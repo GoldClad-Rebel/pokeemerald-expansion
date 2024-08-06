@@ -1071,3 +1071,53 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/OldaleMarsh/scripts.inc"
+
+	.include "data/maps/LittleRootForest/scripts.inc"
+
+	.include "data/maps/LittleRootForest1/scripts.inc"
+
+	.include "data/maps/BirchesHiddenGarden/scripts.inc"
+
+	.include "data/maps/Route101Ext01/scripts.inc"
+
+	.include "data/maps/Route101Ext02/scripts.inc"
+
+	.include "data/maps/LostCreek/scripts.inc"
+
+	.include "data/maps/FarmerJohnsHouse/scripts.inc"
+
+	.include "data/maps/NewMap1/scripts.inc"
+
+	.include "data/maps/NewMap2/scripts.inc"
+
+	.include "data/maps/trees/scripts.inc"
+
+	.include "data/maps/RustboroRiver/scripts.inc"
+
+	.include "data/maps/Route121Ext01/scripts.inc"
+
+	.include "data/maps/RustboroRiverExt01/scripts.inc"
+
+	.include "data/maps/RustboroRiverExt02/scripts.inc"
+
+	.include "data/maps/RustboroRiverHouse/scripts.inc"
+
+	.include "data/maps/RustboroRidge/scripts.inc"
+
+	.include "data/maps/RustboroRidgeExt/scripts.inc"
+
+	.include "data/maps/RustboroRidgeExt01/scripts.inc"
+
+	.include "data/maps/RustboroRidgeExt02/scripts.inc"
+
+	.include "data/maps/Route102Ext/scripts.inc"
+
+	.include "data/maps/DewfordIsland/scripts.inc"
+
+	.include "data/maps/DewfordTownEXT01/scripts.inc"
+
+	.include "data/maps/DewfordTownEXT02/scripts.inc"
+
+	.include "data/maps/NorthernRustboroRiver/scripts.inc"

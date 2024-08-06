@@ -254,8 +254,8 @@
   ],
   "warp_events": [
     {
-      "x": 28,
-      "y": 9,
+      "x": 18,
+      "y": 16,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_HOUSE1",
       "dest_warp_id": "0"
@@ -289,22 +289,22 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 49,
-      "y": 6,
+      "x": 19,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_HOUSE3",
       "dest_warp_id": "0"
     },
     {
-      "x": 19,
-      "y": 10,
+      "x": 49,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_STEVENS_HOUSE",
       "dest_warp_id": "0"
     },
     {
-      "x": 18,
-      "y": 16,
+      "x": 28,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_HOUSE4",
       "dest_warp_id": "1"

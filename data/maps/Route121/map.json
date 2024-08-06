@@ -27,6 +27,11 @@
       "map": "MAP_LILYCOVE_CITY",
       "offset": -10,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE121EXT01",
+      "offset": 26,
+      "direction": "right"
     }
   ],
   "object_events": [

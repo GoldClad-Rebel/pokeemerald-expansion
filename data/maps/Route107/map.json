@@ -22,6 +22,21 @@
       "map": "MAP_ROUTE108",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_DEWFORD_ISLAND",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE106",
+      "offset": -20,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_DEWFORD_TOWN_EXT02",
+      "offset": -54,
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -117,7 +132,13 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
-  "bg_events": []
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

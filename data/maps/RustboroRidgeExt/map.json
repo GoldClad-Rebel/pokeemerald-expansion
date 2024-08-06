@@ -1,0 +1,44 @@
+{
+  "id": "MAP_RUSTBORO_RIDGE_EXT",
+  "name": "RustboroRidgeExt",
+  "layout": "LAYOUT_RUSTBORO_RIDGE_EXT",
+  "music": "MUS_AWAKEN_LEGEND",
+  "region_map_section": "MAPSEC_PETALBURG_WOODS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_RUSTBORO_RIDGE",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_RUSTBORO_RIDGE_EXT01",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_RUSTBORO_RIVER_EXT02",
+      "offset": 15,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

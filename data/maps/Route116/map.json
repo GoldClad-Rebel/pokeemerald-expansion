@@ -22,6 +22,21 @@
       "map": "MAP_RUSTBORO_CITY",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_RUSTBORO_RIVER",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE115",
+      "offset": -40,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_NORTHERN_RUSTBORO_RIVER",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -118,8 +133,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 10,
-      "y": 17,
+      "x": 5,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -343,8 +358,8 @@
       "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_POTION",
       "script": "Common_EventScript_FindItem",
@@ -441,8 +456,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 5,
-      "y": 10,
+      "x": 7,
+      "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route116_EventScript_RouteSignRustboro"
@@ -479,7 +494,7 @@
     },
     {
       "type": "sign",
-      "x": 16,
+      "x": 20,
       "y": 12,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

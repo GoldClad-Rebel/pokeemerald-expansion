@@ -27,6 +27,21 @@
       "map": "MAP_PETALBURG_CITY",
       "offset": 50,
       "direction": "right"
+    },
+    {
+      "map": "MAP_RUSTBORO_RIVER_EXT02",
+      "offset": -3,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_RUSTBORO_RIVER_EXT01",
+      "offset": -26,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_RUSTBORO_RIDGE",
+      "offset": 17,
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -45,8 +60,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
-      "x": 25,
-      "y": 49,
+      "x": 24,
+      "y": 45,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,

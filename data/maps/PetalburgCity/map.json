@@ -19,8 +19,8 @@
       "direction": "left"
     },
     {
-      "map": "MAP_ROUTE102",
-      "offset": 10,
+      "map": "MAP_ROUTE102EXT",
+      "offset": 14,
       "direction": "right"
     }
   ],

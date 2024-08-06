@@ -5,7 +5,7 @@
   "music": "MUS_OLDALE",
   "region_map_section": "MAPSEC_OLDALE_TOWN",
   "requires_flash": false,
-  "weather": "WEATHER_SUNNY",
+  "weather": "WEATHER_DOWNPOUR",
   "map_type": "MAP_TYPE_TOWN",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -19,14 +19,24 @@
       "direction": "up"
     },
     {
-      "map": "MAP_ROUTE101",
+      "map": "MAP_ROUTE102",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_OLDALE_MARSH",
+      "offset": -25,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE101EXT02",
       "offset": 0,
       "direction": "down"
     },
     {
-      "map": "MAP_ROUTE102",
-      "offset": 0,
-      "direction": "left"
+      "map": "MAP_LOST_CREEK",
+      "offset": -24,
+      "direction": "down"
     }
   ],
   "object_events": [
