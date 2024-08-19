@@ -14746,7 +14746,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 5887
-            .species = SPECIES_POOCHYENA,
+            .species = SPECIES_HOUNDOUR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5889
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

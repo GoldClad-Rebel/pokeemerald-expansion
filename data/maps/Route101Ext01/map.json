@@ -45,13 +45,135 @@
     }
   ],
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZAPDOS)",
+      "x": 10,
+      "y": 4,
+      "elevation": 4,
+      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_ZAPDOS_0x023"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 16,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_RivalRoute101Ext01_0x025"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AIPOM)",
+      "x": 14,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_Aipom_0x026"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AIPOM)",
+      "x": 17,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_Aipom_0x026"
+    }
   ],
   "warp_events": [
 
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "5",
+      "script": "Route101Ext01_EventScript_PlayerApproachesRoute101Ext01"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "5",
+      "script": "Route101Ext01_EventScript_PlayerApproachesRoute101Ext01"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "6",
+      "script": "Route101Ext01_EventScript_RivalRunsToOlddale"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "6",
+      "script": "Route101Ext01_EventScript_RivalRunsToOlddale"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "6",
+      "script": "Route101Ext01_EventScript_RivalRunsToOlddale"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "6",
+      "script": "Route101Ext01_EventScript_RivalRunsToOlddale"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "6",
+      "script": "Route101Ext01_EventScript_AipomShowsUp"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "6",
+      "script": "Route101Ext01_EventScript_AipomShowsUp"
+    }
   ],
   "bg_events": [
 

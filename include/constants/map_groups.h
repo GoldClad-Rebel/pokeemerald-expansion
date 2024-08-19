@@ -86,6 +86,8 @@
 #define MAP_DEWFORD_TOWN_EXT01      (77 | (0 << 8))
 #define MAP_DEWFORD_TOWN_EXT02      (78 | (0 << 8))
 #define MAP_NORTHERN_RUSTBORO_RIVER (79 | (0 << 8))
+#define MAP_ROUTE118TRANSITION      (80 | (0 << 8))
+#define MAP_NEW_MAP3                (81 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))

@@ -104,7 +104,7 @@
     {
       "id": "LAYOUT_OLDALE_TOWN",
       "name": "OldaleTown_Layout",
-      "width": 20,
+      "width": 22,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -164,7 +164,7 @@
     {
       "id": "LAYOUT_ROUTE101",
       "name": "Route101_Layout",
-      "width": 20,
+      "width": 21,
       "height": 23,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -174,7 +174,7 @@
     {
       "id": "LAYOUT_ROUTE102",
       "name": "Route102_Layout",
-      "width": 50,
+      "width": 51,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -345,7 +345,7 @@
       "id": "LAYOUT_ROUTE119",
       "name": "Route119_Layout",
       "width": 40,
-      "height": 140,
+      "height": 135,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Route119/border.bin",
@@ -4424,7 +4424,7 @@
     {
       "id": "LAYOUT_LITTLE_ROOT_FOREST",
       "name": "LittleRootForest_Layout",
-      "width": 20,
+      "width": 22,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -4434,7 +4434,7 @@
     {
       "id": "LAYOUT_LITTLE_ROOT_FOREST1",
       "name": "LittleRootForest1_Layout",
-      "width": 20,
+      "width": 21,
       "height": 23,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -4474,7 +4474,7 @@
     {
       "id": "LAYOUT_LOST_CREEK",
       "name": "LostCreek_Layout",
-      "width": 24,
+      "width": 25,
       "height": 37,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
@@ -4505,7 +4505,7 @@
       "id": "LAYOUT_NEW_MAP2",
       "name": "NewMap2_Layout",
       "width": 20,
-      "height": 15,
+      "height": 17,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/NewMap2/border.bin",
@@ -4660,6 +4660,26 @@
       "secondary_tileset": "gTileset_Fallarbor",
       "border_filepath": "data/layouts/NorthernRustboroRiver/border.bin",
       "blockdata_filepath": "data/layouts/NorthernRustboroRiver/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE118TRANSITION",
+      "name": "Route118Transition_Layout",
+      "width": 40,
+      "height": 8,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Route118Transition/border.bin",
+      "blockdata_filepath": "data/layouts/Route118Transition/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAP3",
+      "name": "NewMap3_Layout",
+      "width": 46,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/NewMap3/border.bin",
+      "blockdata_filepath": "data/layouts/NewMap3/map.bin"
     }
   ]
 }

@@ -20,7 +20,12 @@
     },
     {
       "map": "MAP_ROUTE102EXT",
-      "offset": 14,
+      "offset": 12,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_NEW_MAP3",
+      "offset": -8,
       "direction": "right"
     }
   ],

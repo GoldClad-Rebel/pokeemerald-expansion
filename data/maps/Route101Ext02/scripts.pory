@@ -1,0 +1,8 @@
+mapscripts Route101Ext02_MapScripts {
+}
+
+script Route101Ext02_EventScript_SeviperBatllesZangoose {
+    lockall
+    setflag(FLAG_SeviperBattle_0x027)
+    releaseall   
+}

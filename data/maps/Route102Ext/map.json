@@ -20,8 +20,13 @@
     },
     {
       "map": "MAP_PETALBURG_CITY",
-      "offset": -14,
+      "offset": -12,
       "direction": "left"
+    },
+    {
+      "map": "MAP_NEW_MAP3",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [

@@ -204,6 +204,7 @@
 #define METATILE_Fortree_SecretBase_ShrubOpen              0x278
 #define METATILE_Fortree_WoodBridge1_Bottom                0x29F
 #define METATILE_Fortree_WoodBridge1_Top                   0x297
+#define METATILE_Fortree_celebiwarptiles                   0x2D3
 
 // gTileset_General
 #define METATILE_General_BlueCaveIndent        0x1B0

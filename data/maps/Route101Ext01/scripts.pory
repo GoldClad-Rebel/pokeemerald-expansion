@@ -1,0 +1,65 @@
+mapscripts Route101Ext01_MapScripts {
+}
+
+const LOCALID_SPECIES_ZAPDOS = 1
+
+script Route101Ext01_EventScript_PlayerApproachesRoute101Ext01 {
+    lockall
+    addobject(LOCALID_SPECIES_ZAPDOS)
+    delay(8)       
+    applymovement(LOCALID_SPECIES_ZAPDOS, Route101Ext01_Movement_ZapdosFlysBy)
+    waitmovement(LOCALID_SPECIES_ZAPDOS)
+    playmoncry(SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER)
+    applymovement(LOCALID_SPECIES_ZAPDOS, Route101Ext01_Movement_ZapdosFlysBy2)
+    waitmovement(0)
+    removeobject(1)
+    setflag(FLAG_ZAPDOS_0x023)
+    setvar(VAR_ROUTE101_STATE, 6)
+    releaseall
+}
+
+movement Route101Ext01_Movement_ZapdosFlysBy {
+    walk_fast_down * 6
+    walk_fast_left
+    walk_fast_down * 4 
+    step_end
+}
+
+movement Route101Ext01_Movement_ZapdosFlysBy2 {
+    walk_fast_left * 3
+    walk_fast_up
+    walk_fast_left * 4
+    walk_fast_down
+    walk_fast_left * 2
+    step_end   
+}
+
+const LOCALID_VAR_0 = 2
+
+script Route101Ext01_EventScript_RivalRunsToOlddale {
+    lockall
+    setobjectxy(LOCALID_VAR_0,16,4)
+    msgbox("C'mon Slowpoke!")
+    closemessage
+    applymovement(LOCALID_VAR_0, Route101Ext01_Movement_RivalRUNSAway)
+    waitmovement(2)
+    removeobject(2)
+    setflag(FLAG_RivalRoute101Ext01_0x025)
+    setvar(VAR_ROUTE101_STATE, 7)
+    releaseall
+}
+
+movement Route101Ext01_Movement_RivalRUNSAway {
+    disable_jump_landing_ground_effect
+    jump_in_place_left
+    face_up
+    delay_8
+    walk_fast_up * 5
+    step_end
+}
+
+script Route101Ext01_EventScript_AipomShowsUp {
+    lockall
+    clearflag(FLAG_Aipom_0x026)
+    releaseall   
+}

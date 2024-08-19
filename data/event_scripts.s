@@ -1124,3 +1124,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/DewfordTownEXT02/scripts.inc"
 
 	.include "data/maps/NorthernRustboroRiver/scripts.inc"
+
+	.include "data/maps/Route118Transition/scripts.inc"
+
+	.include "data/maps/NewMap3/scripts.inc"

@@ -115,7 +115,9 @@
     "DewfordIsland",
     "DewfordTownEXT01",
     "DewfordTownEXT02",
-    "NorthernRustboroRiver"
+    "NorthernRustboroRiver",
+    "Route118Transition",
+    "NewMap3"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
