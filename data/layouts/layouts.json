@@ -4675,11 +4675,51 @@
       "id": "LAYOUT_NEW_MAP3",
       "name": "NewMap3_Layout",
       "width": 46,
-      "height": 20,
+      "height": 22,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/NewMap3/border.bin",
       "blockdata_filepath": "data/layouts/NewMap3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE104EXT",
+      "name": "Route104EXT_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Route104EXT/border.bin",
+      "blockdata_filepath": "data/layouts/Route104EXT/map.bin"
+    },
+    {
+      "id": "LAYOUT_FRENZIED_FOREST",
+      "name": "FrenziedForest_Layout",
+      "width": 56,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/FrenziedForest/border.bin",
+      "blockdata_filepath": "data/layouts/FrenziedForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAP4",
+      "name": "NewMap4_Layout",
+      "width": 15,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/NewMap4/border.bin",
+      "blockdata_filepath": "data/layouts/NewMap4/map.bin"
+    },
+    {
+      "id": "LAYOUT_LOWER_PETALBURG_FOREST",
+      "name": "LowerPetalburgForest_Layout",
+      "width": 56,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/LowerPetalburgForest/border.bin",
+      "blockdata_filepath": "data/layouts/LowerPetalburgForest/map.bin"
     }
   ]
 }

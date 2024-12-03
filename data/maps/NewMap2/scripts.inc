@@ -66,37 +66,13 @@ Won_or_Caught::
 	removeobject 1
 # 32 "data/maps/NewMap2/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 33 "data/maps/NewMap2/scripts.pory"
-	msgbox Won_or_Caught_Text_0
 	return
 
 
 RanAway::
-# 38 "data/maps/NewMap2/scripts.pory"
-	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
-# 39 "data/maps/NewMap2/scripts.pory"
-	MSGBOX RanAway_Text_0, MSGBOX_AUTOCLOSE
-# 40 "data/maps/NewMap2/scripts.pory"
-	delay 20
-# 41 "data/maps/NewMap2/scripts.pory"
+# 37 "data/maps/NewMap2/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 42 "data/maps/NewMap2/scripts.pory"
-	removeobject 1
-# 43 "data/maps/NewMap2/scripts.pory"
+# 38 "data/maps/NewMap2/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 44 "data/maps/NewMap2/scripts.pory"
-	msgbox RanAway_Text_1
 	return
 
-
-Won_or_Caught_Text_0:
-# 33 "data/maps/NewMap2/scripts.pory"
-	.string "You Have Defeated The Forest Deity$"
-
-RanAway_Text_0:
-# 39 "data/maps/NewMap2/scripts.pory"
-	.string "be...$"
-
-RanAway_Text_1:
-# 44 "data/maps/NewMap2/scripts.pory"
-	.string "You Have Been Defeated, By The Forest Deity$"

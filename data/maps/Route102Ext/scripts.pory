@@ -1,0 +1,63 @@
+mapscripts Route102Ext_MapScripts {
+}
+
+script Route102Ext_EventScript_Snorlaxs_Leftovers {
+    lockall
+    msgbox("Snorlax has woken up!", type=MSGBOX_DEFAULT)
+    playmoncry(SPECIES_SNORLAX, CRY_MODE_ENCOUNTER)
+    delay(40)
+    waitmoncry
+    setwildbattle(SPECIES_SNORLAX, 25, ITEM_LEFTOVERS)
+    dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if(var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+        call(Won_or_Caught)
+    setflag(FLAG_SNORLAX_0x02A)
+    removeobject(2)
+    giveitem(ITEM_LEFTOVERS, 1)   
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_WON) {
+        call(Won_or_Caught) 
+    setflag(FLAG_SNORLAX_0x02A)
+    removeobject(2)
+    giveitem(ITEM_LEFTOVERS, 1)   
+    }
+    waitmessage
+    releaseall
+}
+
+script Route102Ext_EventScript_Munchlax {
+    lockall
+    msgbox(Munchlax_Battle, MSGBOX_DEFAULT)
+    playmoncry(SPECIES_MUNCHLAX, CRY_MODE_ENCOUNTER)
+    delay(40)
+    waitmoncry
+    setwildbattle(SPECIES_MUNCHLAX, 18, ITEM_LEFTOVERS)
+    dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if(var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+        call(Won_or_Caught)
+    setflag(FLAG_MUNCHLAX_0x029)
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_WON) {
+        call(Won_or_Caught)
+    setflag(FLAG_MUNCHLAX_0x029)   
+    }
+    waitmessage
+    releaseall
+}
+
+script Route102Ext_Snorlax {
+lockall
+msgbox(Snorlax_Sleeping, MSGBOX_DEFAULT)
+waitmessage
+releaseall
+}
+
+text Snorlax_Sleeping{
+    "zzz zzZ ZZZ"
+}
+
+text Munchlax_Battle {
+    "Lax, Lax, Munchlax!"
+}

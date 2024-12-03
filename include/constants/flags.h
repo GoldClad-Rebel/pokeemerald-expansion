@@ -50,10 +50,10 @@
 #define FLAG_RivalRoute101Ext01_0x025    0x25 // Unused Flag
 #define FLAG_Aipom_0x026    0x26 // Unused Flag
 #define FLAG_SeviperBattle_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
+#define FLAG_Murkrow_0x028    0x28 // Unused Flag
+#define FLAG_MUNCHLAX_0x029    0x29 // Unused Flag
+#define FLAG_SNORLAX_0x02A    0x2A // Unused Flag
+#define FLAG_LEFTOVERS_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag

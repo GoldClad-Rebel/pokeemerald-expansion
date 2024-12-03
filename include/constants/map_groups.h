@@ -88,6 +88,10 @@
 #define MAP_NORTHERN_RUSTBORO_RIVER (79 | (0 << 8))
 #define MAP_ROUTE118TRANSITION      (80 | (0 << 8))
 #define MAP_NEW_MAP3                (81 | (0 << 8))
+#define MAP_ROUTE104EXT             (82 | (0 << 8))
+#define MAP_FRENZIED_FOREST         (83 | (0 << 8))
+#define MAP_NEW_MAP4                (84 | (0 << 8))
+#define MAP_LOWER_PETALBURG_FOREST  (85 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))

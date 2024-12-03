@@ -42,6 +42,11 @@
       "map": "MAP_RUSTBORO_RIDGE",
       "offset": 17,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE104EXT",
+      "offset": 11,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -486,6 +491,71 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route104_EventScript_Rival",
       "flag": "FLAG_HIDE_ROUTE_104_RIVAL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
+      "x": 28,
+      "y": 75,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 4,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CRAWDAUNT)",
+      "x": 14,
+      "y": 61,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
+      "x": 5,
+      "y": 70,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 15,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
+      "x": 4,
+      "y": 70,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 15,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 27,
+      "y": 52,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_1"
     }
   ],
   "warp_events": [

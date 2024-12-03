@@ -53,8 +53,47 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Route102Ext_EventScript_Snorlaxs_Leftovers",
+      "flag": "FLAG_LEFTOVERS_0x02B"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 6,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUNCHLAX)",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP",
+      "movement_range_x": 3,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "Route102Ext_EventScript_Munchlax",
+      "flag": "FLAG_MUNCHLAX_0x029"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SNORLAX)",
+      "x": 9,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route102Ext_Snorlax",
+      "flag": "FLAG_SNORLAX_0x02A"
     }
   ],
   "warp_events": [

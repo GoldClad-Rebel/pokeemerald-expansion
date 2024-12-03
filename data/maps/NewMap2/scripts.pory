@@ -9,7 +9,7 @@ script NewMap2_EventScript_Celebi {
     waitmoncry
     setwildbattle(SPECIES_CELEBI, 75, ITEM_SUPER_POTION)
     dowildbattle
-    specialvar(VAR_RESULT, GetBattleOutcome)
+    specialvar(VAR_RESULT,GetBattleOutcome)
     if(var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
         call(Won_or_Caught)
     }
@@ -30,17 +30,11 @@ script Won_or_Caught {
     fadescreen(FADE_TO_BLACK)
     removeobject(1)
     fadescreen(FADE_FROM_BLACK)
-    msgbox("You Have Defeated The Forest Deity")
     return
 }
 
 script RanAway {
-    playmoncry(SPECIES_CELEBI, CRY_MODE_ENCOUNTER)
-    MSGBOX("be...", MSGBOX_AUTOCLOSE)
-    delay(20)
     fadescreen(FADE_TO_BLACK)
-    removeobject(1)
     fadescreen(FADE_FROM_BLACK)
-    msgbox("You Have Been Defeated, By The Forest Deity")
     return
 }

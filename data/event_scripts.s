@@ -1128,3 +1128,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route118Transition/scripts.inc"
 
 	.include "data/maps/NewMap3/scripts.inc"
+
+	.include "data/maps/Route104EXT/scripts.inc"
+
+	.include "data/maps/FrenziedForest/scripts.inc"
+
+	.include "data/maps/NewMap4/scripts.inc"
+
+	.include "data/maps/LowerPetalburgForest/scripts.inc"
