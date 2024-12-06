@@ -1,0 +1,384 @@
+mapscripts PetalburgForest_MapScripts {
+}
+const LOCALID_LEAF=1
+
+script PetalburgForest_EventScript_leaf1 {
+    lockall
+    addobject(LOCALID_LEAF)
+    setobjectxy(LOCALID_LEAF,15,8)
+    applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFNotices1)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+    waitmovement(0)
+    msgbox(format("Hey, {PLAYER}! You made it!""It's been a while, why don't you come say hi to my family!"))
+    closemessage
+    applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFGoesInside1)
+	applymovement(OBJ_EVENT_ID_PLAYER, PetalburgForest_Movement_PlayerEnterHouse1)
+	waitmovement(0)
+    removeobject(1)
+	hideobjectat(OBJ_EVENT_ID_PLAYER,MAP_PETALBURG_FOREST)
+    setflag(FLAG_LeafHouse_0x02D)
+    setvar(VAR_PARTNERSHOUSE_STATE, 1 )
+    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    warp(MAP_PARTNERS_HOUSE,0)
+    waitstate
+}
+
+movement PetalburgForest_Movement_LEAFNotices1{
+    disable_jump_landing_ground_effect
+    jump_in_place_down
+    face_right
+    walk_right
+    face_down
+    walk_down * 4
+    face_left
+    walk_left
+    step_end
+}
+
+movement PetalburgForest_Movement_LEAFGoesInside1{
+    face_right
+    walk_right
+    face_up
+    walk_up * 4
+    face_right
+    walk_right * 3
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+
+movement PetalburgForest_Movement_PlayerEnterHouse1{
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 4
+    face_right
+    walk_right * 3
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+
+script PetalburgForest_EventScript_leaf2 {
+    lockall
+    addobject(LOCALID_LEAF)
+    setobjectxy(LOCALID_LEAF,15,8)
+    applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFNotices2)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+    msgbox(format("Hey, {PLAYER}! You made it!""It's been a while, why don't you come say hi to my family!"))
+    closemessage
+    applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFGoesInside2)
+	applymovement(OBJ_EVENT_ID_PLAYER, PetalburgForest_Movement_PlayerEnterHouse2)
+    waitmovement(0)
+    removeobject(1)
+    hideobjectat(OBJ_EVENT_ID_PLAYER,MAP_PETALBURG_FOREST)
+    setflag(FLAG_LeafHouse_0x02D)
+    setvar(VAR_PARTNERSHOUSE_STATE, 1 )
+    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    warp(MAP_PARTNERS_HOUSE,0)
+    releaseall
+}
+
+movement PetalburgForest_Movement_LEAFNotices2{
+    disable_jump_landing_ground_effect
+    jump_in_place_down
+    face_right
+    walk_right
+    face_down
+    walk_down * 5
+    face_left
+    walk_left
+    step_end
+}
+
+movement PetalburgForest_Movement_LEAFGoesInside2{
+    face_right
+    walk_right
+    face_up
+    walk_up * 5
+    face_right
+    walk_right * 3
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+
+movement PetalburgForest_Movement_PlayerEnterHouse2{
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 5
+    face_right
+    walk_right * 3
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+
+script PetalburgForest_EventScript_leaf3 {
+    lockall
+    addobject(LOCALID_LEAF)
+    setobjectxy(LOCALID_LEAF,15,8)
+    applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFNotices3)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+    msgbox(format("Hey, {PLAYER}! You made it!""It's been a while, why don't you come say hi to my family!"))
+    closemessage
+    applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFGoesInside3)
+	applymovement(OBJ_EVENT_ID_PLAYER, PetalburgForest_Movement_PlayerEnterHouse3)
+    waitmovement(0)
+    removeobject(1)
+    hideobjectat(OBJ_EVENT_ID_PLAYER,MAP_PETALBURG_FOREST)
+    setflag(FLAG_LeafHouse_0x02D)
+    setvar(VAR_PARTNERSHOUSE_STATE, 1 )
+    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    warp(MAP_PARTNERS_HOUSE,0)
+    releaseall
+}
+
+movement PetalburgForest_Movement_LEAFNotices3{
+    disable_jump_landing_ground_effect
+    jump_in_place_down
+    face_right
+    walk_right
+    face_down
+    walk_down * 6
+    face_left
+    step_end
+}
+
+movement PetalburgForest_Movement_LEAFGoesInside3{
+    face_up
+    walk_up * 6
+    face_right
+    walk_right * 3
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+
+movement PetalburgForest_Movement_PlayerEnterHouse3{
+    face_right
+    walk_right
+    face_up
+    walk_up * 6
+    face_right
+    walk_right * 3
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+
+
+script PetalburgForest_EventScript_leaf4 {
+    lockall
+    addobject(LOCALID_LEAF)
+    setobjectxy(LOCALID_LEAF,15,8)
+    applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFNotices4)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    msgbox(format("Hey, {PLAYER}! You made it!""It's been a while, why don't you come say hi to my family!"))
+    closemessage
+    applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFGoesInside4)
+	applymovement(OBJ_EVENT_ID_PLAYER, PetalburgForest_Movement_PlayerEnterHouse4)
+    waitmovement(0)
+    removeobject(1)
+    hideobjectat(OBJ_EVENT_ID_PLAYER,MAP_PETALBURG_FOREST)
+    setflag(FLAG_LeafHouse_0x02D)
+    setvar(VAR_PARTNERSHOUSE_STATE, 1 )
+    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    warp(MAP_PARTNERS_HOUSE,0)
+    releaseall
+}
+
+movement PetalburgForest_Movement_LEAFNotices4{
+    disable_jump_landing_ground_effect
+    jump_in_place_down
+    face_right
+    walk_right
+    face_down
+    walk_down * 5
+    step_end
+}
+
+movement PetalburgForest_Movement_LEAFGoesInside4{
+    face_up
+    walk_up * 5
+    face_right
+    walk_right * 3
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+
+movement PetalburgForest_Movement_PlayerEnterHouse4{
+    face_up
+    walk_up * 6
+    face_right
+    walk_right * 3
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+
+
+
+script PetalburgForest_EventScript_leaf5 {
+    lockall
+    addobject(LOCALID_LEAF)
+    setobjectxy(LOCALID_LEAF,15,8)
+    applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFNotices5)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    msgbox(format("Hey, {PLAYER}! You made it!""It's been a while, why don't you come say hi to my family!"))
+    closemessage
+    applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFGoesInside5)
+	applymovement(OBJ_EVENT_ID_PLAYER, PetalburgForest_Movement_PlayerEnterHouse5)
+    waitmovement(0)
+    removeobject(1)
+    hideobjectat(OBJ_EVENT_ID_PLAYER,MAP_PETALBURG_FOREST)
+    setflag(FLAG_LeafHouse_0x02D)
+    setvar(VAR_PARTNERSHOUSE_STATE, 1 )
+    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    warp(MAP_PARTNERS_HOUSE,0)
+    releaseall
+}
+
+movement PetalburgForest_Movement_LEAFNotices5{
+    disable_jump_landing_ground_effect
+    jump_in_place_down
+    face_right
+    walk_right
+    face_down
+    walk_down * 5
+    face_right
+    step_end
+}
+
+movement PetalburgForest_Movement_LEAFGoesInside5{
+    face_up
+    walk_up * 5
+    face_right
+    walk_right * 3
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+
+movement PetalburgForest_Movement_PlayerEnterHouse5{
+    face_left
+    walk_left
+    face_up
+    walk_up * 5
+    face_right
+    walk_right * 3
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+
+
+script PetalburgForest_EventScript_leaf6 {
+    lockall
+    addobject(LOCALID_LEAF)
+    setobjectxy(LOCALID_LEAF,15,8)
+    applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFNotices6)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    msgbox(format("Hey, {PLAYER}! You made it!""It's been a while, why don't you come say hi to my family!"))
+    closemessage
+    applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFGoesInside6)
+	applymovement(OBJ_EVENT_ID_PLAYER, PetalburgForest_Movement_PlayerEnterHouse6)
+    waitmovement(0)
+    removeobject(1)
+    hideobjectat(OBJ_EVENT_ID_PLAYER,MAP_PETALBURG_FOREST)
+    setflag(FLAG_LeafHouse_0x02D)
+    setvar(VAR_PARTNERSHOUSE_STATE, 1 )
+    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    warp(MAP_PARTNERS_HOUSE,0)
+    releaseall
+}
+
+movement PetalburgForest_Movement_LEAFNotices6{
+    disable_jump_landing_ground_effect
+    jump_in_place_down
+    face_right
+    walk_right
+    face_down
+    walk_down * 3
+    face_right
+    step_end
+}
+
+movement PetalburgForest_Movement_LEAFGoesInside6{
+    face_up
+    walk_up * 3
+    face_right
+    walk_right * 3
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+
+movement PetalburgForest_Movement_PlayerEnterHouse6{
+    face_left
+    walk_left
+    face_up
+    walk_up * 3
+    face_right
+    walk_right * 3
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+

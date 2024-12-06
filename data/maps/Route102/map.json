@@ -273,57 +273,31 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MURKROW)",
-      "x": 12,
+      "x": 8,
       "y": 4,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WANDER_IN_GRASS",
       "movement_range_x": 5,
-      "movement_range_y": 0,
+      "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "1",
       "script": "Route102_EventScript_Murkrow",
       "flag": "FLAG_Murkrow_0x028"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 5,
-      "y": 16,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_CutTree",
-      "flag": "FLAG_TEMP_2"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 5,
-      "y": 17,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_CutTree",
-      "flag": "FLAG_TEMP_3"
     }
   ],
   "warp_events": [
     {
       "x": 4,
-      "y": 16,
+      "y": 17,
       "elevation": 0,
-      "dest_map": "MAP_LOWER_PETALBURG_FOREST",
+      "dest_map": "MAP_PETALBURG_FOREST",
       "dest_warp_id": "0"
     },
     {
       "x": 4,
-      "y": 17,
+      "y": 16,
       "elevation": 0,
-      "dest_map": "MAP_LOWER_PETALBURG_FOREST",
+      "dest_map": "MAP_PETALBURG_FOREST",
       "dest_warp_id": "1"
     }
   ],

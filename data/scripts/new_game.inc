@@ -273,5 +273,6 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SKY_PILLAR_WALLACE
 	setflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL
 	setflag FLAG_PichuAppears_0x024
+	setflag FLAG_LEAFRoute101Ext02_0x02C 
 	call EventScript_ResetAllBerries
 	end

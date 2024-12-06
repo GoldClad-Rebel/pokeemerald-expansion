@@ -1136,4 +1136,8 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/NewMap4/scripts.inc"
 
-	.include "data/maps/LowerPetalburgForest/scripts.inc"
+	.include "data/maps/PetalburgForest/scripts.inc"
+
+	.include "data/maps/PetalburgForestPokeCenter/scripts.inc"
+
+	.include "data/maps/PartnersHouse/scripts.inc"

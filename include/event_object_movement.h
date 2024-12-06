@@ -252,6 +252,7 @@ const struct ObjectEventGraphicsInfo *SpeciesToGraphicsInfo(u16 species, u8 form
 void MovementType_None(struct Sprite *);
 void MovementType_LookAround(struct Sprite *);
 void MovementType_WanderAround(struct Sprite *);
+void MovementType_WanderInGrass(struct Sprite *);
 void MovementType_WanderUpAndDown(struct Sprite *);
 void MovementType_WanderLeftAndRight(struct Sprite *);
 void MovementType_FaceDirection(struct Sprite *);
@@ -317,6 +318,7 @@ u8 MovementType_WanderAround_Step3(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_WanderAround_Step4(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_WanderAround_Step5(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_WanderAround_Step6(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_WanderInGrass_Step4(struct ObjectEvent *, struct Sprite *);
 u8 GetVectorDirection(s16 dx, s16 dy, s16 absdx, s16 absdy);
 u8 GetLimitedVectorDirection_SouthNorth(s16 dx, s16 dy, s16 absdx, s16 absdy);
 u8 GetLimitedVectorDirection_WestEast(s16 dx, s16 dy, s16 absdx, s16 absdy);

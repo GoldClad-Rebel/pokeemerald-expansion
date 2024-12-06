@@ -91,7 +91,7 @@
 #define MAP_ROUTE104EXT             (82 | (0 << 8))
 #define MAP_FRENZIED_FOREST         (83 | (0 << 8))
 #define MAP_NEW_MAP4                (84 | (0 << 8))
-#define MAP_LOWER_PETALBURG_FOREST  (85 | (0 << 8))
+#define MAP_PETALBURG_FOREST        (85 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -622,6 +622,10 @@
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (33 << 8))
 
-#define MAP_GROUPS_COUNT 34
+// gMapGroup_IndoorPetalburgForest
+#define MAP_PETALBURG_FOREST_POKE_CENTER (0 | (34 << 8))
+#define MAP_PARTNERS_HOUSE               (1 | (34 << 8))
+
+#define MAP_GROUPS_COUNT 35
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

@@ -141,7 +141,7 @@
     {
       "type": "trigger",
       "x": 14,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "var": "VAR_ROUTE101_STATE",
       "var_value": "6",
@@ -149,8 +149,8 @@
     },
     {
       "type": "trigger",
-      "x": 15,
-      "y": 5,
+      "x": 14,
+      "y": 7,
       "elevation": 0,
       "var": "VAR_ROUTE101_STATE",
       "var_value": "6",

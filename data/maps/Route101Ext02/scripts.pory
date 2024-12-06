@@ -6,3 +6,40 @@ script Route101Ext02_EventScript_SeviperBatllesZangoose {
     setflag(FLAG_SeviperBattle_0x027)
     releaseall   
 }
+
+const LOCALID_LEAF=4
+
+script Route101Ext02_EventScript_leaf {
+    lockall
+    clearflag(FLAG_LEAFRoute101Ext02_0x02C)
+    addobject(LOCALID_LEAF)
+    setobjectxy(LOCALID_LEAF,7,2)
+    applymovement(LOCALID_LEAF, Route101Ext02_Movement_LEAFAproaches)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    msgbox(format("Hey, {PLAYER}! I was just grabbing some supplies and seen you run by earlier. so i waited up, to give you these, Heres some pokeballs!"))
+    closemessage
+    giveitem(ITEM_POKE_BALL, 10)
+    msgbox(format("im going to head home now, you should stop by sometime!"))
+    closemessage
+    applymovement(LOCALID_LEAF, Route101Ext02_Movement_LEAFRunsAway)
+    waitmovement(0)
+    removeobject(4)
+    setflag(FLAG_LEAFRoute101Ext02_0x02C)
+    releaseall
+}
+
+movement Route101Ext02_Movement_LEAFAproaches{
+    walk_right * 8
+    face_down
+    walk_down
+    step_end
+}
+
+movement Route101Ext02_Movement_LEAFRunsAway{
+    face_left
+    walk_left * 5
+    face_up
+    walk_up * 5
+    step_end
+}

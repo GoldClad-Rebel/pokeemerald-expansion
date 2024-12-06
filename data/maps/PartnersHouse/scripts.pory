@@ -1,0 +1,125 @@
+mapscripts PartnersHouse_MapScripts{   
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_PARTNERSHOUSE_STATE, 1: PartnersHouse_EventScript_LEAFIntroducesYou
+    ]
+}
+
+const LOCALID_LEAF = 1
+const LOCALID_LEAFsMom = 2
+const LOCALID_GRANDPA = 4
+
+script PartnersHouse_EventScript_LEAFIntroducesYou {
+    lockall
+    addobject(LOCALID_LEAF)
+    addobject(LOCALID_LEAFsMom)
+    addobject(LOCALID_GRANDPA)
+    setobjectxy(LOCALID_LEAF,6,10)
+    setobjectxy(LOCALID_LEAFsMom,5,2)
+    setobjectxy(LOCALID_GRANDPA,2,9)
+    applymovement(LOCALID_LEAF, PartnersHouse_movement_LeafWalkstoGrandpa)
+    applymovement(OBJ_EVENT_ID_PLAYER, PartnersHouse_movement_PlayerFacesGrandpa)
+    waitmovement(0)
+    msgbox(format("Hey Grandpa! Look who came to visit!"))
+    closemessage
+    applymovement(LOCALID_GRANDPA, PartnersHouse_movement_GrandpaTurnsToLeaf)
+    waitmovement(0)
+    msgbox(format("Oh, {PLAYER}! I havent seen you, since you both were knee high to a Kricketune!"))
+    closemessage
+    applymovement(LOCALID_GRANDPA, PartnersHouse_movement_GrandpaTurnsBackAway)
+    waitmovement(0)
+	applymovement(LOCALID_LEAF, PartnersHouse_movement_LeafWalksUpToMom)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, PartnersHouse_movement_PlayerWalksUpToLeafsMom)
+    waitmovement(0)
+    applymovement(LOCALID_LEAFsMom, PartnersHouse_movement_LeafsMomApproaches)
+    msgbox(format("Hey Mom, {PLAYER} stopped by! {PLAYER} got a pokemon from Prof. Birch!"))
+    closemessage
+    msgbox(format("That's awesome! Maybe now the two of you could venture together!"))
+    closemessage
+    applymovement(LOCALID_LEAFsMom, PartnersHouse_movement_LeafsMomSitsBackDown)
+    waitmovement(0)
+    applymovement(LOCALID_LEAF, PartnersHouse_movement_LEAFSitsDown)
+    waitmovement(0)
+    setvar(VAR_PARTNERSHOUSE_STATE, 2)
+    releaseall
+}
+
+movement PartnersHouse_movement_LeafWalkstoGrandpa{
+    face_up
+    walk_up
+    face_left
+    walk_left * 2
+    step_end
+}
+
+movement PartnersHouse_movement_PlayerFacesGrandpa{
+    face_up
+    walk_up
+    face_left
+    walk_left
+    step_end
+}
+
+movement PartnersHouse_movement_GrandpaTurnsToLeaf{
+    face_right
+    step_end
+}
+
+movement PartnersHouse_movement_GrandpaTurnsBackAway{
+    face_down
+}
+
+movement PartnersHouse_movement_LeafWalksUpToMom{
+    face_right
+    walk_right
+    face_up
+    walk_up * 4
+    face_left
+    walk_left
+    face_up
+    step_end
+}
+
+movement PartnersHouse_movement_PlayerWalksUpToLeafsMom{
+    face_up
+    walk_up * 5
+    step_end
+}
+
+movement PartnersHouse_movement_LeafsMomApproaches{
+    face_down
+    walk_down * 2
+    step_end
+}
+
+movement PartnersHouse_movement_LeafsMomSitsBackDown{
+    face_up
+    walk_up * 2
+    face_down
+    step_end
+}
+
+movement PartnersHouse_movement_LEAFSitsDown{
+    face_up
+    walk_up
+    face_left
+    walk_left
+    face_down
+    walk_down
+    face_left
+    step_end
+}
+
+script PartnersHouse_EventScript_LEAFAsksToJoin {
+    msgbox(format("What would you like to do?"))
+    closemessage
+    dynmultichoice(1, 1, FALSE, 2, 0,
+    DYN_MULTICHOICE_CB_NONE, "Have LEAF join your team", "Chat with LEAF")
+    if(var(VAR_RESULT)==0){
+    setfollower 1, FOLLOWER_ALL,
+    LEAFonYourteamChat_Eventscript_CustomFollowerScript, PARTNER_leaf
+    }
+    else{
+    msgbox(format("Stop by any time {PLAYER}, I'm always down for an adventure!"))
+    }
+}
