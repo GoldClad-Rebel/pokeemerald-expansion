@@ -15,6 +15,8 @@
 
 #define ALL_LAND                            FOLLOWER_FLAG_ALL_LAND
 #define FOLLOWER_ALL                        FOLLOWER_FLAG_ALL
+#define FOLLOWER_NO_RUN                     CAN_LEAVE_ROUTE | CLEAR_ON_WHITE_OUT
+
 
 
 // Replace the 0 with a flag in order to use that flag to toggle whether the Player's party
@@ -33,7 +35,7 @@
 #define FOLLOWER_PARTY_PREVIEW              TRUE
 
 // If set to TRUE, the player will turn to face the follower when they exit a doorway.
-#define FACE_FOLLOWER_ON_DOOR_EXIT          TRUE
+#define FACE_FOLLOWER_ON_DOOR_EXIT          FALSE
 
 
 

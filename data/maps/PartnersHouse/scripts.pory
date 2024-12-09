@@ -32,6 +32,7 @@ script PartnersHouse_EventScript_LEAFIntroducesYou {
     applymovement(OBJ_EVENT_ID_PLAYER, PartnersHouse_movement_PlayerWalksUpToLeafsMom)
     waitmovement(0)
     applymovement(LOCALID_LEAFsMom, PartnersHouse_movement_LeafsMomApproaches)
+    waitmovement(0)
     msgbox(format("Hey Mom, {PLAYER} stopped by! {PLAYER} got a pokemon from Prof. Birch!"))
     closemessage
     msgbox(format("That's awesome! Maybe now the two of you could venture together!"))
@@ -111,15 +112,47 @@ movement PartnersHouse_movement_LEAFSitsDown{
 }
 
 script PartnersHouse_EventScript_LEAFAsksToJoin {
+    faceplayer
     msgbox(format("What would you like to do?"))
-    closemessage
     dynmultichoice(1, 1, FALSE, 2, 0,
     DYN_MULTICHOICE_CB_NONE, "Have LEAF join your team", "Chat with LEAF")
+    closemessage
     if(var(VAR_RESULT)==0){
-    setfollower 1, FOLLOWER_ALL,
-    LEAFonYourteamChat_Eventscript_CustomFollowerScript, PARTNER_leaf
+    setfollower( 1, FOLLOWER_NO_RUN ,
+    LEAFonYourteamChat_Eventscript_CustomFollowerScript)
     }
     else{
     msgbox(format("Stop by any time {PLAYER}, I'm always down for an adventure!"))
+    closemessage
+    turnobject(LOCALID_LEAF, DIR_WEST)
     }
+}
+
+script LEAFonYourteamChat_Eventscript_CustomFollowerScript{
+    facefollower
+    msgbox(format("What would you like to do?"))
+    dynmultichoice(1, 1, FALSE, 3, 0,
+    DYN_MULTICHOICE_CB_NONE, "Have LEAF head home", "Have LEAF heal your party", "Chat with LEAF")
+    closemessage
+    switch(var(VAR_RESULT)){
+        case 0:
+        applymovement(OBJ_EVENT_ID_FOLLOW_ME, PartnersHouse_movement_LEAFheadshome)
+        waitmovement(0)
+        destroyfollower
+        clearflag(FLAG_leafsittinginhouse_0x02E)
+        case 1:
+        special(HealPlayerParty)
+        msgbox(format("Here {PLAYER}, I healed your pokemon back to full health for you!"))
+        closemessage
+        case 2:
+        msgbox(format("Let me know if your pokemon need healed {PLAYER}, i have medicine with me."))
+        closemessage   
+    }
+}
+
+movement PartnersHouse_movement_LEAFheadshome{
+    face_down
+    walk_down
+    walk_down
+    step_end
 }

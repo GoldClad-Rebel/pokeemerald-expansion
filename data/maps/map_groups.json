@@ -122,7 +122,14 @@
     "Route104EXT",
     "FrenziedForest",
     "NewMap4",
-    "PetalburgForest"
+    "PetalburgForest",
+    "finishingmap",
+    "RustboroRiverTransition1",
+    "RustboroRiverTransisiton2",
+    "BirchesSanctuaryNorth",
+    "BirchesSanctuarySouth",
+    "BirchesSanctuaryEast",
+    "BirchesSantuaryWest"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

@@ -20,13 +20,18 @@
     },
     {
       "map": "MAP_ROUTE101EXT01",
-      "offset": 20,
+      "offset": 25,
       "direction": "up"
     },
     {
       "map": "MAP_LOST_CREEK",
-      "offset": -5,
+      "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_FINISHINGMAP",
+      "offset": 0,
+      "direction": "left"
     }
   ],
   "object_events": [

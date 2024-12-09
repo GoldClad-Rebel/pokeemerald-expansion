@@ -1141,3 +1141,17 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PetalburgForestPokeCenter/scripts.inc"
 
 	.include "data/maps/PartnersHouse/scripts.inc"
+
+	.include "data/maps/finishingmap/scripts.inc"
+
+	.include "data/maps/RustboroRiverTransition1/scripts.inc"
+
+	.include "data/maps/RustboroRiverTransisiton2/scripts.inc"
+
+	.include "data/maps/BirchesSanctuaryNorth/scripts.inc"
+
+	.include "data/maps/BirchesSanctuarySouth/scripts.inc"
+
+	.include "data/maps/BirchesSanctuaryEast/scripts.inc"
+
+	.include "data/maps/BirchesSantuaryWest/scripts.inc"

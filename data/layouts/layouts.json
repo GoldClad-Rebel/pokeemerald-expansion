@@ -95,7 +95,7 @@
       "id": "LAYOUT_LITTLEROOT_TOWN",
       "name": "LittlerootTown_Layout",
       "width": 30,
-      "height": 20,
+      "height": 36,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/LittlerootTown/border.bin",
@@ -4425,7 +4425,7 @@
       "id": "LAYOUT_LITTLE_ROOT_FOREST",
       "name": "LittleRootForest_Layout",
       "width": 22,
-      "height": 20,
+      "height": 36,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/LittleRootForest/border.bin",
@@ -4444,10 +4444,10 @@
     {
       "id": "LAYOUT_BIRCHES_HIDDEN_GARDEN",
       "name": "BirchesHiddenGarden_Layout",
-      "width": 20,
-      "height": 15,
+      "width": 29,
+      "height": 25,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/BirchesHiddenGarden/border.bin",
       "blockdata_filepath": "data/layouts/BirchesHiddenGarden/map.bin"
     },
@@ -4494,8 +4494,8 @@
     {
       "id": "LAYOUT_NEW_MAP1",
       "name": "NewMap1_Layout",
-      "width": 20,
-      "height": 9,
+      "width": 25,
+      "height": 17,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/NewMap1/border.bin",
@@ -4525,7 +4525,7 @@
       "id": "LAYOUT_RUSTBORO_RIVER",
       "name": "RustboroRiver_Layout",
       "width": 30,
-      "height": 27,
+      "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/RustboroRiver/border.bin",
@@ -4740,6 +4740,76 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/PartnersHouse/border.bin",
       "blockdata_filepath": "data/layouts/PartnersHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_FINISHINGMAP",
+      "name": "finishingmap_Layout",
+      "width": 20,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/finishingmap/border.bin",
+      "blockdata_filepath": "data/layouts/finishingmap/map.bin"
+    },
+    {
+      "id": "LAYOUT_RUSTBORO_RIVER_TRANSITION1",
+      "name": "RustboroRiverTransition1_Layout",
+      "width": 1,
+      "height": 1,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/RustboroRiverTransition1/border.bin",
+      "blockdata_filepath": "data/layouts/RustboroRiverTransition1/map.bin"
+    },
+    {
+      "id": "LAYOUT_RUSTBORO_RIVER_TRANSISITON2",
+      "name": "RustboroRiverTransisiton2_Layout",
+      "width": 2,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/RustboroRiverTransisiton2/border.bin",
+      "blockdata_filepath": "data/layouts/RustboroRiverTransisiton2/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIRCHES_SANCTUARY_NORTH",
+      "name": "BirchesSanctuaryNorth_Layout",
+      "width": 32,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/BirchesSanctuaryNorth/border.bin",
+      "blockdata_filepath": "data/layouts/BirchesSanctuaryNorth/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIRCHES_SANCTUARY_SOUTH",
+      "name": "BirchesSanctuarySouth_Layout",
+      "width": 22,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/BirchesSanctuarySouth/border.bin",
+      "blockdata_filepath": "data/layouts/BirchesSanctuarySouth/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIRCHES_SANCTUARY_EAST",
+      "name": "BirchesSanctuaryEast_Layout",
+      "width": 23,
+      "height": 19,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/BirchesSanctuaryEast/border.bin",
+      "blockdata_filepath": "data/layouts/BirchesSanctuaryEast/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIRCHES_SANTUARY_WEST",
+      "name": "BirchesSantuaryWest_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/BirchesSantuaryWest/border.bin",
+      "blockdata_filepath": "data/layouts/BirchesSantuaryWest/map.bin"
     }
   ]
 }

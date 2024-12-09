@@ -40,7 +40,12 @@
     },
     {
       "map": "MAP_NEW_MAP1",
-      "offset": 5,
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_FINISHINGMAP",
+      "offset": -20,
       "direction": "down"
     }
   ],
