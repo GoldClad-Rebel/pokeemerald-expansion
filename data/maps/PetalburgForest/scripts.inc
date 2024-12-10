@@ -38,7 +38,7 @@ PetalburgForest_EventScript_leaf1::
 # 22 "data/maps/PetalburgForest/scripts.pory"
 	setvar VAR_PETALBURGFOREST_STATE, 1
 # 23 "data/maps/PetalburgForest/scripts.pory"
-	warpsilent MAP_PARTNERS_HOUSE, 0
+	warp MAP_PARTNERS_HOUSE, 0
 # 24 "data/maps/PetalburgForest/scripts.pory"
 	waitstate
 	return
@@ -197,7 +197,7 @@ PetalburgForest_EventScript_leaf2::
 # 87 "data/maps/PetalburgForest/scripts.pory"
 	setvar VAR_PETALBURGFOREST_STATE, 1
 # 88 "data/maps/PetalburgForest/scripts.pory"
-	warpsilent MAP_PARTNERS_HOUSE, 0
+	warp MAP_PARTNERS_HOUSE, 0
 # 89 "data/maps/PetalburgForest/scripts.pory"
 	releaseall
 	return
@@ -362,7 +362,7 @@ PetalburgForest_EventScript_leaf3::
 # 152 "data/maps/PetalburgForest/scripts.pory"
 	setvar VAR_PETALBURGFOREST_STATE, 1
 # 153 "data/maps/PetalburgForest/scripts.pory"
-	warpsilent MAP_PARTNERS_HOUSE, 0
+	warp MAP_PARTNERS_HOUSE, 0
 # 154 "data/maps/PetalburgForest/scripts.pory"
 	releaseall
 	return
@@ -525,7 +525,7 @@ PetalburgForest_EventScript_leaf4::
 # 215 "data/maps/PetalburgForest/scripts.pory"
 	setvar VAR_PETALBURGFOREST_STATE, 1
 # 216 "data/maps/PetalburgForest/scripts.pory"
-	warpsilent MAP_PARTNERS_HOUSE, 0
+	warp MAP_PARTNERS_HOUSE, 0
 # 217 "data/maps/PetalburgForest/scripts.pory"
 	releaseall
 	return
@@ -678,7 +678,7 @@ PetalburgForest_EventScript_leaf5::
 # 276 "data/maps/PetalburgForest/scripts.pory"
 	setvar VAR_PETALBURGFOREST_STATE, 1
 # 277 "data/maps/PetalburgForest/scripts.pory"
-	warpsilent MAP_PARTNERS_HOUSE, 0
+	warp MAP_PARTNERS_HOUSE, 0
 # 278 "data/maps/PetalburgForest/scripts.pory"
 	releaseall
 	return
@@ -835,7 +835,7 @@ PetalburgForest_EventScript_leaf6::
 # 339 "data/maps/PetalburgForest/scripts.pory"
 	setvar VAR_PETALBURGFOREST_STATE, 1
 # 340 "data/maps/PetalburgForest/scripts.pory"
-	warpsilent MAP_PARTNERS_HOUSE, 0
+	warp MAP_PARTNERS_HOUSE, 0
 # 341 "data/maps/PetalburgForest/scripts.pory"
 	releaseall
 	return
