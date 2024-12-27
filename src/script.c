@@ -5,6 +5,7 @@
 #include "util.h"
 #include "constants/event_objects.h"
 #include "constants/map_scripts.h"
+#include "trainer_see.h"
 
 #define RAM_SCRIPT_MAGIC 51
 
@@ -507,4 +508,10 @@ u8* ReadWord(u8 index)
     struct ScriptContext *ctx = &sGlobalScriptContext;
 
     return (T1_READ_PTR(&ctx->data[index]));
+}
+
+bool8 LoadTrainerObjectScript(void)
+{
+    sGlobalScriptContext.scriptPtr = gApproachingTrainers[gNoOfApproachingTrainers - 1].trainerScriptPtr;
+    return TRUE;
 }

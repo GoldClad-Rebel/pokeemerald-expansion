@@ -1,0 +1,33 @@
+mapscripts PetalburgForestPokeCenter_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: PetalburgForestPokeCenter_On_Transition
+    MAP_SCRIPT_ON_RESUME: CableClub_OnResume
+}
+
+const LOCALID_NURSE=1
+
+script PetalburgForestPokeCenter_On_Transition{
+    setrespawn(HEAL_LOCATION_PETALBURG_FOREST)
+}
+
+script Pokecenter_Employee{
+    lock
+    faceplayer
+    msgbox("Would you like me to heal your party?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        incrementgamestat(GAME_STAT_USED_POKECENTER)
+        applymovement(1, Common_Movement_WalkInPlaceFasterLeft)
+        waitmovement(0)
+        dofieldeffect(FLDEFF_POKECENTER_HEAL)
+        waitfieldeffect(FLDEFF_POKECENTER_HEAL)
+        applymovement(1, Common_Movement_WalkInPlaceFasterDown)
+        waitmovement(0)
+        special(HealPlayerParty)
+        msgbox("Come again soon.")
+        waitmessage
+        release
+        end
+    }
+    else{
+        msgbox("Have a nice day", MSGBOX_NPC)
+    }
+}

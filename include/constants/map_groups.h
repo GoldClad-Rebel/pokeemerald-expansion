@@ -99,6 +99,7 @@
 #define MAP_BIRCHES_SANCTUARY_SOUTH     (90 | (0 << 8))
 #define MAP_BIRCHES_SANCTUARY_EAST      (91 | (0 << 8))
 #define MAP_BIRCHES_SANTUARY_WEST       (92 | (0 << 8))
+#define MAP_LOST_CREEK_TRANSITION_MAP   (93 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))

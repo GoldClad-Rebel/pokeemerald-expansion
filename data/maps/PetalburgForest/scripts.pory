@@ -1,6 +1,18 @@
+const LOCALID_Ow_Mon_0 = 8
 mapscripts PetalburgForest_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION
+    {
+    setobjectaswildencounter(LOCALID_Ow_Mon_0, 1)
+    }
 }
 const LOCALID_LEAF=1
+const LOCALID_BUTTERFREE=6
+const LOCALID_SCYTHER=5
+const LOCALID_SCIZOR=12
+const LOCALID_VIVILLON=7
+const LOCALID_HERACROSS=4
+const LOCALID_PINSIR=3
+const LOCALID_CORVIKNIGHT=9
 
 script PetalburgForest_EventScript_leaf1 {
     lockall
@@ -15,13 +27,28 @@ script PetalburgForest_EventScript_leaf1 {
     applymovement(LOCALID_LEAF, PetalburgForest_Movement_LEAFGoesInside1)
 	applymovement(OBJ_EVENT_ID_PLAYER, PetalburgForest_Movement_PlayerEnterHouse1)
 	waitmovement(0)
+    opendoor(VAR_0x8004, VAR_0x8005)
+	waitdooranim
+	applymovement(LOCALID_LEAF, PetalburgForest_Movement_LeafEnterHouse)
+	applymovement(OBJ_EVENT_ID_PLAYER, PetalburgForest_Movement_PlayerEnterHouse01)
+    waitmovement(0)
     removeobject(1)
-	hideobjectat(OBJ_EVENT_ID_PLAYER,MAP_PETALBURG_FOREST)
+	hideobjectat(OBJ_EVENT_ID_PLAYER, MAP_PETALBURG_FOREST)
     setflag(FLAG_LeafHouse_0x02D)
     setvar(VAR_PARTNERSHOUSE_STATE, 1 )
-    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    setvar(VAR_PETALBURGFOREST_STATE, 2 )
     warp(MAP_PARTNERS_HOUSE,0)
     waitstate
+}
+
+movement PetalburgForest_Movement_LeafEnterHouse{
+    walk_up
+    step_end
+}
+
+movement PetalburgForest_Movement_PlayerEnterHouse01{
+    walk_up
+    step_end
 }
 
 movement PetalburgForest_Movement_LEAFNotices1{
@@ -48,7 +75,7 @@ movement PetalburgForest_Movement_LEAFGoesInside1{
     face_right
     walk_right * 2
     face_up
-    walk_up * 2
+    walk_up 
     step_end
 }
 
@@ -64,7 +91,7 @@ movement PetalburgForest_Movement_PlayerEnterHouse1{
     face_right
     walk_right * 2
     face_up
-    walk_up * 2
+    walk_up 
     step_end
 }
 
@@ -84,7 +111,7 @@ script PetalburgForest_EventScript_leaf2 {
     hideobjectat(OBJ_EVENT_ID_PLAYER,MAP_PETALBURG_FOREST)
     setflag(FLAG_LeafHouse_0x02D)
     setvar(VAR_PARTNERSHOUSE_STATE, 1 )
-    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    setvar(VAR_PETALBURGFOREST_STATE, 2 )
     warp(MAP_PARTNERS_HOUSE,0)
     releaseall
 }
@@ -113,7 +140,7 @@ movement PetalburgForest_Movement_LEAFGoesInside2{
     face_right
     walk_right * 2
     face_up
-    walk_up * 2
+    walk_up 
     step_end
 }
 
@@ -129,7 +156,7 @@ movement PetalburgForest_Movement_PlayerEnterHouse2{
     face_right
     walk_right * 2
     face_up
-    walk_up * 2
+    walk_up 
     step_end
 }
 
@@ -149,7 +176,7 @@ script PetalburgForest_EventScript_leaf3 {
     hideobjectat(OBJ_EVENT_ID_PLAYER,MAP_PETALBURG_FOREST)
     setflag(FLAG_LeafHouse_0x02D)
     setvar(VAR_PARTNERSHOUSE_STATE, 1 )
-    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    setvar(VAR_PETALBURGFOREST_STATE, 2 )
     warp(MAP_PARTNERS_HOUSE,0)
     releaseall
 }
@@ -175,7 +202,7 @@ movement PetalburgForest_Movement_LEAFGoesInside3{
     face_right
     walk_right * 2
     face_up
-    walk_up * 2
+    walk_up 
     step_end
 }
 
@@ -191,7 +218,7 @@ movement PetalburgForest_Movement_PlayerEnterHouse3{
     face_right
     walk_right * 2
     face_up
-    walk_up * 2
+    walk_up 
     step_end
 }
 
@@ -212,7 +239,7 @@ script PetalburgForest_EventScript_leaf4 {
     hideobjectat(OBJ_EVENT_ID_PLAYER,MAP_PETALBURG_FOREST)
     setflag(FLAG_LeafHouse_0x02D)
     setvar(VAR_PARTNERSHOUSE_STATE, 1 )
-    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    setvar(VAR_PETALBURGFOREST_STATE, 2 )
     warp(MAP_PARTNERS_HOUSE,0)
     releaseall
 }
@@ -237,7 +264,7 @@ movement PetalburgForest_Movement_LEAFGoesInside4{
     face_right
     walk_right * 2
     face_up
-    walk_up * 2
+    walk_up 
     step_end
 }
 
@@ -251,7 +278,7 @@ movement PetalburgForest_Movement_PlayerEnterHouse4{
     face_right
     walk_right * 2
     face_up
-    walk_up * 2
+    walk_up 
     step_end
 }
 
@@ -273,7 +300,7 @@ script PetalburgForest_EventScript_leaf5 {
     hideobjectat(OBJ_EVENT_ID_PLAYER,MAP_PETALBURG_FOREST)
     setflag(FLAG_LeafHouse_0x02D)
     setvar(VAR_PARTNERSHOUSE_STATE, 1 )
-    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    setvar(VAR_PETALBURGFOREST_STATE, 2 )
     warp(MAP_PARTNERS_HOUSE,0)
     releaseall
 }
@@ -299,7 +326,7 @@ movement PetalburgForest_Movement_LEAFGoesInside5{
     face_right
     walk_right * 2
     face_up
-    walk_up * 2
+    walk_up 
     step_end
 }
 
@@ -315,7 +342,7 @@ movement PetalburgForest_Movement_PlayerEnterHouse5{
     face_right
     walk_right * 2
     face_up
-    walk_up * 2
+    walk_up 
     step_end
 }
 
@@ -336,7 +363,7 @@ script PetalburgForest_EventScript_leaf6 {
     hideobjectat(OBJ_EVENT_ID_PLAYER,MAP_PETALBURG_FOREST)
     setflag(FLAG_LeafHouse_0x02D)
     setvar(VAR_PARTNERSHOUSE_STATE, 1 )
-    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    setvar(VAR_PETALBURGFOREST_STATE, 2 )
     warp(MAP_PARTNERS_HOUSE,0)
     releaseall
 }
@@ -362,7 +389,7 @@ movement PetalburgForest_Movement_LEAFGoesInside6{
     face_right
     walk_right * 2
     face_up
-    walk_up * 2
+    walk_up 
     step_end
 }
 
@@ -378,7 +405,242 @@ movement PetalburgForest_Movement_PlayerEnterHouse6{
     face_right
     walk_right * 2
     face_up
-    walk_up * 2
+    walk_up 
     step_end
 }
 
+script PetalburgForest_EventScript_OverworldMon0{
+    lock
+    applymovement(LOCALID_Ow_Mon_0, PetalburgForest_Movement_Ow_MonFacesPlayer)
+    callnative(GetOverworldMonSpecies)
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    startoverworldencounter(5)
+    fadescreen(FADE_TO_BLACK)
+    removeobject(8)
+    fadescreen(FADE_FROM_BLACK)
+    releaseall
+    end
+}
+
+movement PetalburgForest_Movement_Ow_MonFacesPlayer {
+    face_player
+    step_end
+}
+
+script PetalburgForest_EventScript_Scyther {
+    lock
+	applymovement(LOCALID_SCYTHER, PetalburgForest_Movement_ScytherFacesPlayer)
+    playmoncry(SPECIES_SCYTHER, CRY_MODE_ENCOUNTER)
+    delay(40)
+    waitmoncry
+    setwildbattle(SPECIES_SCYTHER, 20)
+    dowildbattle
+    fadescreen(FADE_TO_BLACK)
+    removeobject(5)
+    fadescreen(FADE_FROM_BLACK)
+    releaseall
+}
+
+movement PetalburgForest_Movement_ScytherFacesPlayer{
+	face_player
+	step_end
+}
+
+script PetalburgForest_EventScript_Scizor {
+    lock
+	applymovement(LOCALID_SCIZOR, PetalburgForest_Movement_ScizorFacesPlayer)
+    playmoncry(SPECIES_SCIZOR, CRY_MODE_ENCOUNTER)
+    delay(40)
+    waitmoncry
+    setwildbattle(SPECIES_SCIZOR, 38)
+    dowildbattle
+    fadescreen(FADE_TO_BLACK)
+    removeobject(12)
+    setflag(FLAG_Scizor_0x035)
+    fadescreen(FADE_FROM_BLACK)
+    releaseall
+}
+
+movement PetalburgForest_Movement_ScizorFacesPlayer{
+	face_player
+	step_end
+}
+
+script PetalburgForest_EventScript_Butterfree {
+    lock
+	applymovement(LOCALID_SCYTHER, PetalburgForest_Movement_ButterfreeFacesPlayer)
+    playmoncry(SPECIES_BUTTERFREE, CRY_MODE_ENCOUNTER)
+    delay(40)
+    waitmoncry
+    setwildbattle(SPECIES_BUTTERFREE, 15)
+    dowildbattle
+    fadescreen(FADE_TO_BLACK)
+    removeobject(6)
+    fadescreen(FADE_FROM_BLACK)
+    releaseall
+}
+
+movement PetalburgForest_Movement_ButterfreeFacesPlayer{
+	face_player
+	step_end
+}
+
+script PetalburgForest_EventScript_Vivillon {
+    lock
+	applymovement(LOCALID_VIVILLON, PetalburgForest_Movement_VivillonFacesPlayer)
+    playmoncry(SPECIES_VIVILLON, CRY_MODE_ENCOUNTER)
+    delay(40)
+    waitmoncry
+    setwildbattle(SPECIES_VIVILLON, 15)
+    dowildbattle
+    fadescreen(FADE_TO_BLACK)
+    removeobject(7)
+    fadescreen(FADE_FROM_BLACK)
+    releaseall
+}
+
+movement PetalburgForest_Movement_VivillonFacesPlayer{
+	face_player
+	step_end
+}
+
+script PetalburgForest_EventScript_WildBattleTrigger{
+    lock
+    playmoncry(SPECIES_HERACROSS, CRY_MODE_ENCOUNTER)
+    applymovement(LOCALID_HERACROSS, PetalburgForest_Movement_HeracrossAttacksPinsir)
+    waitmovement(4)
+    playmoncry(SPECIES_PINSIR, CRY_MODE_ENCOUNTER)
+    applymovement(LOCALID_PINSIR, PetalburgForest_Movement_PinsirAttacksHeracross)
+    addobject(9)
+    delay(8)
+    applymovement(LOCALID_CORVIKNIGHT, PetalburgForest_Movement_CorviknightApproaches)
+    waitmovement(9)
+    playmoncry(SPECIES_CORVIKNIGHT, CRY_MODE_ENCOUNTER)
+    applymovement(LOCALID_CORVIKNIGHT, PetalburgForest_Movement_CorviknightAttacksPokemon)
+    waitmovement(9)
+    playmoncry(SPECIES_HERACROSS, CRY_MODE_ENCOUNTER)
+    delay(8)
+    playmoncry(SPECIES_PINSIR, CRY_MODE_ENCOUNTER)
+    delay(8)
+    applymovement(LOCALID_HERACROSS, PetalburgForest_Movement_HeracrossRunsAway)
+    applymovement(LOCALID_PINSIR, PetalburgForest_Movement_PinsirRunsAway)
+    waitmovement(0)
+    removeobject(4)
+    removeobject(3)
+    applymovement(LOCALID_CORVIKNIGHT, PetalburgForest_Movement_CorviknightFlaysAway)
+    waitmovement(9)
+    removeobject(9)
+    setflag(FLAG_Heracross_0x031)
+    setflag(FLAG_Pinsir_0x032)
+    setflag(FLAG_Corviknight_0x033)
+    setvar(VAR_PETALBURGFOREST_STATE, 1 )
+    releaseall
+}
+    
+
+movement PetalburgForest_Movement_HeracrossAttacksPinsir {
+    jump_right
+    jump_left
+    face_right
+    step_end 
+}
+
+movement PetalburgForest_Movement_PinsirAttacksHeracross {
+    jump_left
+    jump_right
+    face_left
+    step_end 
+}
+
+movement PetalburgForest_Movement_CorviknightApproaches {
+    face_left
+    walk_fast_left * 3
+    walk_fast_left * 3
+    walk_fast_left * 3
+    walk_fast_left * 3
+    walk_fast_left * 3
+    face_down
+    walk_fast_down * 2
+    face_left
+    walk_fast_left * 2
+    face_down
+    walk_down * 2
+    step_end
+}
+
+movement PetalburgForest_Movement_CorviknightAttacksPokemon {
+    jump_in_place_down
+    jump_in_place_down
+    jump_down
+    jump_up
+    face_down
+    step_end
+}
+
+movement PetalburgForest_Movement_HeracrossRunsAway {
+    jump_in_place_right
+    face_left
+    walk_fast_left * 3
+    walk_fast_left * 3
+    walk_fast_left
+    step_end
+}
+
+movement PetalburgForest_Movement_PinsirRunsAway {
+    jump_in_place_left
+    face_right
+    walk_fast_right * 2
+    face_up
+    walk_fast_up
+    step_end 
+}
+
+movement PetalburgForest_Movement_CorviknightFlaysAway {
+    face_up
+    walk_fast_up
+    face_left
+    walk_left * 3
+    walk_left * 3
+    walk_fast_left * 2
+    step_end
+}
+
+script PetalburgForest_EventScript_Jimmy {
+    trainerbattle_single(TRAINER_JIMMY, Jimmy_Intro, Jimmy_Outro)
+    msgbox(PostBattle_Jimmy, MSGBOX_AUTOCLOSE)
+    waitmessage
+    releaseall
+}
+
+text Jimmy_Intro{
+    "I got you now, Scyther!"
+}
+
+text Jimmy_Outro{
+    "Well, you weren't scyther..."
+}
+
+text PostBattle_Jimmy{
+    "I need to get my eyes checked..."
+}
+
+script PetalburgForest_EventScript_SignToRoute102Up{
+	lockall
+	msgbox("{UP_ARROW} To Route 102")
+    waitmessage
+    releaseall
+}
+
+script PetalburgForest_EventScript_SignToPetalburgUp{
+	lockall
+	msgbox("{UP_ARROW} To Petalburg City")
+    waitmessage
+    releaseall
+}
+
+script PetalburgForest_EventScript_LeafsHouseSign{
+	lockall
+	msgbox("Leafs House")
+    waitmessage
+    releaseall
+}

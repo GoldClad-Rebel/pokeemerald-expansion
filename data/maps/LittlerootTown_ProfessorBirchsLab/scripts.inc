@@ -764,8 +764,8 @@ LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
 	.string "why, {RIVAL} looks for me while I'm out\l"
 	.string "doing fieldwork, and shows me.\p"
 	.string "I also gave you, the POKéMON BOX LINK.\n"
-	.string "it is for accessing your,\l"
-	.string "POKéMON STORAGE on the fly.$"
+	.string "it is for accessing your\l"
+	.string "POKéMON STORAGE SYSTEM, on the fly.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
 	.string "PROF. BIRCH: Countless POKéMON\n"

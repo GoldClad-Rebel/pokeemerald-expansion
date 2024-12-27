@@ -3266,7 +3266,7 @@ const u8 *GetObjectEventScriptPointerByObjectEventId(u8 objectEventId)
     return GetObjectEventScriptPointerByLocalIdAndMap(gObjectEvents[objectEventId].localId, gObjectEvents[objectEventId].mapNum, gObjectEvents[objectEventId].mapGroup);
 }
 
-static u16 GetObjectEventFlagIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
+u16 GetObjectEventFlagIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
 {
     const struct ObjectEventTemplate *obj = GetObjectEventTemplateByLocalIdAndMap(localId, mapNum, mapGroup);
 #ifdef UBFIX
@@ -10694,6 +10694,17 @@ void GetDaycareGraphics(struct ScriptContext *ctx)
     gSpecialVar_Result = i;
 }
 
+u16 GetObjectEventGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
+{
+    const struct ObjectEventTemplate *obj = GetObjectEventTemplateByLocalIdAndMap(localId, mapNum, mapGroup);
+#ifdef UBFIX
+    // BUG: The function may return NULL, and attempting to read from NULL may freeze the game using modern compilers.
+    if (obj == NULL)
+        return 0;
+#endif // UBFIX
+    return obj->graphicsId;
+}
+
 movement_type_def(MovementType_WanderInGrass, gMovementTypeFuncs_WanderInGrass)
 
  bool8 MovementType_WanderInGrass_Step4(struct ObjectEvent *objectEvent, struct Sprite *sprite)
@@ -10711,3 +10722,8 @@ movement_type_def(MovementType_WanderInGrass, gMovementTypeFuncs_WanderInGrass)
 
      return TRUE;
  }
+
+ u16 GetObjectEventTrainerSightFlagByObjectEventId(u8 objEventId)
+{
+    return GetObjectEventTemplateByLocalIdAndMap(gObjectEvents[objEventId].localId, gObjectEvents[objEventId].mapNum, gObjectEvents[objEventId].mapGroup)->trainerType;
+}

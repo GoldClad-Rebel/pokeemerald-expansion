@@ -1,146 +1,219 @@
 Route101Ext01_MapScripts::
+# 3 "data/maps/Route101Ext01/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, Route101Ext01_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Route101Ext01_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 5 "data/maps/Route101Ext01/scripts.pory"
+	call Common_EventScript_SetupRivalGfxId
+# 6 "data/maps/Route101Ext01/scripts.pory"
+	setobjectaswildencounter 6, 1
+	return
 
 
 Route101Ext01_EventScript_PlayerApproachesRoute101Ext01::
-# 7 "data/maps/Route101Ext01/scripts.pory"
-	lockall
-# 8 "data/maps/Route101Ext01/scripts.pory"
-	addobject 1
-# 9 "data/maps/Route101Ext01/scripts.pory"
-	delay 8
-# 10 "data/maps/Route101Ext01/scripts.pory"
-	applymovement 1, Route101Ext01_Movement_ZapdosFlysBy
-# 11 "data/maps/Route101Ext01/scripts.pory"
-	waitmovement 1
-# 12 "data/maps/Route101Ext01/scripts.pory"
-	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
 # 13 "data/maps/Route101Ext01/scripts.pory"
-	applymovement 1, Route101Ext01_Movement_ZapdosFlysBy2
+	lockall
 # 14 "data/maps/Route101Ext01/scripts.pory"
-	waitmovement 0
+	addobject 1
 # 15 "data/maps/Route101Ext01/scripts.pory"
-	removeobject 1
+	delay 8
 # 16 "data/maps/Route101Ext01/scripts.pory"
-	setflag FLAG_ZAPDOS_0x023
+	applymovement 1, Route101Ext01_Movement_ZapdosFlysBy
 # 17 "data/maps/Route101Ext01/scripts.pory"
-	setvar VAR_ROUTE101_STATE, 6
+	waitmovement 1
 # 18 "data/maps/Route101Ext01/scripts.pory"
+	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
+# 19 "data/maps/Route101Ext01/scripts.pory"
+	applymovement 1, Route101Ext01_Movement_ZapdosFlysBy2
+# 20 "data/maps/Route101Ext01/scripts.pory"
+	waitmovement 1
+# 21 "data/maps/Route101Ext01/scripts.pory"
+	removeobject 1
+# 22 "data/maps/Route101Ext01/scripts.pory"
+	setflag FLAG_ZAPDOS_0x023
+# 23 "data/maps/Route101Ext01/scripts.pory"
+	setvar VAR_ROUTE101_STATE, 6
+# 24 "data/maps/Route101Ext01/scripts.pory"
 	releaseall
 	return
 
 
-# 21 "data/maps/Route101Ext01/scripts.pory"
+# 27 "data/maps/Route101Ext01/scripts.pory"
 Route101Ext01_Movement_ZapdosFlysBy:
-# 22 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_down
-# 22 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_down
-# 22 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_down
-# 22 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_down
-# 22 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_down
-# 22 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_down
-# 23 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_left
-# 24 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_down
-# 24 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_down
-# 24 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_down
-# 24 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_down
-# 25 "data/maps/Route101Ext01/scripts.pory"
-	step_end
-
 # 28 "data/maps/Route101Ext01/scripts.pory"
-Route101Ext01_Movement_ZapdosFlysBy2:
+	walk_fast_down
 # 29 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_left
-# 29 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_left
-# 29 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_left
+	walk_fast_down
 # 30 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_up
+	walk_fast_down
 # 31 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_left
-# 31 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_left
-# 31 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_left
-# 31 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_left
+	walk_fast_down
 # 32 "data/maps/Route101Ext01/scripts.pory"
 	walk_fast_down
 # 33 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_left
-# 33 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_left
+	walk_fast_down
 # 34 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_down
+# 35 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_down
+# 36 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 37 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 38 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 39 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 40 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 41 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 42 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 43 "data/maps/Route101Ext01/scripts.pory"
+	face_up
+# 44 "data/maps/Route101Ext01/scripts.pory"
+	step_end
+
+# 47 "data/maps/Route101Ext01/scripts.pory"
+Route101Ext01_Movement_ZapdosFlysBy2:
+# 48 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_down
+# 49 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 49 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 50 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_down
+# 51 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 51 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 52 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 52 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 53 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 53 "data/maps/Route101Ext01/scripts.pory"
+	walk_fast_left
+# 54 "data/maps/Route101Ext01/scripts.pory"
 	step_end
 
 Route101Ext01_EventScript_RivalRunsToOlddale::
-# 40 "data/maps/Route101Ext01/scripts.pory"
+# 60 "data/maps/Route101Ext01/scripts.pory"
 	lockall
-# 41 "data/maps/Route101Ext01/scripts.pory"
+# 61 "data/maps/Route101Ext01/scripts.pory"
 	setobjectxy 2, 16, 4
-# 42 "data/maps/Route101Ext01/scripts.pory"
-	msgbox Route101Ext01_EventScript_RivalRunsToOlddale_Text_0
-# 43 "data/maps/Route101Ext01/scripts.pory"
+# 62 "data/maps/Route101Ext01/scripts.pory"
 	closemessage
-# 44 "data/maps/Route101Ext01/scripts.pory"
+# 63 "data/maps/Route101Ext01/scripts.pory"
 	applymovement 2, Route101Ext01_Movement_RivalRUNSAway
-# 45 "data/maps/Route101Ext01/scripts.pory"
+# 64 "data/maps/Route101Ext01/scripts.pory"
 	waitmovement 2
-# 46 "data/maps/Route101Ext01/scripts.pory"
+# 65 "data/maps/Route101Ext01/scripts.pory"
 	removeobject 2
-# 47 "data/maps/Route101Ext01/scripts.pory"
+# 66 "data/maps/Route101Ext01/scripts.pory"
 	setflag FLAG_RivalRoute101Ext01_0x025
-# 48 "data/maps/Route101Ext01/scripts.pory"
+# 67 "data/maps/Route101Ext01/scripts.pory"
 	setvar VAR_ROUTE101_STATE, 7
-# 49 "data/maps/Route101Ext01/scripts.pory"
+# 68 "data/maps/Route101Ext01/scripts.pory"
+	setweather WEATHER_SHADE
+# 69 "data/maps/Route101Ext01/scripts.pory"
+	doweather
+# 70 "data/maps/Route101Ext01/scripts.pory"
 	releaseall
 	return
 
 
-# 52 "data/maps/Route101Ext01/scripts.pory"
+# 73 "data/maps/Route101Ext01/scripts.pory"
 Route101Ext01_Movement_RivalRUNSAway:
-# 53 "data/maps/Route101Ext01/scripts.pory"
-	disable_jump_landing_ground_effect
-# 54 "data/maps/Route101Ext01/scripts.pory"
-	jump_in_place_left
-# 55 "data/maps/Route101Ext01/scripts.pory"
+# 74 "data/maps/Route101Ext01/scripts.pory"
 	face_up
-# 56 "data/maps/Route101Ext01/scripts.pory"
+# 75 "data/maps/Route101Ext01/scripts.pory"
 	delay_8
-# 57 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_up
-# 57 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_up
-# 57 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_up
-# 57 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_up
-# 57 "data/maps/Route101Ext01/scripts.pory"
-	walk_fast_up
-# 58 "data/maps/Route101Ext01/scripts.pory"
+# 76 "data/maps/Route101Ext01/scripts.pory"
+	walk_up
+# 77 "data/maps/Route101Ext01/scripts.pory"
+	walk_up
+# 78 "data/maps/Route101Ext01/scripts.pory"
+	walk_up
+# 79 "data/maps/Route101Ext01/scripts.pory"
+	walk_up
+# 80 "data/maps/Route101Ext01/scripts.pory"
+	walk_up
+# 81 "data/maps/Route101Ext01/scripts.pory"
 	step_end
 
 Route101Ext01_EventScript_AipomShowsUp::
-# 62 "data/maps/Route101Ext01/scripts.pory"
+# 85 "data/maps/Route101Ext01/scripts.pory"
 	lockall
-# 63 "data/maps/Route101Ext01/scripts.pory"
+# 86 "data/maps/Route101Ext01/scripts.pory"
 	clearflag FLAG_Aipom_0x026
-# 64 "data/maps/Route101Ext01/scripts.pory"
+# 87 "data/maps/Route101Ext01/scripts.pory"
 	releaseall
 	return
 
 
-Route101Ext01_EventScript_RivalRunsToOlddale_Text_0:
-# 42 "data/maps/Route101Ext01/scripts.pory"
-	.string "C'mon Slowpoke!$"
+Route101Ext01_EventScript_Rattata::
+# 93 "data/maps/Route101Ext01/scripts.pory"
+	lock
+# 94 "data/maps/Route101Ext01/scripts.pory"
+	applymovement 5, Route101Ext01_Movement_RattataFacesPlayer
+# 95 "data/maps/Route101Ext01/scripts.pory"
+	playmoncry SPECIES_RATTATA, CRY_MODE_ENCOUNTER
+# 96 "data/maps/Route101Ext01/scripts.pory"
+	delay 40
+# 97 "data/maps/Route101Ext01/scripts.pory"
+	waitmoncry
+# 98 "data/maps/Route101Ext01/scripts.pory"
+	setwildbattle SPECIES_RATTATA, 6
+# 99 "data/maps/Route101Ext01/scripts.pory"
+	dowildbattle
+# 100 "data/maps/Route101Ext01/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 101 "data/maps/Route101Ext01/scripts.pory"
+	removeobject 5
+# 102 "data/maps/Route101Ext01/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 103 "data/maps/Route101Ext01/scripts.pory"
+	releaseall
+	return
+
+
+# 106 "data/maps/Route101Ext01/scripts.pory"
+Route101Ext01_Movement_RattataFacesPlayer:
+# 107 "data/maps/Route101Ext01/scripts.pory"
+	face_player
+# 108 "data/maps/Route101Ext01/scripts.pory"
+	step_end
+
+Route101Ext01_EventScript_OverworldMon0::
+# 112 "data/maps/Route101Ext01/scripts.pory"
+	lock
+# 113 "data/maps/Route101Ext01/scripts.pory"
+	applymovement 6, Route101Ext01_Movement_Ow_MonFacesPlayer
+# 114 "data/maps/Route101Ext01/scripts.pory"
+	callnative GetOverworldMonSpecies
+# 115 "data/maps/Route101Ext01/scripts.pory"
+	bufferspeciesname STR_VAR_1, VAR_0x8004
+# 116 "data/maps/Route101Ext01/scripts.pory"
+	startoverworldencounter 5
+# 117 "data/maps/Route101Ext01/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 118 "data/maps/Route101Ext01/scripts.pory"
+	removeobject 6
+# 119 "data/maps/Route101Ext01/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 120 "data/maps/Route101Ext01/scripts.pory"
+	releaseall
+	end
+
+
+# 124 "data/maps/Route101Ext01/scripts.pory"
+Route101Ext01_Movement_Ow_MonFacesPlayer:
+# 125 "data/maps/Route101Ext01/scripts.pory"
+	face_player
+# 126 "data/maps/Route101Ext01/scripts.pory"
+	step_end

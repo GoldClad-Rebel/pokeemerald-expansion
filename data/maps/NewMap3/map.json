@@ -25,7 +25,7 @@
     },
     {
       "map": "MAP_PETALBURG_CITY",
-      "offset": 10,
+      "offset": 8,
       "direction": "left"
     },
     {
@@ -42,47 +42,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
-      "x": 26,
-      "y": 12,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
-      "movement_range_x": 3,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "x": 30,
-      "y": 11,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 4,
-      "y": 16,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 2,
-      "movement_range_y": 2,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
-      "x": 23,
-      "y": 16,
+      "x": 31,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -90,28 +51,54 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_NewMap3Girl_0x03A"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MORPEKO)",
-      "x": 21,
-      "y": 13,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(URSARING)",
+      "x": 29,
+      "y": 11,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
-      "movement_range_x": 3,
+      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_URSARING_0x037"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SWELLOW)",
-      "x": 16,
-      "y": 13,
+      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
+      "x": 5,
+      "y": 17,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
-      "movement_range_x": 11,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewMap3_EventScript_BoyNeedsHelp2",
+      "flag": "FLAG_NewMap3Boy_0x036"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(URSALUNA)",
+      "x": 32,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewMap3_EventScript_UrsalunaBattle",
+      "flag": "FLAG_URSALUNA_0x038"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPEAROW)",
+      "x": 18,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+      "movement_range_x": 4,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
@@ -132,26 +119,13 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HOOTHOOT)",
-      "x": 34,
-      "y": 8,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIDGEOT)",
       "x": 22,
       "y": 19,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_DOWN_UP_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 15,
-      "movement_range_y": 2,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -160,11 +134,11 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPEAROW)",
       "x": 26,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_DOWN_UP_RIGHT",
       "movement_range_x": 4,
-      "movement_range_y": 4,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -172,10 +146,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(FURRET)",
-      "x": 10,
-      "y": 10,
+      "x": 2,
+      "y": 11,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
       "movement_range_x": 10,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -198,11 +172,11 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PACHIRISU)",
-      "x": 8,
-      "y": 11,
+      "x": 2,
+      "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
-      "movement_range_x": 5,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 1,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
@@ -211,8 +185,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PLUSLE)",
-      "x": 14,
-      "y": 10,
+      "x": 15,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
       "movement_range_x": 0,
@@ -224,8 +198,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MINUN)",
-      "x": 13,
-      "y": 10,
+      "x": 14,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
       "movement_range_x": 0,
@@ -234,15 +208,272 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_5",
+      "x": 21,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_IN_GRASS",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "5",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "NewMap3_EventScript_OverworldMon0",
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
+      "x": 21,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_boy2newmap3_0x039"
     }
   ],
   "warp_events": [
 
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "1",
+      "script": "NewMap3_EventScript_WeatherTrigger01"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "1",
+      "script": "NewMap3_EventScript_WeatherTrigger01"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "3",
+      "script": "NewMap3_EventScript_TriggerNoExit2"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "2",
+      "script": "NewMap3_EventScript_WeatherTrigger02"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "2",
+      "script": "NewMap3_EventScript_WeatherTrigger02"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "2",
+      "script": "NewMap3_EventScript_WeatherTrigger02"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "4",
+      "script": "NewMap3_EventScript_Trigger04"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "4",
+      "script": "NewMap3_EventScript_Trigger08"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "4",
+      "script": "NewMap3_EventScript_Trigger08"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "4",
+      "script": "NewMap3_EventScript_Trigger08"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "3",
+      "script": "NewMap3_EventScript_WeatherTrigger03"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "4",
+      "script": "NewMap3_EventScript_Trigger05"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "4",
+      "script": "NewMap3_EventScript_Trigger06"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "4",
+      "script": "NewMap3_EventScript_Trigger07"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "2",
+      "script": "NewMap3_EventScript_TriggerNoExit"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "2",
+      "script": "NewMap3_EventScript_TriggerNoExit"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "3",
+      "script": "NewMap3_EventScript_TriggerNoExit2"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "3",
+      "script": "NewMap3_EventScript_TriggerNoExit2"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "4",
+      "script": "NewMap3_EventScript_TriggerNoExit2"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "4",
+      "script": "NewMap3_EventScript_TriggerNoExit2"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "4",
+      "script": "NewMap3_EventScript_TriggerNoExit2"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "0",
+      "script": "NewMap3_EventScript_BoyNeedsHelp"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "1",
+      "script": "NewMap3_EventScript_TriggerNoExit"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "1",
+      "script": "NewMap3_EventScript_TriggerNoExit"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_NewMap3_STATE",
+      "var_value": "1",
+      "script": "NewMap3_EventScript_WeatherTrigger01"
+    }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
   ]
 }

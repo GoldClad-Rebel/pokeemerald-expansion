@@ -42183,3 +42183,48 @@ F_TRAINER_FEMALE |
             },
         },
     },
+#line 16877
+    [TRAINER_JIMMY] =
+    {
+#line 16878
+        .trainerName = _("JIMMY"),
+#line 16879
+        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
+#line 16880
+        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .encounterMusic_gender = 
+#line 16882
+            TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+#line 16883
+        .items = { ITEM_POTION },
+#line 16884
+        .doubleBattle = FALSE,
+#line 16885
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = 2,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16887
+            .species = SPECIES_HERACROSS,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16889
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+#line 16888
+            .lvl = 18,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+            {
+#line 16891
+            .species = SPECIES_PINSIR,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16893
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+#line 16892
+            .lvl = 18,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },

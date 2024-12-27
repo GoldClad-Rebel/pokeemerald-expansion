@@ -1,5 +1,24 @@
 raw`Route102_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route102_OnTransition
 	.byte 0
+
+.set LOCALID_OW_MON, 20
+
+Route102_OnTransition::
+    setobjectaswildencounter LOCALID_OW_MON, ENCOUNTER_LAND
+    end
+
+Route102_EventScript_OverworldMon::
+    lock
+	faceplayer
+    callnative GetOverworldMonSpecies
+    bufferspeciesname STR_VAR_1, VAR_0x8004
+    startoverworldencounter 8
+	fadescreen FADE_TO_BLACK
+    removeobject 6
+    fadescreen FADE_FROM_BLACK
+    release
+    end
 
 Route102_EventScript_LittleBoy::
 	msgbox Route102_Text_ImNotVeryTall, MSGBOX_NPC
@@ -18,6 +37,7 @@ Route102_EventScript_Boy::
 	end
 
 Route102_EventScript_Calvin::
+	setflag FLAG_houndourroute102_0x030
 	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_CalvinRematch
@@ -108,8 +128,12 @@ Route102_Text_RouteSignPetalburg:
 	.string "ROUTE 102\n"
 	.string "{LEFT_ARROW} PETALBURG CITY$"
 `
+const LOCALID_SUDOWOODO=19
+const LOCALID_MURKROW=18
+
 script Route102_EventScript_Murkrow {
     lockall
+	applymovement(LOCALID_MURKROW, Route102_Movement_MurkrowFacesPlayer)
     setflag(FLAG_Murkrow_0x028)
     playmoncry(SPECIES_MURKROW, CRY_MODE_ENCOUNTER)
     delay(40)
@@ -119,17 +143,14 @@ script Route102_EventScript_Murkrow {
 	specialvar(VAR_RESULT,GetBattleOutcome)
     if(var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
         call(Won_or_Caught_2)
+	setflag(FLAG_Murkrow_0x028)
     }
     elif(var(VAR_RESULT) == B_OUTCOME_WON) {
         call(Won_or_Caught_2)
     }
-    elif(var(VAR_RESULT) == B_OUTCOME_RAN) {
-        call(RanAway)
-    }
     elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED) {
-        call(RanAway_2)
+        call(Won_or_Caught_2)
     }
-	waitmessage
     releaseall
 }
 
@@ -137,14 +158,69 @@ script Won_or_Caught_2 {
     fadescreen(FADE_TO_BLACK)
     removeobject(18)
     fadescreen(FADE_FROM_BLACK)
-    return
 }
 
-script RanAway_2 {
+movement Route102_Movement_MurkrowFacesPlayer{
+	face_player
+	step_end
+}
+
+script Route102_EventScript_SudowoodoShakes {
+	lockall
+	waitse
+	playse(SE_SUDOWOODO_SHAKE)
+	applymovement(LOCALID_SUDOWOODO, Route102_movement_SudowoodoShakes)
+	waitmovement(0)
+	releaseall
+}
+
+script Route102_EventScript_WaterSudowoodo{
+	lockall
+	faceplayer
+	special(DoWateringBerryTreeAnim)
+	waitstate
+	waitse
+	playse(SE_SUDOWOODO_SHAKE)
+	applymovement(LOCALID_SUDOWOODO, Route102_movement_SudowoodoShakes)
+	waitmovement(0)
+	msgbox(format("The weird tree doesn't like the WAILMER PAIL!""The weird tree attacked!"))
+	closemessage
+	waitse
+	playmoncry(SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER)
+	delay(40)
+	waitmoncry
+	setflag(FLAG_HIDE_Route102_SUDOWOODO)
+	setwildbattle(SPECIES_SUDOWOODO, 40)
+	dowildbattle
     fadescreen(FADE_TO_BLACK)
-    removeobject(18)
+    removeobject(19)
     fadescreen(FADE_FROM_BLACK)
-    return	
+    return 
+	releaseall
+}
+
+movement Route102_movement_SudowoodoShakes{
+	face_right
+	delay_8
+	face_down
+	delay_8
+	face_left
+	delay_8
+	face_down
+	delay_8
+	face_right
+	delay_8
+	face_down
+	delay_8
+	face_left
+	delay_8
+	face_down
+	step_end
+}
+
+script Route102_EventScript_SignToPetalburgForestLeft{
+	lockall
+	msgbox("{LEFT_ARROW} To Petalburg Forest")
+	waitmessage
     releaseall
 }
-

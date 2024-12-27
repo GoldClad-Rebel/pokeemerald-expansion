@@ -4,6 +4,7 @@ LITTLEROOTTOWN_MapScripts::
 .set LOCALID_MOM, 4
 .set LOCALID_RIVAL, 7
 .set LOCALID_BIRCH, 8
+.set LOCALID_OW_MON, 19
 
 LittlerootTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_OnTransition
@@ -41,7 +42,8 @@ LittlerootTown_MapScripts::
 	@ 4: Received Pokedex
 
 
-LittlerootTown_OnTransition:
+LittlerootTown_OnTransition::
+    setobjectaswildencounter LOCALID_OW_MON, ENCOUNTER_LAND
 	setflag FLAG_VISITED_LITTLEROOT_TOWN
 	call Common_EventScript_SetupRivalGfxId
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_EventScript_MoveMomToMaysDoor
@@ -100,7 +102,7 @@ LittlerootTown_OnFrame:
 LittlerootTown_EventScript_StepOffTruckMale::
 	lockall
 	setvar VAR_0x8004, 5
-	setvar VAR_0x8005, 8
+	setvar VAR_0x8005, 6
 	call LittlerootTown_EventScript_GoInsideWithMom
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK
 	warpsilent MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 8, 8
@@ -110,8 +112,8 @@ LittlerootTown_EventScript_StepOffTruckMale::
 
 LittlerootTown_EventScript_StepOffTruckFemale::
 	lockall
-	setvar VAR_0x8004, 14
-	setvar VAR_0x8005, 8
+	setvar VAR_0x8004, 15
+	setvar VAR_0x8005, 7
 	call LittlerootTown_EventScript_GoInsideWithMom
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK
 	warpsilent MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F, 2, 8
@@ -401,6 +403,17 @@ LittlerootTown_EventScript_PlayersHouseSignFemale::
 	msgbox LittlerootTown_Text_PlayersHouse, MSGBOX_DEFAULT
 	return
 
+LittlerootTown_EventScript_OverworldMon::
+    lock
+	faceplayer
+    callnative GetOverworldMonSpecies
+    bufferspeciesname STR_VAR_1, VAR_0x8004
+    startoverworldencounter 8
+	fadescreen FADE_TO_BLACK
+    removeobject 6
+    fadescreen FADE_FROM_BLACK
+    release
+    end
 
 LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "MOM: {PLAYER}, we're here, honey!\p"

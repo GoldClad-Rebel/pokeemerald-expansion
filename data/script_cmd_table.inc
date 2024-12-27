@@ -235,6 +235,7 @@ gScriptCmdTable::
     .4byte ScrCmd_checkfollower						@ 0xe8
 	.4byte ScrCmd_updatefollowingmon				@ 0xe9
 	.4byte ScrCmd_ballfollowingmon					@ 0xea
+	.4byte ScrCmd_SetObjectAsWildEncounter			@ 0xeb
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

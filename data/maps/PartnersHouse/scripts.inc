@@ -229,7 +229,7 @@ PartnersHouse_EventScript_LEAFAsksToJoin::
 
 PartnersHouse_EventScript_LEAFAsksToJoin_1:
 # 121 "data/maps/PartnersHouse/scripts.pory"
-	setfollower 1, FOLLOWER_NO_RUN, LEAFonYourteamChat_Eventscript_CustomFollowerScript
+	setfollower 1, FOLLOWER_NO_WHITE_OUT, LEAFonYourteamChat_Eventscript_CustomFollowerScript
 	return
 
 

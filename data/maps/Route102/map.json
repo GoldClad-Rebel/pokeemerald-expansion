@@ -5,7 +5,7 @@
   "music": "MUS_ROUTE101",
   "region_map_section": "MAPSEC_ROUTE_102",
   "requires_flash": false,
-  "weather": "WEATHER_RAIN",
+  "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -47,13 +47,18 @@
       "map": "MAP_NEW_MAP3",
       "offset": -20,
       "direction": "up"
+    },
+    {
+      "map": "MAP_LOST_CREEK_TRANSITION_MAP",
+      "offset": 14,
+      "direction": "down"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 18,
-      "y": 11,
+      "x": 15,
+      "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -66,12 +71,12 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 29,
-      "y": 9,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route102_EventScript_Calvin",
       "flag": "0"
@@ -79,7 +84,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
       "x": 25,
-      "y": 12,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
@@ -91,7 +96,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 8,
+      "x": 21,
       "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
@@ -118,7 +123,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 11,
-      "y": 15,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -130,8 +135,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 24,
-      "y": 2,
+      "x": 3,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -143,8 +148,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 25,
-      "y": 2,
+      "x": 4,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -156,10 +161,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 17,
-      "y": 5,
+      "x": 20,
+      "y": 11,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -196,7 +201,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(HOUNDOUR)",
       "x": 28,
-      "y": 9,
+      "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -204,12 +209,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_houndourroute102_0x030"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_1",
       "x": 30,
-      "y": 6,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -222,7 +227,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_1",
       "x": 27,
-      "y": 7,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -234,7 +239,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIDOVE)",
-      "x": 29,
+      "x": 34,
       "y": 1,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
@@ -273,16 +278,42 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MURKROW)",
-      "x": 8,
-      "y": 4,
+      "x": 9,
+      "y": 3,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_IN_GRASS",
-      "movement_range_x": 5,
-      "movement_range_y": 5,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 3,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
       "trainer_sight_or_berry_tree_id": "1",
       "script": "Route102_EventScript_Murkrow",
       "flag": "FLAG_Murkrow_0x028"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SUDOWOODO",
+      "x": 1,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route102_EventScript_SudowoodoShakes",
+      "flag": "FLAG_HIDE_Route102_SUDOWOODO"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_IN_GRASS",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_RUN_SCRIPT",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "Route102_EventScript_OverworldMon",
+      "flag": "FLAG_TEMP_2"
     }
   ],
   "warp_events": [
@@ -320,6 +351,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route102_EventScript_RouteSignOldale"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route102_EventScript_SignToPetalburgForestLeft"
     }
   ]
 }

@@ -1155,3 +1155,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/BirchesSanctuaryEast/scripts.inc"
 
 	.include "data/maps/BirchesSantuaryWest/scripts.inc"
+
+	.include "data/maps/LostCreekTransitionMap/scripts.inc"

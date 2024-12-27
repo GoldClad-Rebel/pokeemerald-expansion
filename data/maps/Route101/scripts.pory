@@ -333,17 +333,17 @@ Route101_Text_RouteSign:
 	.string "{UP_ARROW} OLDALE TOWN$"
 
 `
-const LOCALID_SPECIES_CORVIKNIGHT = 14
+const LOCALID_CORVIKNIGHT = 12
 
 script Route101_EventScript_PlayerApproachesBridge {
     lockall
-    setobjectxy(LOCALID_SPECIES_CORVIKNIGHT,18,2)
+    setobjectxy(LOCALID_CORVIKNIGHT,18,2)
     delay(8)
     playmoncry(SPECIES_CORVIKNIGHT, CRY_MODE_ENCOUNTER) 
     delay(8)   
-    applymovement(LOCALID_SPECIES_CORVIKNIGHT, Route101_Movement_CorviknightFlysAway)
-    waitmovement(14)
-    removeobject(14)
+    applymovement(LOCALID_CORVIKNIGHT, Route101_Movement_CorviknightFlysAway)
+    waitmovement(12)
+    removeobject(12)
 	setflag(FLAG_Aipom_0x026)
     setflag(FLAG_CORVIKNIGHT_0x020)
     setvar(VAR_ROUTE101_STATE, 5)
@@ -360,17 +360,17 @@ movement Route101_Movement_CorviknightFlysAway {
     step_end
 }
 
-const LOCALID_SPECIES_PICHU = 15
+const LOCALID_PICHU = 13
 
 script Route101_EventScript_PlayerApproachesLittleroot {
     lockall
-    setobjectxy(LOCALID_SPECIES_PICHU,0,9)
+    setobjectxy(LOCALID_PICHU,0,9)
     delay(8)
     playmoncry(SPECIES_PICHU, CRY_MODE_ENCOUNTER) 
     delay(8)   
-    applymovement(LOCALID_SPECIES_PICHU, Route101_Movement_PichuRunsBy)
-    waitmovement(15)
-    removeobject(15)
+    applymovement(LOCALID_PICHU, Route101_Movement_PichuRunsBy)
+    waitmovement(13)
+    removeobject(13)
     setflag(FLAG_PICHU_0x022)
     setvar(VAR_ROUTE101_STATE, 4)
     releaseall
@@ -387,11 +387,11 @@ movement Route101_Movement_PichuRunsBy {
 script Route101_EventScript_PlayerApproachesLittleroot2 {
     lockall
 	playmoncry(SPECIES_PICHU, CRY_MODE_ENCOUNTER)
-    setobjectxy(LOCALID_SPECIES_PICHU,0,9)
+    setobjectxy(LOCALID_PICHU,0,9)
     delay(8)       
-    applymovement(LOCALID_SPECIES_PICHU, Route101_Movement_PichuRunsBy2)
-    waitmovement(15)
-    removeobject(15)
+    applymovement(LOCALID_PICHU, Route101_Movement_PichuRunsBy2)
+    waitmovement(13)
+    removeobject(13)
     setflag(FLAG_PICHU_0x022)
     setvar(VAR_ROUTE101_STATE, 4)
     releaseall

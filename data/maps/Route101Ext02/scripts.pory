@@ -1,4 +1,13 @@
+const LOCALID_Ow_Mon_0 = 5
+const LOCALID_Ow_Mon_1 = 6
+const LOCALID_Ow_Mon_2 = 7
 mapscripts Route101Ext02_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION
+    {
+    setobjectaswildencounter(LOCALID_Ow_Mon_0, 1)
+    setobjectaswildencounter(LOCALID_Ow_Mon_1, 1)
+    setobjectaswildencounter(LOCALID_Ow_Mon_2, 1)
+    }
 }
 
 script Route101Ext02_EventScript_SeviperBatllesZangoose {
@@ -8,6 +17,8 @@ script Route101Ext02_EventScript_SeviperBatllesZangoose {
 }
 
 const LOCALID_LEAF=4
+const LOCALID_SEVIPER=2
+const LOCALID_ZANGOOSE=1
 
 script Route101Ext02_EventScript_leaf {
     lockall
@@ -26,6 +37,7 @@ script Route101Ext02_EventScript_leaf {
     waitmovement(0)
     removeobject(4)
     setflag(FLAG_LEAFRoute101Ext02_0x02C)
+    setvar(VAR_LITTLEROOT_TOWN_STATE, 4)
     releaseall
 }
 
@@ -41,5 +53,120 @@ movement Route101Ext02_Movement_LEAFRunsAway{
     walk_left * 5
     face_up
     walk_up * 5
+    step_end
+}
+
+script Route101Ext02_EventScript_WildBattleTriggerUp{
+    lockall
+    applymovement(LOCALID_SEVIPER, Route101Ext02_Movement_SeviperAttacksZangoose)
+    waitmovement(0)
+    applymovement(LOCALID_ZANGOOSE, Route101Ext02_Movement_ZangooseAttacksSeviper)
+    waitmovement(0)
+    msgbox(format("These pokemon are in a heated battle,""Its probably best to avoid them right now!"))
+    applymovement(OBJ_EVENT_ID_PLAYER, Route101Ext02_Movement_ForcePLayerUP)
+    waitmovement(0)
+    releaseall
+}
+
+script Route101Ext02_EventScript_WildBattleTriggerLeft{
+    lockall
+    applymovement(LOCALID_SEVIPER, Route101Ext02_Movement_SeviperAttacksZangoose)
+    waitmovement(0)
+    applymovement(LOCALID_ZANGOOSE, Route101Ext02_Movement_ZangooseAttacksSeviper)
+    waitmovement(0)
+    msgbox(format("These pokemon are in a heated battle,""Its probably best to avoid them right now!"))
+    applymovement(OBJ_EVENT_ID_PLAYER, Route101Ext02_Movement_ForcePLayerLeft)
+    waitmovement(0)
+    releaseall
+}
+
+script Route101Ext02_EventScript_WildBattleTriggerRight{
+    lockall
+    applymovement(LOCALID_SEVIPER, Route101Ext02_Movement_SeviperAttacksZangoose)
+    waitmovement(0)
+    applymovement(LOCALID_ZANGOOSE, Route101Ext02_Movement_ZangooseAttacksSeviper)
+    waitmovement(0)
+    msgbox(format("These pokemon are in a heated battle,""Its probably best to avoid them right now!"))
+    applymovement(OBJ_EVENT_ID_PLAYER, Route101Ext02_Movement_ForcePLayerRight)
+    waitmovement(0)
+    releaseall
+}
+
+movement Route101Ext02_Movement_SeviperAttacksZangoose {
+   jump_right
+   jump_left
+   face_right
+   step_end 
+}
+
+movement Route101Ext02_Movement_ZangooseAttacksSeviper {
+   jump_left
+   jump_right
+   face_left
+   step_end 
+}
+
+movement Route101Ext02_Movement_ForcePLayerUP {
+   walk_up
+   step_end 
+}
+
+movement Route101Ext02_Movement_ForcePLayerLeft {
+   walk_left
+   step_end 
+}
+
+movement Route101Ext02_Movement_ForcePLayerRight {
+   walk_right
+   step_end 
+}
+
+script Route101Ext02_EventScript_SeviperAndZangooseDisapear{
+    lockall
+    setvar(VAR_ROUTE101_STATE, 8)
+    releaseall
+}
+
+script Route101Ext02_EventScript_OverworldMon0{
+    lock
+    applymovement(LOCALID_Ow_Mon_0, Route101Ext02_Movement_Ow_MonFacesPlayer)
+    callnative(GetOverworldMonSpecies)
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    startoverworldencounter(8)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(5)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    releaseall
+    end
+}
+
+script Route101Ext02_EventScript_OverworldMon1{
+    lock
+    applymovement(LOCALID_Ow_Mon_1, Route101Ext02_Movement_Ow_MonFacesPlayer)
+    callnative(GetOverworldMonSpecies)
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    startoverworldencounter(8)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(6)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    releaseall
+    end
+}
+
+script Route101Ext02_EventScript_OverworldMon2{
+    lock
+    applymovement(LOCALID_Ow_Mon_2, Route101Ext02_Movement_Ow_MonFacesPlayer)
+    callnative(GetOverworldMonSpecies)
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    startoverworldencounter(8)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(7)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    releaseall
+    end
+}
+
+movement Route101Ext02_Movement_Ow_MonFacesPlayer {
+    face_player
     step_end
 }

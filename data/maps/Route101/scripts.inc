@@ -669,7 +669,7 @@ Route101_EventScript_PlayerApproachesBridge::
 # 339 "data/maps/Route101/scripts.pory"
 	lockall
 # 340 "data/maps/Route101/scripts.pory"
-	setobjectxy 14, 18, 2
+	setobjectxy 12, 18, 2
 # 341 "data/maps/Route101/scripts.pory"
 	delay 8
 # 342 "data/maps/Route101/scripts.pory"
@@ -677,11 +677,11 @@ Route101_EventScript_PlayerApproachesBridge::
 # 343 "data/maps/Route101/scripts.pory"
 	delay 8
 # 344 "data/maps/Route101/scripts.pory"
-	applymovement 14, Route101_Movement_CorviknightFlysAway
+	applymovement 12, Route101_Movement_CorviknightFlysAway
 # 345 "data/maps/Route101/scripts.pory"
-	waitmovement 14
+	waitmovement 12
 # 346 "data/maps/Route101/scripts.pory"
-	removeobject 14
+	removeobject 12
 # 347 "data/maps/Route101/scripts.pory"
 	setflag FLAG_Aipom_0x026
 # 348 "data/maps/Route101/scripts.pory"
@@ -740,7 +740,7 @@ Route101_EventScript_PlayerApproachesLittleroot::
 # 366 "data/maps/Route101/scripts.pory"
 	lockall
 # 367 "data/maps/Route101/scripts.pory"
-	setobjectxy 15, 0, 9
+	setobjectxy 13, 0, 9
 # 368 "data/maps/Route101/scripts.pory"
 	delay 8
 # 369 "data/maps/Route101/scripts.pory"
@@ -748,11 +748,11 @@ Route101_EventScript_PlayerApproachesLittleroot::
 # 370 "data/maps/Route101/scripts.pory"
 	delay 8
 # 371 "data/maps/Route101/scripts.pory"
-	applymovement 15, Route101_Movement_PichuRunsBy
+	applymovement 13, Route101_Movement_PichuRunsBy
 # 372 "data/maps/Route101/scripts.pory"
-	waitmovement 15
+	waitmovement 13
 # 373 "data/maps/Route101/scripts.pory"
-	removeobject 15
+	removeobject 13
 # 374 "data/maps/Route101/scripts.pory"
 	setflag FLAG_PICHU_0x022
 # 375 "data/maps/Route101/scripts.pory"
@@ -819,15 +819,15 @@ Route101_EventScript_PlayerApproachesLittleroot2::
 # 389 "data/maps/Route101/scripts.pory"
 	playmoncry SPECIES_PICHU, CRY_MODE_ENCOUNTER
 # 390 "data/maps/Route101/scripts.pory"
-	setobjectxy 15, 0, 9
+	setobjectxy 13, 0, 9
 # 391 "data/maps/Route101/scripts.pory"
 	delay 8
 # 392 "data/maps/Route101/scripts.pory"
-	applymovement 15, Route101_Movement_PichuRunsBy2
+	applymovement 13, Route101_Movement_PichuRunsBy2
 # 393 "data/maps/Route101/scripts.pory"
-	waitmovement 15
+	waitmovement 13
 # 394 "data/maps/Route101/scripts.pory"
-	removeobject 15
+	removeobject 13
 # 395 "data/maps/Route101/scripts.pory"
 	setflag FLAG_PICHU_0x022
 # 396 "data/maps/Route101/scripts.pory"

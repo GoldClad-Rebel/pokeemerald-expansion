@@ -1,4 +1,10 @@
+const LOCALID_Ow_Mon_0 = 6
 mapscripts Route101Ext01_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION
+    {
+    call(Common_EventScript_SetupRivalGfxId)
+    setobjectaswildencounter(LOCALID_Ow_Mon_0, 1)
+    }
 }
 
 const LOCALID_SPECIES_ZAPDOS = 1
@@ -8,10 +14,10 @@ script Route101Ext01_EventScript_PlayerApproachesRoute101Ext01 {
     addobject(LOCALID_SPECIES_ZAPDOS)
     delay(8)       
     applymovement(LOCALID_SPECIES_ZAPDOS, Route101Ext01_Movement_ZapdosFlysBy)
-    waitmovement(LOCALID_SPECIES_ZAPDOS)
+    waitmovement(1)
     playmoncry(SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER)
     applymovement(LOCALID_SPECIES_ZAPDOS, Route101Ext01_Movement_ZapdosFlysBy2)
-    waitmovement(0)
+    waitmovement(1)
     removeobject(1)
     setflag(FLAG_ZAPDOS_0x023)
     setvar(VAR_ROUTE101_STATE, 6)
@@ -19,17 +25,31 @@ script Route101Ext01_EventScript_PlayerApproachesRoute101Ext01 {
 }
 
 movement Route101Ext01_Movement_ZapdosFlysBy {
-    walk_fast_down * 6
+    walk_fast_down
+    walk_fast_down 
+    walk_fast_down 
+    walk_fast_down 
+    walk_fast_down 
+    walk_fast_down 
+    walk_fast_down 
+    walk_fast_down 
     walk_fast_left
-    walk_fast_down * 4 
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    face_up 
     step_end
 }
 
 movement Route101Ext01_Movement_ZapdosFlysBy2 {
-    walk_fast_left * 3
-    walk_fast_up
-    walk_fast_left * 4
     walk_fast_down
+    walk_fast_left * 2
+    walk_fast_down
+    walk_fast_left * 2
+    walk_fast_left * 2
     walk_fast_left * 2
     step_end   
 }
@@ -39,22 +59,25 @@ const LOCALID_VAR_0 = 2
 script Route101Ext01_EventScript_RivalRunsToOlddale {
     lockall
     setobjectxy(LOCALID_VAR_0,16,4)
-    msgbox("C'mon Slowpoke!")
     closemessage
     applymovement(LOCALID_VAR_0, Route101Ext01_Movement_RivalRUNSAway)
     waitmovement(2)
     removeobject(2)
     setflag(FLAG_RivalRoute101Ext01_0x025)
     setvar(VAR_ROUTE101_STATE, 7)
+    setweather(WEATHER_SHADE)
+    doweather
     releaseall
 }
 
 movement Route101Ext01_Movement_RivalRUNSAway {
-    disable_jump_landing_ground_effect
-    jump_in_place_left
     face_up
     delay_8
-    walk_fast_up * 5
+    walk_up
+    walk_up 
+    walk_up 
+    walk_up 
+    walk_up 
     step_end
 }
 
@@ -62,4 +85,43 @@ script Route101Ext01_EventScript_AipomShowsUp {
     lockall
     clearflag(FLAG_Aipom_0x026)
     releaseall   
+}
+
+const LOCALID_RATTATA=5
+
+script Route101Ext01_EventScript_Rattata {
+    lock
+	applymovement(LOCALID_RATTATA, Route101Ext01_Movement_RattataFacesPlayer)
+    playmoncry(SPECIES_RATTATA, CRY_MODE_ENCOUNTER)
+    delay(40)
+    waitmoncry
+    setwildbattle(SPECIES_RATTATA, 6)
+    dowildbattle
+    fadescreen(FADE_TO_BLACK)
+    removeobject(5)
+    fadescreen(FADE_FROM_BLACK)
+    releaseall
+}
+
+movement Route101Ext01_Movement_RattataFacesPlayer{
+	face_player
+	step_end
+}
+
+script Route101Ext01_EventScript_OverworldMon0{
+    lock
+    applymovement(LOCALID_Ow_Mon_0, Route101Ext01_Movement_Ow_MonFacesPlayer)
+    callnative(GetOverworldMonSpecies)
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    startoverworldencounter(5)
+    fadescreen(FADE_TO_BLACK)
+    removeobject(6)
+    fadescreen(FADE_FROM_BLACK)
+    releaseall
+    end
+}
+
+movement Route101Ext01_Movement_Ow_MonFacesPlayer {
+    face_player
+    step_end
 }

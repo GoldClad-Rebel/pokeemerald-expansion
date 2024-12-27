@@ -44,10 +44,10 @@
 
 #define FLAG_CORVIKNIGHT_0x020    0x20 // used to hide corviknight before trigger
 #define FLAG_CELEBI_0x021    0x21 // Used to make celebi disapapear after battle
-#define FLAG_PICHU_0x022    0x22 // Unused Flag
-#define FLAG_ZAPDOS_0x023    0x23 // Unused Flag
-#define FLAG_PichuAppears_0x024    0x24 // Unused Flag
-#define FLAG_RivalRoute101Ext01_0x025    0x25 // Unused Flag
+#define FLAG_PICHU_0x022    0x22 // Used to hide pichu rt101
+#define FLAG_ZAPDOS_0x023    0x23 // hide zapdos,101ext1
+#define FLAG_PichuAppears_0x024    0x24 // Used to make pichu appear on the right rt101
+#define FLAG_RivalRoute101Ext01_0x025    0x25 // hide brandon rt101ext1
 #define FLAG_Aipom_0x026    0x26 // Unused Flag
 #define FLAG_SeviperBattle_0x027    0x27 // Unused Flag
 #define FLAG_Murkrow_0x028    0x28 // Unused Flag
@@ -57,20 +57,20 @@
 #define FLAG_LEAFRoute101Ext02_0x02C    0x2C // Unused Flag
 #define FLAG_LeafHouse_0x02D    0x2D // Unused Flag
 #define FLAG_leafsittinginhouse_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
+#define FLAG_HIDE_Route102_SUDOWOODO    0x2F // Unused Flag
+#define FLAG_houndourroute102_0x030    0x30 // Unused Flag
+#define FLAG_Heracross_0x031    0x31 // Unused Flag
+#define FLAG_Pinsir_0x032    0x32 // Unused Flag
+#define FLAG_Corviknight_0x033    0x33 // petalburgforest
+#define FLAG_HyperPotion_0x034    0x34 // Unused Flag
+#define FLAG_Scizor_0x035    0x35 // Unused Flag
+#define FLAG_NewMap3Boy_0x036    0x36 // Unused Flag
+#define FLAG_URSARING_0x037    0x37 // Unused Flag
+#define FLAG_URSALUNA_0x038    0x38 // Unused Flag
+#define FLAG_boy2newmap3_0x039    0x39 // Unused Flag
+#define FLAG_NewMap3Girl_0x03A    0x3A // Unused Flag
+#define FLAG_PetalburgGirl_0x03B    0x3B // Unused Flag
+#define FLAG_PetalburgBoy_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
@@ -1218,7 +1218,7 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
+#define FLAG_ITEM_PETALBURG_CITY_FULL_RESTORE                       0x493 
 #define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
 #define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag

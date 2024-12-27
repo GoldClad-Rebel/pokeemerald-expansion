@@ -493,6 +493,9 @@ bool32 IsVirtualObjectAnimating(u8 virtualObjId);
 bool8 MovementAction_EmoteX_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *, struct Sprite *);
 
+u16 GetObjectEventFlagIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup);
+u16 GetObjectEventGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup);
+
 u16 GetMiniStepCount(u8 speed);
 void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame);
 bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
@@ -500,3 +503,5 @@ bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
 void ReturnFollowingMonToBall(void);
 
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H
+
+u16 GetObjectEventTrainerSightFlagByObjectEventId(u8 objEventId);

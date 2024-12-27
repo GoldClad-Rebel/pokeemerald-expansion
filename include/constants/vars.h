@@ -265,9 +265,9 @@
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_PARTNERSHOUSE_STATE                          0x40F7 //
-#define VAR_PETALBURGFOREST_STATE                   0x40F8 //
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
+#define VAR_PETALBURGFOREST_STATE                        0x40F8 // Used for munchlax R102Maze
+#define VAR_Route102Ext_STATE                            0x40F9 // 
+#define VAR_NewMap3_STATE                                0x40FA // Unused Var
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var

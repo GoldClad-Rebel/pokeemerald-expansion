@@ -788,7 +788,10 @@ static bool8 TryToWaterSudowoodo(void)
 static void ItemUseOnFieldCB_WailmerPailSudowoodo(u8 taskId)
 {
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(BattleFrontier_OutsideEast_EventScript_WaterSudowoodo);
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE102) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE102))
+        ScriptContext_SetupScript(Route102_EventScript_WaterSudowoodo);
+    else
+        ScriptContext_SetupScript(BattleFrontier_OutsideEast_EventScript_WaterSudowoodo);
     DestroyTask(taskId);
 }
 

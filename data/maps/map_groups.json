@@ -129,7 +129,8 @@
     "BirchesSanctuaryNorth",
     "BirchesSanctuarySouth",
     "BirchesSanctuaryEast",
-    "BirchesSantuaryWest"
+    "BirchesSantuaryWest",
+    "LostCreekTransitionMap"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
