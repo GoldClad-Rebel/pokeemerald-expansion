@@ -118,7 +118,7 @@ script PartnersHouse_EventScript_LEAFAsksToJoin {
     DYN_MULTICHOICE_CB_NONE, "Have LEAF join your team", "Chat with LEAF")
     closemessage
     if(var(VAR_RESULT)==0){
-    setfollower( 1, FOLLOWER_NO_WHITE_OUT ,
+    setfollower( 1, CAN_LEAVE_ROUTE,
     LEAFonYourteamChat_Eventscript_CustomFollowerScript)
     }
     else{

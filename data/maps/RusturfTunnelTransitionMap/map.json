@@ -1,0 +1,39 @@
+{
+  "id": "MAP_RUSTURF_TUNNEL_TRANSITION_MAP",
+  "name": "RusturfTunnelTransitionMap",
+  "layout": "LAYOUT_RUSTURF_TUNNEL_TRANSITION_MAP",
+  "music": "MUS_RUSTBORO",
+  "region_map_section": "MAPSEC_PETALBURG_WOODS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_RUSTURF_TUNNEL",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_RUSTURF_TUNNEL_EAST",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

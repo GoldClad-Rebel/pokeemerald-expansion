@@ -259,188 +259,153 @@ Route102_Text_RouteSignPetalburg:
 
 Route102_EventScript_Murkrow::
 # 135 "data/maps/Route102/scripts.pory"
-	lockall
+	lock
 # 136 "data/maps/Route102/scripts.pory"
 	applymovement 18, Route102_Movement_MurkrowFacesPlayer
 # 137 "data/maps/Route102/scripts.pory"
-	setflag FLAG_Murkrow_0x028
-# 138 "data/maps/Route102/scripts.pory"
 	playmoncry SPECIES_MURKROW, CRY_MODE_ENCOUNTER
-# 139 "data/maps/Route102/scripts.pory"
+# 138 "data/maps/Route102/scripts.pory"
 	delay 40
-# 140 "data/maps/Route102/scripts.pory"
+# 139 "data/maps/Route102/scripts.pory"
 	waitmoncry
+# 140 "data/maps/Route102/scripts.pory"
+	setwildbattle SPECIES_MURKROW, 32
 # 141 "data/maps/Route102/scripts.pory"
-	setwildbattle SPECIES_MURKROW, 8
-# 142 "data/maps/Route102/scripts.pory"
 	dowildbattle
+# 142 "data/maps/Route102/scripts.pory"
+	fadescreen FADE_TO_BLACK
 # 143 "data/maps/Route102/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	removeobject 18
 # 144 "data/maps/Route102/scripts.pory"
-	compare VAR_RESULT, B_OUTCOME_CAUGHT
-	goto_if_eq Route102_EventScript_Murkrow_2
-# 148 "data/maps/Route102/scripts.pory"
-	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq Route102_EventScript_Murkrow_3
-# 151 "data/maps/Route102/scripts.pory"
-	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
-	goto_if_eq Route102_EventScript_Murkrow_4
-Route102_EventScript_Murkrow_1:
-# 154 "data/maps/Route102/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 145 "data/maps/Route102/scripts.pory"
 	releaseall
 	return
 
-Route102_EventScript_Murkrow_2:
-# 145 "data/maps/Route102/scripts.pory"
-	call Won_or_Caught_2
-# 146 "data/maps/Route102/scripts.pory"
-	setflag FLAG_Murkrow_0x028
-	goto Route102_EventScript_Murkrow_1
 
-Route102_EventScript_Murkrow_3:
-# 149 "data/maps/Route102/scripts.pory"
-	call Won_or_Caught_2
-	goto Route102_EventScript_Murkrow_1
-
-Route102_EventScript_Murkrow_4:
-# 152 "data/maps/Route102/scripts.pory"
-	call Won_or_Caught_2
-	goto Route102_EventScript_Murkrow_1
-
-
-Won_or_Caught_2::
-# 158 "data/maps/Route102/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 159 "data/maps/Route102/scripts.pory"
-	removeobject 18
-# 160 "data/maps/Route102/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-	return
-
-
-# 163 "data/maps/Route102/scripts.pory"
+# 148 "data/maps/Route102/scripts.pory"
 Route102_Movement_MurkrowFacesPlayer:
-# 164 "data/maps/Route102/scripts.pory"
+# 149 "data/maps/Route102/scripts.pory"
 	face_player
-# 165 "data/maps/Route102/scripts.pory"
+# 150 "data/maps/Route102/scripts.pory"
 	step_end
 
 Route102_EventScript_SudowoodoShakes::
-# 169 "data/maps/Route102/scripts.pory"
+# 154 "data/maps/Route102/scripts.pory"
 	lockall
-# 170 "data/maps/Route102/scripts.pory"
+# 155 "data/maps/Route102/scripts.pory"
 	waitse
-# 171 "data/maps/Route102/scripts.pory"
+# 156 "data/maps/Route102/scripts.pory"
 	playse SE_SUDOWOODO_SHAKE
-# 172 "data/maps/Route102/scripts.pory"
+# 157 "data/maps/Route102/scripts.pory"
 	applymovement 19, Route102_movement_SudowoodoShakes
-# 173 "data/maps/Route102/scripts.pory"
+# 158 "data/maps/Route102/scripts.pory"
 	waitmovement 0
-# 174 "data/maps/Route102/scripts.pory"
+# 159 "data/maps/Route102/scripts.pory"
 	releaseall
 	return
 
 
 Route102_EventScript_WaterSudowoodo::
-# 178 "data/maps/Route102/scripts.pory"
+# 163 "data/maps/Route102/scripts.pory"
 	lockall
-# 179 "data/maps/Route102/scripts.pory"
+# 164 "data/maps/Route102/scripts.pory"
 	faceplayer
-# 180 "data/maps/Route102/scripts.pory"
+# 165 "data/maps/Route102/scripts.pory"
 	special DoWateringBerryTreeAnim
-# 181 "data/maps/Route102/scripts.pory"
+# 166 "data/maps/Route102/scripts.pory"
 	waitstate
-# 182 "data/maps/Route102/scripts.pory"
+# 167 "data/maps/Route102/scripts.pory"
 	waitse
-# 183 "data/maps/Route102/scripts.pory"
+# 168 "data/maps/Route102/scripts.pory"
 	playse SE_SUDOWOODO_SHAKE
-# 184 "data/maps/Route102/scripts.pory"
+# 169 "data/maps/Route102/scripts.pory"
 	applymovement 19, Route102_movement_SudowoodoShakes
-# 185 "data/maps/Route102/scripts.pory"
+# 170 "data/maps/Route102/scripts.pory"
 	waitmovement 0
-# 186 "data/maps/Route102/scripts.pory"
+# 171 "data/maps/Route102/scripts.pory"
 	msgbox Route102_EventScript_WaterSudowoodo_Text_0
-# 187 "data/maps/Route102/scripts.pory"
+# 172 "data/maps/Route102/scripts.pory"
 	closemessage
-# 188 "data/maps/Route102/scripts.pory"
+# 173 "data/maps/Route102/scripts.pory"
 	waitse
-# 189 "data/maps/Route102/scripts.pory"
+# 174 "data/maps/Route102/scripts.pory"
 	playmoncry SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER
-# 190 "data/maps/Route102/scripts.pory"
+# 175 "data/maps/Route102/scripts.pory"
 	delay 40
-# 191 "data/maps/Route102/scripts.pory"
+# 176 "data/maps/Route102/scripts.pory"
 	waitmoncry
-# 192 "data/maps/Route102/scripts.pory"
+# 177 "data/maps/Route102/scripts.pory"
 	setflag FLAG_HIDE_Route102_SUDOWOODO
-# 193 "data/maps/Route102/scripts.pory"
+# 178 "data/maps/Route102/scripts.pory"
 	setwildbattle SPECIES_SUDOWOODO, 40
-# 194 "data/maps/Route102/scripts.pory"
+# 179 "data/maps/Route102/scripts.pory"
 	dowildbattle
-# 195 "data/maps/Route102/scripts.pory"
+# 180 "data/maps/Route102/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 196 "data/maps/Route102/scripts.pory"
+# 181 "data/maps/Route102/scripts.pory"
 	removeobject 19
-# 197 "data/maps/Route102/scripts.pory"
+# 182 "data/maps/Route102/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 198 "data/maps/Route102/scripts.pory"
+# 183 "data/maps/Route102/scripts.pory"
 	return
-# 199 "data/maps/Route102/scripts.pory"
+# 184 "data/maps/Route102/scripts.pory"
 	releaseall
 	return
 
 
-# 202 "data/maps/Route102/scripts.pory"
+# 187 "data/maps/Route102/scripts.pory"
 Route102_movement_SudowoodoShakes:
+# 188 "data/maps/Route102/scripts.pory"
+	face_right
+# 189 "data/maps/Route102/scripts.pory"
+	delay_8
+# 190 "data/maps/Route102/scripts.pory"
+	face_down
+# 191 "data/maps/Route102/scripts.pory"
+	delay_8
+# 192 "data/maps/Route102/scripts.pory"
+	face_left
+# 193 "data/maps/Route102/scripts.pory"
+	delay_8
+# 194 "data/maps/Route102/scripts.pory"
+	face_down
+# 195 "data/maps/Route102/scripts.pory"
+	delay_8
+# 196 "data/maps/Route102/scripts.pory"
+	face_right
+# 197 "data/maps/Route102/scripts.pory"
+	delay_8
+# 198 "data/maps/Route102/scripts.pory"
+	face_down
+# 199 "data/maps/Route102/scripts.pory"
+	delay_8
+# 200 "data/maps/Route102/scripts.pory"
+	face_left
+# 201 "data/maps/Route102/scripts.pory"
+	delay_8
+# 202 "data/maps/Route102/scripts.pory"
+	face_down
 # 203 "data/maps/Route102/scripts.pory"
-	face_right
-# 204 "data/maps/Route102/scripts.pory"
-	delay_8
-# 205 "data/maps/Route102/scripts.pory"
-	face_down
-# 206 "data/maps/Route102/scripts.pory"
-	delay_8
-# 207 "data/maps/Route102/scripts.pory"
-	face_left
-# 208 "data/maps/Route102/scripts.pory"
-	delay_8
-# 209 "data/maps/Route102/scripts.pory"
-	face_down
-# 210 "data/maps/Route102/scripts.pory"
-	delay_8
-# 211 "data/maps/Route102/scripts.pory"
-	face_right
-# 212 "data/maps/Route102/scripts.pory"
-	delay_8
-# 213 "data/maps/Route102/scripts.pory"
-	face_down
-# 214 "data/maps/Route102/scripts.pory"
-	delay_8
-# 215 "data/maps/Route102/scripts.pory"
-	face_left
-# 216 "data/maps/Route102/scripts.pory"
-	delay_8
-# 217 "data/maps/Route102/scripts.pory"
-	face_down
-# 218 "data/maps/Route102/scripts.pory"
 	step_end
 
 Route102_EventScript_SignToPetalburgForestLeft::
-# 222 "data/maps/Route102/scripts.pory"
+# 207 "data/maps/Route102/scripts.pory"
 	lockall
-# 223 "data/maps/Route102/scripts.pory"
+# 208 "data/maps/Route102/scripts.pory"
 	msgbox Route102_EventScript_SignToPetalburgForestLeft_Text_0
-# 224 "data/maps/Route102/scripts.pory"
+# 209 "data/maps/Route102/scripts.pory"
 	waitmessage
-# 225 "data/maps/Route102/scripts.pory"
+# 210 "data/maps/Route102/scripts.pory"
 	releaseall
 	return
 
 
 Route102_EventScript_WaterSudowoodo_Text_0:
-# 186 "data/maps/Route102/scripts.pory"
+# 171 "data/maps/Route102/scripts.pory"
 	.string "The weird tree doesn't like the WAILMER\n"
 	.string "PAIL! The weird tree attacked!$"
 
 Route102_EventScript_SignToPetalburgForestLeft_Text_0:
-# 223 "data/maps/Route102/scripts.pory"
+# 208 "data/maps/Route102/scripts.pory"
 	.string "{LEFT_ARROW} To Petalburg Forest$"

@@ -72,25 +72,25 @@
 #define FLAG_NewMap3Girl_0x03A    0x3A // Unused Flag
 #define FLAG_PetalburgGirl_0x03B    0x3B // Unused Flag
 #define FLAG_PetalburgBoy_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_Bloodmoonursula_0x03D    0x3D // Unused Flag
+#define FLAG_DevonPresident_0x03E    0x3E // Unused Flag
+#define FLAG_DarkAlleyOldMan_0x03F    0x3F // Unused Flag
+#define FLAG_DAThug1_0x040    0x40 // Unused Flag
+#define FLAG_DAThug2_0x041    0x41 // Unused Flag
+#define FLAG_DAThug3_0x042    0x42 // Unused Flag
+#define FLAG_ThugBoss_0x043    0x43 // Unused Flag
+#define FLAG_Jailbird1_0x044    0x44 // Unused Flag
+#define FLAG_Jailbird2_0x045    0x45 // Unused Flag
+#define FLAG_RustboroWoman_0x046    0x46 // Unused Flag
+#define FLAG_ThePurse_0x047    0x47 // Unused Flag
+#define FLAG_Theif_0x048    0x48 // Unused Flag
+#define FLAG_RustboroWoman2_0x049    0x49 // Unused Flag
+#define FLAG_RCMEOWTH1_0x04A    0x4A // Unused Flag
+#define FLAG_RCMEOWTH2_0x04B    0x4B // Unused Flag
+#define FLAG_RCMEOWTH3_0x04C    0x4C // Unused Flag
+#define FLAG_AZELF_0x04D    0x4D // Unused Flag
+#define FLAG_Azelf01_0x04E    0x4E // Unused Flag
+#define FLAG_Azelf02_0x04F    0x4F // Unused Flag
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
@@ -656,16 +656,16 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
+#define FLAG_Azelf03_0x264  0x264 // Unused Flag
+#define FLAG_Azelf04_0x265  0x265 // Unused Flag
+#define FLAG_ZOROARK01_0x266  0x266 // Unused Flag
+#define FLAG_ZOROARK02_0x267  0x267 // Unused Flag
+#define FLAG_FinalAzelf_0x268  0x268 // Unused Flag
+#define FLAG_Wingull1_0x269  0x269 // Unused Flag
+#define FLAG_Wingull2_0x26A  0x26A // Unused Flag
+#define FLAG_AZELF05_0x26B  0x26B // Unused Flag
+#define FLAG_AZELF06_0x26C  0x26C // Unused Flag
+#define FLAG_FinalAzelf2_0x26D  0x26D // Unused Flag
 #define FLAG_UNUSED_0x26E  0x26E // Unused Flag
 #define FLAG_UNUSED_0x26F  0x26F // Unused Flag
 #define FLAG_UNUSED_0x270  0x270 // Unused Flag

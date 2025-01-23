@@ -264,15 +264,15 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_PARTNERSHOUSE_STATE                          0x40F7 //
+#define VAR_PARTNERSHOUSE_STATE                          0x40F7 
 #define VAR_PETALBURGFOREST_STATE                        0x40F8 // Used for munchlax R102Maze
-#define VAR_Route102Ext_STATE                            0x40F9 // 
-#define VAR_NewMap3_STATE                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_Route102Ext_STATE                            0x40F9 
+#define VAR_NewMap3_STATE                                0x40FA 
+#define VAR_devonpresident_STATE                         0x40FB 
+#define VAR_RustboroWeather_STATE                        0x40FC 
+#define VAR_RustboroThief_STATE                          0x40FD 
+#define VAR_RusturfPass_STATE                            0x40FE 
+#define VAR_RusturfPassWeather_STATE                     0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

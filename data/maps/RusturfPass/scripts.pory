@@ -1,0 +1,570 @@
+const LOCALID_Ow_Mon_0 = 4
+const LOCALID_Ow_Mon_1 = 5
+const LOCALID_Ow_Mon_2 = 7
+const LOCALID_Ow_Mon_3 = 8
+const LOCALID_Ow_Mon_4 = 9
+
+mapscripts RusturfPass_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION
+    {
+    setobjectaswildencounter(LOCALID_Ow_Mon_0, 1)
+    setobjectaswildencounter(LOCALID_Ow_Mon_1, 1)
+    setobjectaswildencounter(LOCALID_Ow_Mon_2, 1)
+    setobjectaswildencounter(LOCALID_Ow_Mon_3, 1)
+    setobjectaswildencounter(LOCALID_Ow_Mon_4, 1)
+    }
+}
+
+const LOCALID_AZELFMAIN = 1
+const LOCALID_AZELF01 = 2
+const LOCALID_AZELF02 = 3
+const LOCALID_AZELF03 = 10
+const LOCALID_AZELF04 = 11
+const LOCALID_AZELF05 = 29
+const LOCALID_AZELF06 = 30
+const LOCALID_ZOROARK01 = 12
+const LOCALID_ZOROARK02 = 13
+const LOCALID_WINGULL1 = 27
+const LOCALID_WINGULL2 = 28 
+
+script RusturfPass_EventScript_OverworldMon0{
+    lock
+    applymovement(LOCALID_Ow_Mon_0, Route101Ext02_Movement_Ow_MonFacesPlayer)
+    callnative(GetOverworldMonSpecies)
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    startoverworldencounter(8)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(4)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    releaseall
+    end
+}
+
+script RusturfPass_EventScript_OverworldMon1{
+    lock
+    applymovement(LOCALID_Ow_Mon_1, Route101Ext02_Movement_Ow_MonFacesPlayer)
+    callnative(GetOverworldMonSpecies)
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    startoverworldencounter(8)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(5)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    releaseall
+    end
+}
+
+script RusturfPass_EventScript_OverworldMon2{
+    lock
+    applymovement(LOCALID_Ow_Mon_2, Route101Ext02_Movement_Ow_MonFacesPlayer)
+    callnative(GetOverworldMonSpecies)
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    startoverworldencounter(8)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(7)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    releaseall
+    end
+}
+
+script RusturfPass_EventScript_OverworldMon3{
+    lock
+    applymovement(LOCALID_Ow_Mon_3, Route101Ext02_Movement_Ow_MonFacesPlayer)
+    callnative(GetOverworldMonSpecies)
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    startoverworldencounter(8)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(8)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    releaseall
+    end
+}
+
+script RusturfPass_EventScript_OverworldMon4{
+    lock
+    applymovement(LOCALID_Ow_Mon_4, Route101Ext02_Movement_Ow_MonFacesPlayer)
+    callnative(GetOverworldMonSpecies)
+    bufferspeciesname(STR_VAR_1, VAR_0x8004)
+    startoverworldencounter(8)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(9)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    releaseall
+    end
+}
+
+movement RusturfPass_Movement_Ow_MonFacesPlayer {
+    face_player
+    step_end
+}
+
+script RusturfPass_EventScript_AzelfFliesByTrigger01 {
+    lockall
+    setobjectxy(LOCALID_AZELF01, 45, 20)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_SOUTH)
+    applymovement(LOCALID_AZELF01, RusturfPass_Movement_AzelfFliesBy1)
+    waitmovement(2)
+    setvar(VAR_RusturfPass_STATE, 1)
+    setflag(FLAG_Azelf01_0x04E)
+    removeobject(2)
+    releaseall
+}
+
+movement RusturfPass_Movement_AzelfFliesBy1 {
+    face_left
+    walk_left * 3
+    face_up
+    walk_up * 2
+    face_right
+    jump_in_place_right
+    face_left
+    walk_fast_left
+    face_up
+    walk_fast_up * 3
+    walk_fast_up * 2
+    step_end
+}
+
+script RusturfPass_EventScript_AzelfFliesByTrigger02 {
+    lockall
+    setobjectxy(LOCALID_AZELF02, 34, 17)
+    applymovement(LOCALID_AZELF02, RusturfPass_Movement_AzelfFliesBy2)
+    waitmovement(3)
+    setvar(VAR_RusturfPass_STATE, 2)
+    setflag(FLAG_Azelf02_0x04F)
+    removeobject(3)
+    releaseall
+}
+
+movement RusturfPass_Movement_AzelfFliesBy2 {
+    face_left
+    walk_fast_left * 4
+    walk_fast_left * 4
+    step_end
+}
+
+script RusturfPass_EventScript_AzelfFliesByTrigger03 {
+    lockall
+    setobjectxy(LOCALID_AZELF02, 39, 15)
+    applymovement(LOCALID_AZELF02, RusturfPass_Movement_AzelfFliesBy3)
+    waitmovement(3)
+    setvar(VAR_RusturfPass_STATE, 2)
+    setflag(FLAG_Azelf02_0x04F)
+    removeobject(3)
+    releaseall
+}
+
+movement RusturfPass_Movement_AzelfFliesBy3 {
+    walk_fast_down * 3
+    walk_fast_down * 3
+    step_end
+}
+
+script RusturfPass_EventScript_AzelfFliesByTrigger04 {
+    lockall
+    clearflag(FLAG_Azelf03_0x264)
+    addobject(10)
+    applymovement(LOCALID_AZELF03, RusturfPass_Movement_AzelfFliesBy4)
+    waitmovement(10)
+    removeobject(10)
+    setvar(VAR_RusturfPass_STATE, 3)
+    releaseall
+}
+
+movement RusturfPass_Movement_AzelfFliesBy4{
+    walk_fast_down * 3
+    walk_fast_down * 3
+    face_left
+    walk_fast_left * 2
+    step_end
+}
+
+script RusturfPass_EventScript_AzelfFliesByTrigger05 {
+    lockall
+    clearflag(FLAG_AZELF05_0x26B)
+    addobject(29)
+    applymovement(LOCALID_AZELF05, RusturfPass_Movement_AzelfFliesBy5)
+    waitmovement(29)
+    setvar(VAR_RusturfPass_STATE, 3)
+    setflag(FLAG_AZELF05_0x26B)
+    removeobject(29)
+    releaseall
+}
+
+movement RusturfPass_Movement_AzelfFliesBy5{
+    face_left
+    walk_fast_left * 4
+    face_up
+    walk_fast_up * 2
+    face_left
+    walk_fast_left * 2
+    step_end
+}
+
+script RusturfPass_EventScript_AzelfApproaches_Trigger {
+    lockall
+    setobjectxy(LOCALID_AZELF04, 19, 31)
+    applymovement(LOCALID_AZELF04, RusturfPass_Movement_AzelfApproaches1)
+    waitmovement(11)
+    setvar(VAR_RusturfPass_STATE, 4)
+    releaseall
+}
+
+movement RusturfPass_Movement_AzelfApproaches1 {
+    walk_left * 3
+    face_up
+    walk_up
+    face_left
+    walk_left
+    step_end
+}
+
+script RusturfPass_EventScript_AzelfBattle01 {
+    lockall
+    faceplayer
+    playmoncry(SPECIES_AZELF, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setwildbattle(SPECIES_ZOROARK, 28)
+    dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if(var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+        call(RusturfPass_EventScript_Won_or_Caught_Zorroark)  
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_WON) {
+        call(RusturfPass_EventScript_Won_or_Caught_Zorroark) 
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_RAN) {
+        call(RusturfPass_EventScript_RanAwayFromZoroark)
+    }
+}
+
+script RusturfPass_EventScript_Won_or_Caught_Zorroark {
+    lockall
+    setflag(FLAG_Azelf04_0x265)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(11)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    setvar(VAR_RusturfPass_STATE, 5)
+    releaseall
+}
+
+script RusturfPass_EventScript_RanAwayFromZoroark {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, RusturfPass_movement_PlayerForcedLeft)
+    setflag(FLAG_Azelf04_0x265)
+    clearflag(FLAG_ZOROARK01_0x266)
+    addobject(12)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(11)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    releaseall
+}
+
+movement RusturfPass_movement_PlayerForcedLeft{
+    face_left
+    walk_left
+    step_end
+}
+
+script RusturfPass_EventScript_ZoroarkBattle {
+    lockall
+    faceplayer
+    playmoncry(SPECIES_ZOROARK, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setwildbattle(SPECIES_ZOROARK, 28)
+    dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if(var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+        call(RusturfPass_EventScript_Won_or_Caught_Zorroark2)  
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_WON) {
+        call(RusturfPass_EventScript_Won_or_Caught_Zorroark2) 
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_RAN) {
+        call(RusturfPass_EventScript_RanAwayFromZoroark2)
+    }
+}
+
+script RusturfPass_EventScript_Won_or_Caught_Zorroark2 {
+    lockall
+    setflag(FLAG_ZOROARK01_0x266)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(12)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    setvar(VAR_RusturfPass_STATE, 5)
+    releaseall
+}
+
+script RusturfPass_EventScript_RanAwayFromZoroark2 {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, RusturfPass_movement_PlayerForcedLeft)
+    clearflag(FLAG_ZOROARK01_0x266)
+    addobject(12)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    delay(8)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    releaseall
+}
+
+script RusturfPass_EventScript_AzelfApproaches_Trigger2 {
+    lockall
+    setobjectxy(LOCALID_AZELF06, 37, 35)
+    applymovement(LOCALID_AZELF06, RusturfPass_Movement_AzelfApproaches2)
+    waitmovement(30)
+    setvar(VAR_RusturfPass_STATE, 4)
+    releaseall
+}
+
+movement RusturfPass_Movement_AzelfApproaches2 {
+    face_right
+    walk_right
+    face_up
+    walk_up
+    step_end
+}
+
+script RusturfPass_EventScript_AzelfBattle02 {
+    lockall
+    playmoncry(SPECIES_AZELF, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setwildbattle(SPECIES_ZOROARK, 28)
+    dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if(var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+        call(RusturfPass_EventScript_Won_or_Caught_ZorroarkRight)  
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_WON) {
+        call(RusturfPass_EventScript_Won_or_Caught_ZorroarkRight) 
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_RAN) {
+        call(RusturfPass_EventScript_RanAwayFromZoroarkRight)
+    }
+}
+
+script RusturfPass_EventScript_Won_or_Caught_ZorroarkRight {
+    lockall
+    setflag(FLAG_AZELF06_0x26C)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(30)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    setvar(VAR_RusturfPass_STATE, 5)
+    releaseall
+}
+
+script RusturfPass_EventScript_RanAwayFromZoroarkRight {
+    lockall
+    setflag(FLAG_AZELF06_0x26C)
+    clearflag(FLAG_ZOROARK02_0x267)
+    addobject(13)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(30)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    applymovement(OBJ_EVENT_ID_PLAYER, RusturfPass_movement_PlayerForcedUp)
+    releaseall
+}
+
+movement RusturfPass_movement_PlayerForcedUp{
+    face_up
+    walk_up
+    step_end
+}
+
+script RusturfPass_EventScript_ZoroarkBattle2 {
+    lockall
+    playmoncry(SPECIES_ZOROARK, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setwildbattle(SPECIES_ZOROARK, 28)
+    dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if(var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+        call(RusturfPass_EventScript_Won_or_Caught_Zorroark3)  
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_WON) {
+        call(RusturfPass_EventScript_Won_or_Caught_Zorroark3) 
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_RAN) {
+        call(RusturfPass_EventScript_RanAwayFromZoroark3)
+    }
+}
+
+script RusturfPass_EventScript_Won_or_Caught_Zorroark3 {
+    lockall
+    setflag(FLAG_ZOROARK02_0x267)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(13)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    setvar(VAR_RusturfPass_STATE, 5)
+    releaseall
+}
+
+script RusturfPass_EventScript_RanAwayFromZoroark3 {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, RusturfPass_movement_PlayerForcedUp)
+    clearflag(FLAG_ZOROARK02_0x267)
+    addobject(13)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    delay(8)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    releaseall
+}
+
+script RusturfPass_EventScript_AzelfActualBattle {
+    lockall
+    playmoncry(SPECIES_AZELF, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setwildbattle(SPECIES_AZELF, 35, ITEM_LIFE_ORB)
+    dowildbattle
+    setflag(FLAG_AZELF_0x04D)
+    removeobject(1)
+    setvar(VAR_RusturfPass_STATE, 8)
+    releaseall
+}
+
+script RusturfPass_EventScript_WingullFlyBy{
+    lockall
+    setobjectxy(LOCALID_WINGULL1, 35, 28)
+    setobjectxy(LOCALID_WINGULL2, 35, 29)
+    applymovement(LOCALID_WINGULL1, RusturfPass_Movement_WingullFliesby)
+    applymovement(LOCALID_WINGULL2, RusturfPass_Movement_WingullFliesby)
+    waitmovement(27)
+    waitmovement(28)
+    setflag(FLAG_Wingull1_0x269)
+    setflag(FLAG_Wingull2_0x26A)
+    removeobject(27)
+    removeobject(28)
+    setvar(VAR_RusturfPass_STATE, 7)
+    releaseall
+}
+
+movement RusturfPass_Movement_WingullFliesby {
+    walk_left * 5
+    walk_left * 5
+    walk_left * 5
+}
+
+script RusturfPass_EventScript_WeatherTrigger0 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 1)
+    setweather(WEATHER_SHADE)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger01 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 0)
+    setweather(WEATHER_NONE)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger1 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 2)
+    setweather(WEATHER_RAIN)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger1_0 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 1)
+    setweather(WEATHER_NONE)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger2 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 3)
+    setweather(WEATHER_NONE)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger2_0 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 2)
+    setweather(WEATHER_RAIN)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger3 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 4)
+    setweather(WEATHER_RAIN)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger3_0 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 3)
+    setweather(WEATHER_NONE)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger4 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 5)
+    setweather(WEATHER_SHADE)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger4_0 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 4)
+    setweather(WEATHER_RAIN)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger5 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 6)
+    setweather(WEATHER_RAIN)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger5_0 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 5)
+    setweather(WEATHER_SHADE)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger6 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 7)
+    setweather(WEATHER_SHADE)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger6_0 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 6)
+    setweather(WEATHER_RAIN)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger7 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 8)
+    setweather(WEATHER_SUNNY)
+    doweather
+    releaseall
+}
+
+script RusturfPass_EventScript_WeatherTrigger7_0 {
+    lockall
+    setvar(VAR_RusturfPassWeather_STATE, 7)
+    setweather(WEATHER_SHADE)
+    doweather
+    releaseall
+}

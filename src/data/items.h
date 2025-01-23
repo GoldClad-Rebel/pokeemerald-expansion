@@ -14093,4 +14093,20 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    [ITEM_PURSE] =
+    {
+        .name = _("Womans Purse"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Presumably, the\n"
+            "one the thief\n"
+            "stole, in Rustboro."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_Purse,
+        .iconPalette = gItemIconPalette_Purse,
+    },
 };

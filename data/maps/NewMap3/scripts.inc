@@ -10,961 +10,1323 @@ NewMap3_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 
 NewMap3_EventScript_OverworldMon0::
-# 16 "data/maps/NewMap3/scripts.pory"
-	lock
 # 17 "data/maps/NewMap3/scripts.pory"
-	faceplayer
+	lock
 # 18 "data/maps/NewMap3/scripts.pory"
-	callnative GetOverworldMonSpecies
+	faceplayer
 # 19 "data/maps/NewMap3/scripts.pory"
-	bufferspeciesname STR_VAR_1, VAR_0x8004
+	callnative GetOverworldMonSpecies
 # 20 "data/maps/NewMap3/scripts.pory"
-	startoverworldencounter 20
+	bufferspeciesname STR_VAR_1, VAR_0x8004
 # 21 "data/maps/NewMap3/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	startoverworldencounter 23
 # 22 "data/maps/NewMap3/scripts.pory"
-	removeobject 5
+	fadescreenswapbuffers FADE_TO_BLACK
 # 23 "data/maps/NewMap3/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	removeobject 14
 # 24 "data/maps/NewMap3/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 25 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	end
 
 
 NewMap3_EventScript_BoyNeedsHelp::
-# 29 "data/maps/NewMap3/scripts.pory"
-	lock
 # 30 "data/maps/NewMap3/scripts.pory"
-	checkfollower
+	lock
 # 31 "data/maps/NewMap3/scripts.pory"
+	checkfollower
+# 32 "data/maps/NewMap3/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq NewMap3_EventScript_BoyNeedsHelp_2
 NewMap3_EventScript_BoyNeedsHelp_1:
-# 43 "data/maps/NewMap3/scripts.pory"
+# 48 "data/maps/NewMap3/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq NewMap3_EventScript_BoyNeedsHelp_4
 	return
 
 NewMap3_EventScript_BoyNeedsHelp_2:
-# 32 "data/maps/NewMap3/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerAway
 # 33 "data/maps/NewMap3/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerAway
 # 34 "data/maps/NewMap3/scripts.pory"
-	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_0
-# 35 "data/maps/NewMap3/scripts.pory"
-	waitmessage
-# 36 "data/maps/NewMap3/scripts.pory"
-	closemessage
-# 37 "data/maps/NewMap3/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOW_ME, PartnersHouse_movement_LEAFheadshome
-# 38 "data/maps/NewMap3/scripts.pory"
 	waitmovement 0
+# 35 "data/maps/NewMap3/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOW_ME, NewMap3_Movement_LeafstepsLeft
+# 36 "data/maps/NewMap3/scripts.pory"
+	waitmovement 0
+# 37 "data/maps/NewMap3/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+# 38 "data/maps/NewMap3/scripts.pory"
+	delay 8
 # 39 "data/maps/NewMap3/scripts.pory"
-	destroyfollower
+	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_0
 # 40 "data/maps/NewMap3/scripts.pory"
-	clearflag FLAG_leafsittinginhouse_0x02E
+	waitmessage
 # 41 "data/maps/NewMap3/scripts.pory"
+	closemessage
+# 42 "data/maps/NewMap3/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOW_ME, NewMap3_Movement_LeafHeadsHome
+# 43 "data/maps/NewMap3/scripts.pory"
+	waitmovement 0
+# 44 "data/maps/NewMap3/scripts.pory"
+	destroyfollower
+# 45 "data/maps/NewMap3/scripts.pory"
+	clearflag FLAG_leafsittinginhouse_0x02E
+# 46 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	goto NewMap3_EventScript_BoyNeedsHelp_1
 
 NewMap3_EventScript_BoyNeedsHelp_4:
-# 44 "data/maps/NewMap3/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 45 "data/maps/NewMap3/scripts.pory"
-	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_1
-# 46 "data/maps/NewMap3/scripts.pory"
-	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_2
-# 47 "data/maps/NewMap3/scripts.pory"
-	waitmessage
-# 48 "data/maps/NewMap3/scripts.pory"
-	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_3
 # 49 "data/maps/NewMap3/scripts.pory"
-	dynmultichoice 1, 1, FALSE, 2, 0, DYN_MULTICHOICE_CB_NONE, NewMap3_EventScript_BoyNeedsHelp_Text_4, NewMap3_EventScript_BoyNeedsHelp_Text_5
+	applymovement 3, NewMap3_Movement_BoyWalksUpToPlayer
+# 50 "data/maps/NewMap3/scripts.pory"
+	waitmovement 3
 # 51 "data/maps/NewMap3/scripts.pory"
-	closemessage
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 # 52 "data/maps/NewMap3/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq NewMap3_EventScript_BoyNeedsHelp_6
-# 58 "data/maps/NewMap3/scripts.pory"
-	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_6
+	delay 8
+# 53 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_1
+# 54 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_2
+# 55 "data/maps/NewMap3/scripts.pory"
+	waitmessage
+# 56 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_3
+# 57 "data/maps/NewMap3/scripts.pory"
+	dynmultichoice 1, 1, FALSE, 2, 0, DYN_MULTICHOICE_CB_NONE, NewMap3_EventScript_BoyNeedsHelp_Text_4, NewMap3_EventScript_BoyNeedsHelp_Text_5
 # 59 "data/maps/NewMap3/scripts.pory"
 	closemessage
 # 60 "data/maps/NewMap3/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq NewMap3_EventScript_BoyNeedsHelp_6
+# 66 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_6
+# 67 "data/maps/NewMap3/scripts.pory"
+	closemessage
+# 68 "data/maps/NewMap3/scripts.pory"
+	applymovement 3, NewMap3_Movement_BoyWalksaway1
+# 69 "data/maps/NewMap3/scripts.pory"
+	waitmovement 3
+# 70 "data/maps/NewMap3/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerAway2
-# 61 "data/maps/NewMap3/scripts.pory"
+# 71 "data/maps/NewMap3/scripts.pory"
 	waitmovement 0
-# 62 "data/maps/NewMap3/scripts.pory"
+# 72 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 NewMap3_EventScript_BoyNeedsHelp_6:
-# 53 "data/maps/NewMap3/scripts.pory"
+# 61 "data/maps/NewMap3/scripts.pory"
 	setfollower 3, FOLLOWER_NO_RUN, BoyonYourteamChat_Eventscript_CustomFollowerScript
-# 54 "data/maps/NewMap3/scripts.pory"
+# 62 "data/maps/NewMap3/scripts.pory"
 	setvar VAR_NewMap3_STATE, 1
-# 55 "data/maps/NewMap3/scripts.pory"
+# 63 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 
 NewMap3_EventScript_BoyNeedsHelp2::
-# 68 "data/maps/NewMap3/scripts.pory"
+# 78 "data/maps/NewMap3/scripts.pory"
 	lock
-# 69 "data/maps/NewMap3/scripts.pory"
+# 79 "data/maps/NewMap3/scripts.pory"
 	checkfollower
-# 70 "data/maps/NewMap3/scripts.pory"
+# 80 "data/maps/NewMap3/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq NewMap3_EventScript_BoyNeedsHelp2_2
 NewMap3_EventScript_BoyNeedsHelp2_1:
-# 80 "data/maps/NewMap3/scripts.pory"
+# 96 "data/maps/NewMap3/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq NewMap3_EventScript_BoyNeedsHelp2_4
 	return
 
 NewMap3_EventScript_BoyNeedsHelp2_2:
-# 71 "data/maps/NewMap3/scripts.pory"
+# 81 "data/maps/NewMap3/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerAway
-# 72 "data/maps/NewMap3/scripts.pory"
+# 82 "data/maps/NewMap3/scripts.pory"
 	waitmovement 0
-# 73 "data/maps/NewMap3/scripts.pory"
+# 83 "data/maps/NewMap3/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOW_ME, NewMap3_Movement_LeafstepsLeft
+# 84 "data/maps/NewMap3/scripts.pory"
+	waitmovement 0
+# 85 "data/maps/NewMap3/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+# 86 "data/maps/NewMap3/scripts.pory"
+	delay 8
+# 87 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_0
-# 74 "data/maps/NewMap3/scripts.pory"
+# 88 "data/maps/NewMap3/scripts.pory"
 	waitmessage
-# 75 "data/maps/NewMap3/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOW_ME, PartnersHouse_movement_LEAFheadshome
-# 76 "data/maps/NewMap3/scripts.pory"
+# 89 "data/maps/NewMap3/scripts.pory"
+	closemessage
+# 90 "data/maps/NewMap3/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOW_ME, NewMap3_Movement_LeafHeadsHome
+# 91 "data/maps/NewMap3/scripts.pory"
 	waitmovement 0
-# 77 "data/maps/NewMap3/scripts.pory"
+# 92 "data/maps/NewMap3/scripts.pory"
 	destroyfollower
-# 78 "data/maps/NewMap3/scripts.pory"
+# 93 "data/maps/NewMap3/scripts.pory"
 	clearflag FLAG_leafsittinginhouse_0x02E
+# 94 "data/maps/NewMap3/scripts.pory"
+	releaseall
 	goto NewMap3_EventScript_BoyNeedsHelp2_1
 
 NewMap3_EventScript_BoyNeedsHelp2_4:
-# 81 "data/maps/NewMap3/scripts.pory"
-	faceplayer
-# 82 "data/maps/NewMap3/scripts.pory"
+# 97 "data/maps/NewMap3/scripts.pory"
+	applymovement 3, NewMap3_Movement_BoyWalksUpToPlayer2
+# 98 "data/maps/NewMap3/scripts.pory"
+	waitmovement 3
+# 99 "data/maps/NewMap3/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+# 100 "data/maps/NewMap3/scripts.pory"
+	delay 8
+# 101 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_1
-# 83 "data/maps/NewMap3/scripts.pory"
+# 102 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_2
-# 84 "data/maps/NewMap3/scripts.pory"
+# 103 "data/maps/NewMap3/scripts.pory"
 	waitmessage
-# 85 "data/maps/NewMap3/scripts.pory"
+# 104 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_3
-# 86 "data/maps/NewMap3/scripts.pory"
+# 105 "data/maps/NewMap3/scripts.pory"
 	dynmultichoice 1, 1, FALSE, 2, 0, DYN_MULTICHOICE_CB_NONE, NewMap3_EventScript_BoyNeedsHelp_Text_4, NewMap3_EventScript_BoyNeedsHelp_Text_5
-# 88 "data/maps/NewMap3/scripts.pory"
+# 107 "data/maps/NewMap3/scripts.pory"
 	closemessage
-# 89 "data/maps/NewMap3/scripts.pory"
+# 108 "data/maps/NewMap3/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq NewMap3_EventScript_BoyNeedsHelp2_6
-# 95 "data/maps/NewMap3/scripts.pory"
+# 114 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_6
-# 96 "data/maps/NewMap3/scripts.pory"
+# 115 "data/maps/NewMap3/scripts.pory"
 	closemessage
-# 97 "data/maps/NewMap3/scripts.pory"
+# 116 "data/maps/NewMap3/scripts.pory"
+	applymovement 3, NewMap3_Movement_BoyWalksaway2
+# 117 "data/maps/NewMap3/scripts.pory"
+	waitmovement 3
+# 118 "data/maps/NewMap3/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerAway2
-# 98 "data/maps/NewMap3/scripts.pory"
+# 119 "data/maps/NewMap3/scripts.pory"
 	waitmovement 0
-# 99 "data/maps/NewMap3/scripts.pory"
+# 120 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 NewMap3_EventScript_BoyNeedsHelp2_6:
-# 90 "data/maps/NewMap3/scripts.pory"
+# 109 "data/maps/NewMap3/scripts.pory"
 	setfollower 3, FOLLOWER_NO_RUN, BoyonYourteamChat_Eventscript_CustomFollowerScript
-# 91 "data/maps/NewMap3/scripts.pory"
+# 110 "data/maps/NewMap3/scripts.pory"
 	setvar VAR_NewMap3_STATE, 1
-# 92 "data/maps/NewMap3/scripts.pory"
+# 111 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 
-# 104 "data/maps/NewMap3/scripts.pory"
-NewMap3_Movement_ForcePlayerAway:
-# 105 "data/maps/NewMap3/scripts.pory"
-	face_down
-# 106 "data/maps/NewMap3/scripts.pory"
-	walk_down
-# 107 "data/maps/NewMap3/scripts.pory"
+# 125 "data/maps/NewMap3/scripts.pory"
+NewMap3_Movement_LeafHeadsHome:
+# 126 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 126 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 126 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 126 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 127 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 127 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 127 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 127 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 128 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 110 "data/maps/NewMap3/scripts.pory"
-NewMap3_Movement_ForcePlayerAway2:
-# 111 "data/maps/NewMap3/scripts.pory"
+# 131 "data/maps/NewMap3/scripts.pory"
+NewMap3_Movement_LeafstepsLeft:
+# 132 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 133 "data/maps/NewMap3/scripts.pory"
+	face_player
+# 134 "data/maps/NewMap3/scripts.pory"
+	step_end
+
+# 138 "data/maps/NewMap3/scripts.pory"
+NewMap3_Movement_BoyWalksUpToPlayer:
+# 139 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 139 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 139 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 139 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 140 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 140 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 140 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 140 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 141 "data/maps/NewMap3/scripts.pory"
+	step_end
+
+# 144 "data/maps/NewMap3/scripts.pory"
+NewMap3_Movement_BoyWalksUpToPlayer2:
+# 145 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 145 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 145 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 145 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 146 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 146 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 146 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 147 "data/maps/NewMap3/scripts.pory"
+	step_end
+
+# 150 "data/maps/NewMap3/scripts.pory"
+NewMap3_Movement_BoyWalksaway1:
+# 151 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 151 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 151 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 151 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 152 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 152 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 152 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 152 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 153 "data/maps/NewMap3/scripts.pory"
+	step_end
+
+# 156 "data/maps/NewMap3/scripts.pory"
+NewMap3_Movement_BoyWalksaway2:
+# 157 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 157 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 157 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 157 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 158 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 158 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 158 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 159 "data/maps/NewMap3/scripts.pory"
+	step_end
+
+# 162 "data/maps/NewMap3/scripts.pory"
+NewMap3_Movement_ForcePlayerAway:
+# 163 "data/maps/NewMap3/scripts.pory"
 	face_down
-# 112 "data/maps/NewMap3/scripts.pory"
+# 164 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 113 "data/maps/NewMap3/scripts.pory"
+# 165 "data/maps/NewMap3/scripts.pory"
+	step_end
+
+# 168 "data/maps/NewMap3/scripts.pory"
+NewMap3_Movement_ForcePlayerAway2:
+# 169 "data/maps/NewMap3/scripts.pory"
+	face_down
+# 170 "data/maps/NewMap3/scripts.pory"
+	walk_down
+# 171 "data/maps/NewMap3/scripts.pory"
 	step_end
 
 BoyonYourteamChat_Eventscript_CustomFollowerScript::
-# 117 "data/maps/NewMap3/scripts.pory"
+# 175 "data/maps/NewMap3/scripts.pory"
 	facefollower
-# 118 "data/maps/NewMap3/scripts.pory"
+# 176 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_BoyNeedsHelp_Text_3
-# 119 "data/maps/NewMap3/scripts.pory"
+# 177 "data/maps/NewMap3/scripts.pory"
 	dynmultichoice 1, 1, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, BoyonYourteamChat_Eventscript_CustomFollowerScript_Text_0, BoyonYourteamChat_Eventscript_CustomFollowerScript_Text_1
-# 121 "data/maps/NewMap3/scripts.pory"
+# 179 "data/maps/NewMap3/scripts.pory"
 	closemessage
-# 122 "data/maps/NewMap3/scripts.pory"
+# 180 "data/maps/NewMap3/scripts.pory"
 	switch VAR_RESULT
-# 123 "data/maps/NewMap3/scripts.pory"
+# 181 "data/maps/NewMap3/scripts.pory"
 	case 0, BoyonYourteamChat_Eventscript_CustomFollowerScript_2
-# 126 "data/maps/NewMap3/scripts.pory"
+# 184 "data/maps/NewMap3/scripts.pory"
 	case 1, BoyonYourteamChat_Eventscript_CustomFollowerScript_3
 	return
 
 BoyonYourteamChat_Eventscript_CustomFollowerScript_2:
-# 124 "data/maps/NewMap3/scripts.pory"
+# 182 "data/maps/NewMap3/scripts.pory"
 	msgbox BoyonYourteamChat_Eventscript_CustomFollowerScript_Text_2
-# 125 "data/maps/NewMap3/scripts.pory"
+# 183 "data/maps/NewMap3/scripts.pory"
 	closemessage
 	return
 
 BoyonYourteamChat_Eventscript_CustomFollowerScript_3:
-# 127 "data/maps/NewMap3/scripts.pory"
+# 185 "data/maps/NewMap3/scripts.pory"
 	msgbox BoyonYourteamChat_Eventscript_CustomFollowerScript_Text_3
-# 128 "data/maps/NewMap3/scripts.pory"
+# 186 "data/maps/NewMap3/scripts.pory"
 	closemessage
 	return
 
 
 NewMap3_EventScript_WeatherTrigger01::
-# 133 "data/maps/NewMap3/scripts.pory"
+# 191 "data/maps/NewMap3/scripts.pory"
 	lock
-# 134 "data/maps/NewMap3/scripts.pory"
+# 192 "data/maps/NewMap3/scripts.pory"
 	setweather WEATHER_SHADE
-# 135 "data/maps/NewMap3/scripts.pory"
+# 193 "data/maps/NewMap3/scripts.pory"
 	doweather
-# 136 "data/maps/NewMap3/scripts.pory"
+# 194 "data/maps/NewMap3/scripts.pory"
 	setvar VAR_NewMap3_STATE, 2
-# 137 "data/maps/NewMap3/scripts.pory"
+# 195 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 
 NewMap3_EventScript_WeatherTrigger02::
-# 141 "data/maps/NewMap3/scripts.pory"
+# 199 "data/maps/NewMap3/scripts.pory"
 	lock
-# 142 "data/maps/NewMap3/scripts.pory"
+# 200 "data/maps/NewMap3/scripts.pory"
 	setweather WEATHER_RAIN
-# 143 "data/maps/NewMap3/scripts.pory"
+# 201 "data/maps/NewMap3/scripts.pory"
 	doweather
-# 144 "data/maps/NewMap3/scripts.pory"
+# 202 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_WeatherTrigger02_Text_0
-# 145 "data/maps/NewMap3/scripts.pory"
+# 203 "data/maps/NewMap3/scripts.pory"
 	waitmessage
-# 146 "data/maps/NewMap3/scripts.pory"
+# 204 "data/maps/NewMap3/scripts.pory"
 	setvar VAR_NewMap3_STATE, 3
-# 147 "data/maps/NewMap3/scripts.pory"
+# 205 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 
 NewMap3_EventScript_WeatherTrigger03::
-# 151 "data/maps/NewMap3/scripts.pory"
+# 209 "data/maps/NewMap3/scripts.pory"
 	lock
-# 152 "data/maps/NewMap3/scripts.pory"
+# 210 "data/maps/NewMap3/scripts.pory"
 	setweather WEATHER_DOWNPOUR
-# 153 "data/maps/NewMap3/scripts.pory"
+# 211 "data/maps/NewMap3/scripts.pory"
 	doweather
-# 154 "data/maps/NewMap3/scripts.pory"
+# 212 "data/maps/NewMap3/scripts.pory"
 	playse SE_DOWNPOUR
-# 155 "data/maps/NewMap3/scripts.pory"
+# 213 "data/maps/NewMap3/scripts.pory"
 	waitse
-# 156 "data/maps/NewMap3/scripts.pory"
+# 214 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_WeatherTrigger03_Text_0
-# 157 "data/maps/NewMap3/scripts.pory"
+# 215 "data/maps/NewMap3/scripts.pory"
 	waitmessage
-# 158 "data/maps/NewMap3/scripts.pory"
+# 216 "data/maps/NewMap3/scripts.pory"
 	setvar VAR_NewMap3_STATE, 4
-# 159 "data/maps/NewMap3/scripts.pory"
+# 217 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 
 NewMap3_EventScript_Trigger08::
-# 163 "data/maps/NewMap3/scripts.pory"
+# 221 "data/maps/NewMap3/scripts.pory"
 	lock
-# 164 "data/maps/NewMap3/scripts.pory"
+# 222 "data/maps/NewMap3/scripts.pory"
 	applymovement 15, NewMap3_Movement_BoyFacesPlayer
-# 165 "data/maps/NewMap3/scripts.pory"
+# 223 "data/maps/NewMap3/scripts.pory"
 	waitmovement 3
-# 166 "data/maps/NewMap3/scripts.pory"
+# 224 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_Trigger08_Text_0
-# 167 "data/maps/NewMap3/scripts.pory"
+# 225 "data/maps/NewMap3/scripts.pory"
 	waitmessage
-# 168 "data/maps/NewMap3/scripts.pory"
+# 226 "data/maps/NewMap3/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerUp
-# 169 "data/maps/NewMap3/scripts.pory"
+# 227 "data/maps/NewMap3/scripts.pory"
 	waitmovement 0
-# 170 "data/maps/NewMap3/scripts.pory"
+# 228 "data/maps/NewMap3/scripts.pory"
 	applymovement 15, NewMap3_Movement_BoyFacesup
-# 171 "data/maps/NewMap3/scripts.pory"
+# 229 "data/maps/NewMap3/scripts.pory"
 	waitmovement 3
-# 172 "data/maps/NewMap3/scripts.pory"
-	releaseall
-	return
-
-
-NewMap3_EventScript_Trigger05::
-# 176 "data/maps/NewMap3/scripts.pory"
-	lock
-# 177 "data/maps/NewMap3/scripts.pory"
-	applymovement 15, NewMap3_Movement_BoyFacesPlayerRight
-# 178 "data/maps/NewMap3/scripts.pory"
-	waitmovement 3
-# 179 "data/maps/NewMap3/scripts.pory"
-	msgbox NewMap3_EventScript_Trigger08_Text_0
-# 180 "data/maps/NewMap3/scripts.pory"
-	waitmessage
-# 181 "data/maps/NewMap3/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerUp
-# 182 "data/maps/NewMap3/scripts.pory"
-	waitmovement 0
-# 183 "data/maps/NewMap3/scripts.pory"
-	applymovement 15, NewMap3_Movement_BoyFacesup
-# 184 "data/maps/NewMap3/scripts.pory"
-	waitmovement 3
-# 185 "data/maps/NewMap3/scripts.pory"
+# 230 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 
 NewMap3_EventScript_Trigger06::
-# 189 "data/maps/NewMap3/scripts.pory"
+# 234 "data/maps/NewMap3/scripts.pory"
 	lock
-# 190 "data/maps/NewMap3/scripts.pory"
+# 235 "data/maps/NewMap3/scripts.pory"
 	applymovement 15, NewMap3_Movement_BoyFacesPlayerRight
-# 191 "data/maps/NewMap3/scripts.pory"
+# 236 "data/maps/NewMap3/scripts.pory"
 	waitmovement 3
-# 192 "data/maps/NewMap3/scripts.pory"
+# 237 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_Trigger08_Text_0
-# 193 "data/maps/NewMap3/scripts.pory"
+# 238 "data/maps/NewMap3/scripts.pory"
 	waitmessage
-# 194 "data/maps/NewMap3/scripts.pory"
+# 239 "data/maps/NewMap3/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerLeft
-# 195 "data/maps/NewMap3/scripts.pory"
+# 240 "data/maps/NewMap3/scripts.pory"
 	waitmovement 0
-# 196 "data/maps/NewMap3/scripts.pory"
+# 241 "data/maps/NewMap3/scripts.pory"
 	applymovement 15, NewMap3_Movement_BoyFacesup
-# 197 "data/maps/NewMap3/scripts.pory"
+# 242 "data/maps/NewMap3/scripts.pory"
 	waitmovement 3
-# 198 "data/maps/NewMap3/scripts.pory"
+# 243 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 
 NewMap3_EventScript_Trigger07::
-# 202 "data/maps/NewMap3/scripts.pory"
+# 247 "data/maps/NewMap3/scripts.pory"
 	lock
-# 203 "data/maps/NewMap3/scripts.pory"
+# 248 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_Trigger08_Text_0
-# 204 "data/maps/NewMap3/scripts.pory"
+# 249 "data/maps/NewMap3/scripts.pory"
 	waitmessage
-# 205 "data/maps/NewMap3/scripts.pory"
+# 250 "data/maps/NewMap3/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerDown
-# 206 "data/maps/NewMap3/scripts.pory"
+# 251 "data/maps/NewMap3/scripts.pory"
 	waitmovement 0
-# 207 "data/maps/NewMap3/scripts.pory"
+# 252 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 
 NewMap3_EventScript_TriggerNoExit::
-# 211 "data/maps/NewMap3/scripts.pory"
+# 256 "data/maps/NewMap3/scripts.pory"
 	lock
-# 212 "data/maps/NewMap3/scripts.pory"
+# 257 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_TriggerNoExit_Text_0
-# 213 "data/maps/NewMap3/scripts.pory"
+# 258 "data/maps/NewMap3/scripts.pory"
 	waitmessage
-# 214 "data/maps/NewMap3/scripts.pory"
+# 259 "data/maps/NewMap3/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerRight
-# 215 "data/maps/NewMap3/scripts.pory"
+# 260 "data/maps/NewMap3/scripts.pory"
 	waitmovement 0
-# 216 "data/maps/NewMap3/scripts.pory"
+# 261 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 
 NewMap3_EventScript_TriggerNoExit2::
-# 220 "data/maps/NewMap3/scripts.pory"
+# 265 "data/maps/NewMap3/scripts.pory"
 	lock
-# 221 "data/maps/NewMap3/scripts.pory"
+# 266 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_TriggerNoExit2_Text_0
-# 222 "data/maps/NewMap3/scripts.pory"
+# 267 "data/maps/NewMap3/scripts.pory"
 	waitmessage
-# 223 "data/maps/NewMap3/scripts.pory"
+# 268 "data/maps/NewMap3/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerRight
-# 224 "data/maps/NewMap3/scripts.pory"
+# 269 "data/maps/NewMap3/scripts.pory"
 	waitmovement 0
-# 225 "data/maps/NewMap3/scripts.pory"
+# 270 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 
 NewMap3_EventScript_Trigger04::
-# 229 "data/maps/NewMap3/scripts.pory"
-	lock
-# 230 "data/maps/NewMap3/scripts.pory"
-	msgbox NewMap3_EventScript_Trigger04_Text_0
-# 231 "data/maps/NewMap3/scripts.pory"
-	waitmessage
-# 232 "data/maps/NewMap3/scripts.pory"
-	applymovement 3, NewMap3_Movement_BoyWalkUpTowardsBattle
-# 233 "data/maps/NewMap3/scripts.pory"
-	waitmovement 3
-# 234 "data/maps/NewMap3/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_WalkUpTowardsNoise
-# 235 "data/maps/NewMap3/scripts.pory"
-	waitmovement 0
-# 236 "data/maps/NewMap3/scripts.pory"
-	msgbox NewMap3_EventScript_Trigger04_Text_1
-# 237 "data/maps/NewMap3/scripts.pory"
-	waitmessage
-# 238 "data/maps/NewMap3/scripts.pory"
-	applymovement 2, NewMap3_Movement_URSARINGAttacksURSALUNA
-# 239 "data/maps/NewMap3/scripts.pory"
-	waitmovement 2
-# 240 "data/maps/NewMap3/scripts.pory"
-	playmoncry SPECIES_URSARING, CRY_MODE_ENCOUNTER
-# 241 "data/maps/NewMap3/scripts.pory"
-	applymovement 2, NewMap3_Movement_URSARINGAttacksURSALUNA
-# 242 "data/maps/NewMap3/scripts.pory"
-	waitmovement 2
-# 243 "data/maps/NewMap3/scripts.pory"
-	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
-# 244 "data/maps/NewMap3/scripts.pory"
-	waitmovement 4
-# 245 "data/maps/NewMap3/scripts.pory"
-	playmoncry SPECIES_URSALUNA, CRY_MODE_ENCOUNTER
-# 246 "data/maps/NewMap3/scripts.pory"
-	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
-# 247 "data/maps/NewMap3/scripts.pory"
-	waitmovement 4
-# 248 "data/maps/NewMap3/scripts.pory"
-	applymovement 2, NewMap3_Movement_URSARINGAttacksURSALUNA
-# 249 "data/maps/NewMap3/scripts.pory"
-	waitmovement 2
-# 250 "data/maps/NewMap3/scripts.pory"
-	playmoncry SPECIES_URSARING, CRY_MODE_ENCOUNTER
-# 251 "data/maps/NewMap3/scripts.pory"
-	applymovement 2, NewMap3_Movement_URSARINGAttacksURSALUNA
-# 252 "data/maps/NewMap3/scripts.pory"
-	waitmovement 2
-# 253 "data/maps/NewMap3/scripts.pory"
-	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
-# 254 "data/maps/NewMap3/scripts.pory"
-	waitmovement 4
-# 255 "data/maps/NewMap3/scripts.pory"
-	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
-# 256 "data/maps/NewMap3/scripts.pory"
-	waitmovement 4
-# 257 "data/maps/NewMap3/scripts.pory"
-	playmoncry SPECIES_URSALUNA, CRY_MODE_ENCOUNTER
-# 258 "data/maps/NewMap3/scripts.pory"
-	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
-# 259 "data/maps/NewMap3/scripts.pory"
-	waitmovement 4
-# 260 "data/maps/NewMap3/scripts.pory"
-	setflag FLAG_URSARING_0x037
-# 261 "data/maps/NewMap3/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 262 "data/maps/NewMap3/scripts.pory"
-	removeobject 2
-# 263 "data/maps/NewMap3/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-# 264 "data/maps/NewMap3/scripts.pory"
-	msgbox NewMap3_EventScript_Trigger04_Text_2
-# 265 "data/maps/NewMap3/scripts.pory"
-	waitmessage
-# 266 "data/maps/NewMap3/scripts.pory"
-	playse SE_THUNDERSTORM
-# 267 "data/maps/NewMap3/scripts.pory"
-	waitse
-# 268 "data/maps/NewMap3/scripts.pory"
-	setflag FLAG_NewMap3Boy_0x036
-# 269 "data/maps/NewMap3/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 270 "data/maps/NewMap3/scripts.pory"
-	destroyfollower
-# 271 "data/maps/NewMap3/scripts.pory"
-	setobjectxy 15, 29, 13
-# 272 "data/maps/NewMap3/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-# 273 "data/maps/NewMap3/scripts.pory"
-	msgbox NewMap3_EventScript_Trigger04_Text_3
 # 274 "data/maps/NewMap3/scripts.pory"
-	waitmessage
+	lock
 # 275 "data/maps/NewMap3/scripts.pory"
-	applymovement 1, NewMap3_Movement_GirlRunsAway
+	msgbox NewMap3_EventScript_Trigger04_Text_0
 # 276 "data/maps/NewMap3/scripts.pory"
-	waitmovement 1
+	waitmessage
 # 277 "data/maps/NewMap3/scripts.pory"
-	applymovement 4, NewMap3_Movement_URSALUNAchasesGirl
+	applymovement 3, NewMap3_Movement_BoyWalkUpTowardsBattle
 # 278 "data/maps/NewMap3/scripts.pory"
-	waitmovement 0
+	waitmovement 3
 # 279 "data/maps/NewMap3/scripts.pory"
-	playmoncry SPECIES_URSALUNA_BLOODMOON, CRY_MODE_ENCOUNTER
+	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_WalkUpTowardsNoise
 # 280 "data/maps/NewMap3/scripts.pory"
-	waitmoncry
+	waitmovement 0
 # 281 "data/maps/NewMap3/scripts.pory"
-	msgbox NewMap3_EventScript_Trigger04_Text_4
+	msgbox NewMap3_EventScript_Trigger04_Text_1
 # 282 "data/maps/NewMap3/scripts.pory"
 	waitmessage
 # 283 "data/maps/NewMap3/scripts.pory"
-	applymovement 15, NewMap3_Movement_BoySeessister
+	applymovement 2, NewMap3_Movement_URSARINGAttacksURSALUNA
 # 284 "data/maps/NewMap3/scripts.pory"
-	waitmovement 0
+	waitmovement 2
 # 285 "data/maps/NewMap3/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_WalkUpTowardsBattle
+	playmoncry SPECIES_URSARING, CRY_MODE_ENCOUNTER
 # 286 "data/maps/NewMap3/scripts.pory"
-	waitmovement 0
+	applymovement 2, NewMap3_Movement_URSARINGAttacksURSALUNA
 # 287 "data/maps/NewMap3/scripts.pory"
-	msgbox NewMap3_EventScript_Trigger04_Text_5
+	waitmovement 2
 # 288 "data/maps/NewMap3/scripts.pory"
-	waitmessage
+	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
 # 289 "data/maps/NewMap3/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_FaceUrsalunaBattle
+	waitmovement 4
 # 290 "data/maps/NewMap3/scripts.pory"
-	waitmovement 0
+	playmoncry SPECIES_URSALUNA, CRY_MODE_ENCOUNTER
 # 291 "data/maps/NewMap3/scripts.pory"
-	setvar VAR_NewMap3_STATE, 4
+	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
 # 292 "data/maps/NewMap3/scripts.pory"
+	waitmovement 4
+# 293 "data/maps/NewMap3/scripts.pory"
+	applymovement 2, NewMap3_Movement_URSARINGAttacksURSALUNA
+# 294 "data/maps/NewMap3/scripts.pory"
+	waitmovement 2
+# 295 "data/maps/NewMap3/scripts.pory"
+	playmoncry SPECIES_URSARING, CRY_MODE_ENCOUNTER
+# 296 "data/maps/NewMap3/scripts.pory"
+	applymovement 2, NewMap3_Movement_URSARINGAttacksURSALUNA
+# 297 "data/maps/NewMap3/scripts.pory"
+	waitmovement 2
+# 298 "data/maps/NewMap3/scripts.pory"
+	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
+# 299 "data/maps/NewMap3/scripts.pory"
+	waitmovement 4
+# 300 "data/maps/NewMap3/scripts.pory"
+	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
+# 301 "data/maps/NewMap3/scripts.pory"
+	waitmovement 4
+# 302 "data/maps/NewMap3/scripts.pory"
+	playmoncry SPECIES_URSALUNA, CRY_MODE_ENCOUNTER
+# 303 "data/maps/NewMap3/scripts.pory"
+	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
+# 304 "data/maps/NewMap3/scripts.pory"
+	waitmovement 4
+# 305 "data/maps/NewMap3/scripts.pory"
+	setflag FLAG_URSARING_0x037
+# 306 "data/maps/NewMap3/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 307 "data/maps/NewMap3/scripts.pory"
+	removeobject 2
+# 308 "data/maps/NewMap3/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 309 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_Trigger04_Text_2
+# 310 "data/maps/NewMap3/scripts.pory"
+	waitmessage
+# 311 "data/maps/NewMap3/scripts.pory"
+	setflag FLAG_NewMap3Boy_0x036
+# 312 "data/maps/NewMap3/scripts.pory"
+	setflag FLAG_URSALUNA_0x038
+# 313 "data/maps/NewMap3/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 314 "data/maps/NewMap3/scripts.pory"
+	removeobject 4
+# 315 "data/maps/NewMap3/scripts.pory"
+	destroyfollower
+# 316 "data/maps/NewMap3/scripts.pory"
+	setobjectxy 15, 29, 13
+# 317 "data/maps/NewMap3/scripts.pory"
+	setobjectxy 16, 32, 11
+# 318 "data/maps/NewMap3/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 319 "data/maps/NewMap3/scripts.pory"
+	setweather WEATHER_RAIN_THUNDERSTORM
+# 320 "data/maps/NewMap3/scripts.pory"
+	doweather
+# 321 "data/maps/NewMap3/scripts.pory"
+	playse SE_THUNDER
+# 322 "data/maps/NewMap3/scripts.pory"
+	waitse
+# 323 "data/maps/NewMap3/scripts.pory"
+	playse SE_THUNDER
+# 324 "data/maps/NewMap3/scripts.pory"
+	waitse
+# 325 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_Trigger04_Text_3
+# 326 "data/maps/NewMap3/scripts.pory"
+	waitmessage
+# 327 "data/maps/NewMap3/scripts.pory"
+	applymovement 1, NewMap3_Movement_GirlRunsAway
+# 328 "data/maps/NewMap3/scripts.pory"
+	waitmovement 1
+# 329 "data/maps/NewMap3/scripts.pory"
+	applymovement 16, NewMap3_Movement_URSALUNAchasesGirl
+# 330 "data/maps/NewMap3/scripts.pory"
+	waitmovement 0
+# 331 "data/maps/NewMap3/scripts.pory"
+	playmoncry SPECIES_URSALUNA_BLOODMOON, CRY_MODE_ENCOUNTER
+# 332 "data/maps/NewMap3/scripts.pory"
+	waitmoncry
+# 333 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_Trigger04_Text_4
+# 334 "data/maps/NewMap3/scripts.pory"
+	waitmessage
+# 335 "data/maps/NewMap3/scripts.pory"
+	applymovement 15, NewMap3_Movement_BoySeessister
+# 336 "data/maps/NewMap3/scripts.pory"
+	waitmovement 0
+# 337 "data/maps/NewMap3/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_WalkUpTowardsBattle
+# 338 "data/maps/NewMap3/scripts.pory"
+	waitmovement 0
+# 339 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_Trigger04_Text_5
+# 340 "data/maps/NewMap3/scripts.pory"
+	waitmessage
+# 341 "data/maps/NewMap3/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_FaceUrsalunaBattle
+# 342 "data/maps/NewMap3/scripts.pory"
+	waitmovement 0
+# 343 "data/maps/NewMap3/scripts.pory"
+	setvar VAR_NewMap3_STATE, 4
+# 344 "data/maps/NewMap3/scripts.pory"
+	releaseall
+	return
+
+
+NewMap3_EventScript_Trigger042::
+# 348 "data/maps/NewMap3/scripts.pory"
+	lock
+# 349 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_Trigger04_Text_0
+# 350 "data/maps/NewMap3/scripts.pory"
+	waitmessage
+# 351 "data/maps/NewMap3/scripts.pory"
+	applymovement 3, NewMap3_Movement_BoyWalkUpTowardsBattle2
+# 352 "data/maps/NewMap3/scripts.pory"
+	waitmovement 3
+# 353 "data/maps/NewMap3/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_WalkUpTowardsNoise2
+# 354 "data/maps/NewMap3/scripts.pory"
+	waitmovement 0
+# 355 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_Trigger042_Text_0
+# 356 "data/maps/NewMap3/scripts.pory"
+	waitmessage
+# 357 "data/maps/NewMap3/scripts.pory"
+	applymovement 2, NewMap3_Movement_URSARINGAttacksURSALUNA
+# 358 "data/maps/NewMap3/scripts.pory"
+	waitmovement 2
+# 359 "data/maps/NewMap3/scripts.pory"
+	playmoncry SPECIES_URSARING, CRY_MODE_ENCOUNTER
+# 360 "data/maps/NewMap3/scripts.pory"
+	applymovement 2, NewMap3_Movement_URSARINGAttacksURSALUNA
+# 361 "data/maps/NewMap3/scripts.pory"
+	waitmovement 2
+# 362 "data/maps/NewMap3/scripts.pory"
+	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
+# 363 "data/maps/NewMap3/scripts.pory"
+	waitmovement 4
+# 364 "data/maps/NewMap3/scripts.pory"
+	playmoncry SPECIES_URSALUNA, CRY_MODE_ENCOUNTER
+# 365 "data/maps/NewMap3/scripts.pory"
+	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
+# 366 "data/maps/NewMap3/scripts.pory"
+	waitmovement 4
+# 367 "data/maps/NewMap3/scripts.pory"
+	applymovement 2, NewMap3_Movement_URSARINGAttacksURSALUNA
+# 368 "data/maps/NewMap3/scripts.pory"
+	waitmovement 2
+# 369 "data/maps/NewMap3/scripts.pory"
+	playmoncry SPECIES_URSARING, CRY_MODE_ENCOUNTER
+# 370 "data/maps/NewMap3/scripts.pory"
+	applymovement 2, NewMap3_Movement_URSARINGAttacksURSALUNA
+# 371 "data/maps/NewMap3/scripts.pory"
+	waitmovement 2
+# 372 "data/maps/NewMap3/scripts.pory"
+	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
+# 373 "data/maps/NewMap3/scripts.pory"
+	waitmovement 4
+# 374 "data/maps/NewMap3/scripts.pory"
+	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
+# 375 "data/maps/NewMap3/scripts.pory"
+	waitmovement 4
+# 376 "data/maps/NewMap3/scripts.pory"
+	playmoncry SPECIES_URSALUNA, CRY_MODE_ENCOUNTER
+# 377 "data/maps/NewMap3/scripts.pory"
+	applymovement 4, NewMap3_Movement_URSALUNAAttacksURSARING
+# 378 "data/maps/NewMap3/scripts.pory"
+	waitmovement 4
+# 379 "data/maps/NewMap3/scripts.pory"
+	setflag FLAG_URSARING_0x037
+# 380 "data/maps/NewMap3/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 381 "data/maps/NewMap3/scripts.pory"
+	removeobject 2
+# 382 "data/maps/NewMap3/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 383 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_Trigger04_Text_2
+# 384 "data/maps/NewMap3/scripts.pory"
+	waitmessage
+# 385 "data/maps/NewMap3/scripts.pory"
+	closemessage
+# 386 "data/maps/NewMap3/scripts.pory"
+	setflag FLAG_NewMap3Boy_0x036
+# 387 "data/maps/NewMap3/scripts.pory"
+	setflag FLAG_URSALUNA_0x038
+# 388 "data/maps/NewMap3/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 389 "data/maps/NewMap3/scripts.pory"
+	removeobject 4
+# 390 "data/maps/NewMap3/scripts.pory"
+	destroyfollower
+# 391 "data/maps/NewMap3/scripts.pory"
+	setobjectxy 15, 29, 13
+# 392 "data/maps/NewMap3/scripts.pory"
+	setobjectxy 16, 32, 11
+# 393 "data/maps/NewMap3/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 394 "data/maps/NewMap3/scripts.pory"
+	setweather WEATHER_RAIN_THUNDERSTORM
+# 395 "data/maps/NewMap3/scripts.pory"
+	doweather
+# 396 "data/maps/NewMap3/scripts.pory"
+	playse SE_THUNDER
+# 397 "data/maps/NewMap3/scripts.pory"
+	waitse
+# 398 "data/maps/NewMap3/scripts.pory"
+	playse SE_THUNDER
+# 399 "data/maps/NewMap3/scripts.pory"
+	waitse
+# 400 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_Trigger04_Text_3
+# 401 "data/maps/NewMap3/scripts.pory"
+	waitmessage
+# 402 "data/maps/NewMap3/scripts.pory"
+	applymovement 1, NewMap3_Movement_GirlRunsAway
+# 403 "data/maps/NewMap3/scripts.pory"
+	waitmovement 1
+# 404 "data/maps/NewMap3/scripts.pory"
+	applymovement 16, NewMap3_Movement_URSALUNAchasesGirl
+# 405 "data/maps/NewMap3/scripts.pory"
+	waitmovement 0
+# 406 "data/maps/NewMap3/scripts.pory"
+	playmoncry SPECIES_URSALUNA_BLOODMOON, CRY_MODE_ENCOUNTER
+# 407 "data/maps/NewMap3/scripts.pory"
+	waitmoncry
+# 408 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_Trigger04_Text_4
+# 409 "data/maps/NewMap3/scripts.pory"
+	waitmessage
+# 410 "data/maps/NewMap3/scripts.pory"
+	applymovement 15, NewMap3_Movement_BoySeessister
+# 411 "data/maps/NewMap3/scripts.pory"
+	waitmovement 0
+# 412 "data/maps/NewMap3/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_WalkUpTowardsBattle
+# 413 "data/maps/NewMap3/scripts.pory"
+	waitmovement 0
+# 414 "data/maps/NewMap3/scripts.pory"
+	msgbox NewMap3_EventScript_Trigger04_Text_5
+# 415 "data/maps/NewMap3/scripts.pory"
+	waitmessage
+# 416 "data/maps/NewMap3/scripts.pory"
+	closemessage
+# 417 "data/maps/NewMap3/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, NewMap3_Movement_FaceUrsalunaBattle
+# 418 "data/maps/NewMap3/scripts.pory"
+	waitmovement 0
+# 419 "data/maps/NewMap3/scripts.pory"
+	setvar VAR_NewMap3_STATE, 4
+# 420 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 
 NewMap3_EventScript_UrsalunaBattle::
-# 296 "data/maps/NewMap3/scripts.pory"
+# 424 "data/maps/NewMap3/scripts.pory"
 	lock
-# 297 "data/maps/NewMap3/scripts.pory"
+# 425 "data/maps/NewMap3/scripts.pory"
 	faceplayer
-# 298 "data/maps/NewMap3/scripts.pory"
+# 426 "data/maps/NewMap3/scripts.pory"
+	playse SE_THUNDER
+# 427 "data/maps/NewMap3/scripts.pory"
+	waitse
+# 428 "data/maps/NewMap3/scripts.pory"
 	playmoncry SPECIES_URSALUNA_BLOODMOON, CRY_MODE_ENCOUNTER
-# 299 "data/maps/NewMap3/scripts.pory"
+# 429 "data/maps/NewMap3/scripts.pory"
 	delay 40
-# 300 "data/maps/NewMap3/scripts.pory"
+# 430 "data/maps/NewMap3/scripts.pory"
 	waitmoncry
-# 301 "data/maps/NewMap3/scripts.pory"
+# 431 "data/maps/NewMap3/scripts.pory"
 	setwildbattle SPECIES_URSALUNA_BLOODMOON, 30
-# 302 "data/maps/NewMap3/scripts.pory"
+# 432 "data/maps/NewMap3/scripts.pory"
 	dowildbattle
-# 303 "data/maps/NewMap3/scripts.pory"
+# 433 "data/maps/NewMap3/scripts.pory"
 	setflag FLAG_NewMap3Girl_0x03A
-# 304 "data/maps/NewMap3/scripts.pory"
-	setflag FLAG_URSALUNA_0x038
-# 305 "data/maps/NewMap3/scripts.pory"
+# 434 "data/maps/NewMap3/scripts.pory"
+	setflag FLAG_Bloodmoonursula_0x03D
+# 435 "data/maps/NewMap3/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 306 "data/maps/NewMap3/scripts.pory"
-	removeobject 4
-# 307 "data/maps/NewMap3/scripts.pory"
+# 436 "data/maps/NewMap3/scripts.pory"
+	removeobject 16
+# 437 "data/maps/NewMap3/scripts.pory"
 	setobjectxy 1, 32, 9
-# 308 "data/maps/NewMap3/scripts.pory"
+# 438 "data/maps/NewMap3/scripts.pory"
 	turnobject 1, DIR_WEST
-# 309 "data/maps/NewMap3/scripts.pory"
+# 439 "data/maps/NewMap3/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 310 "data/maps/NewMap3/scripts.pory"
+# 440 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_UrsalunaBattle_Text_0
-# 311 "data/maps/NewMap3/scripts.pory"
+# 441 "data/maps/NewMap3/scripts.pory"
 	waitmessage
-# 312 "data/maps/NewMap3/scripts.pory"
+# 442 "data/maps/NewMap3/scripts.pory"
 	applymovement 15, NewMap3_Movement_BoyApproachesAfterBattle
-# 313 "data/maps/NewMap3/scripts.pory"
+# 443 "data/maps/NewMap3/scripts.pory"
 	waitmovement 3
-# 314 "data/maps/NewMap3/scripts.pory"
+# 444 "data/maps/NewMap3/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
+# 445 "data/maps/NewMap3/scripts.pory"
+	delay 8
+# 446 "data/maps/NewMap3/scripts.pory"
 	msgbox NewMap3_EventScript_UrsalunaBattle_Text_1
-# 315 "data/maps/NewMap3/scripts.pory"
+# 447 "data/maps/NewMap3/scripts.pory"
 	waitmessage
-# 316 "data/maps/NewMap3/scripts.pory"
+# 448 "data/maps/NewMap3/scripts.pory"
+	closemessage
+# 449 "data/maps/NewMap3/scripts.pory"
 	applymovement 15, NewMap3_Movement_BoyLeaves
-# 317 "data/maps/NewMap3/scripts.pory"
+# 450 "data/maps/NewMap3/scripts.pory"
 	waitmovement 3
-# 318 "data/maps/NewMap3/scripts.pory"
+# 451 "data/maps/NewMap3/scripts.pory"
 	applymovement 1, NewMap3_Movement_GirlLeaves
-# 319 "data/maps/NewMap3/scripts.pory"
+# 452 "data/maps/NewMap3/scripts.pory"
 	waitmovement 1
-# 320 "data/maps/NewMap3/scripts.pory"
+# 453 "data/maps/NewMap3/scripts.pory"
 	setflag FLAG_boy2newmap3_0x039
-# 321 "data/maps/NewMap3/scripts.pory"
+# 454 "data/maps/NewMap3/scripts.pory"
 	setflag FLAG_NewMap3Girl_0x03A
-# 322 "data/maps/NewMap3/scripts.pory"
+# 455 "data/maps/NewMap3/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 323 "data/maps/NewMap3/scripts.pory"
+# 456 "data/maps/NewMap3/scripts.pory"
 	removeobject 15
-# 324 "data/maps/NewMap3/scripts.pory"
+# 457 "data/maps/NewMap3/scripts.pory"
 	removeobject 1
-# 325 "data/maps/NewMap3/scripts.pory"
+# 458 "data/maps/NewMap3/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 326 "data/maps/NewMap3/scripts.pory"
-	setweather WEATHER_NONE
-# 327 "data/maps/NewMap3/scripts.pory"
-	doweather
-# 328 "data/maps/NewMap3/scripts.pory"
+# 459 "data/maps/NewMap3/scripts.pory"
 	setvar VAR_NewMap3_STATE, 5
-# 329 "data/maps/NewMap3/scripts.pory"
+# 460 "data/maps/NewMap3/scripts.pory"
 	releaseall
 	return
 
 
-# 332 "data/maps/NewMap3/scripts.pory"
+# 463 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_WalkUpTowardsNoise:
-# 333 "data/maps/NewMap3/scripts.pory"
+# 464 "data/maps/NewMap3/scripts.pory"
 	face_up
-# 334 "data/maps/NewMap3/scripts.pory"
+# 465 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 334 "data/maps/NewMap3/scripts.pory"
+# 465 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 334 "data/maps/NewMap3/scripts.pory"
+# 465 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 334 "data/maps/NewMap3/scripts.pory"
+# 465 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 335 "data/maps/NewMap3/scripts.pory"
+# 466 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 337 "data/maps/NewMap3/scripts.pory"
+# 469 "data/maps/NewMap3/scripts.pory"
+NewMap3_Movement_WalkUpTowardsNoise2:
+# 470 "data/maps/NewMap3/scripts.pory"
+	face_right
+# 471 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 472 "data/maps/NewMap3/scripts.pory"
+	walk_up
+# 472 "data/maps/NewMap3/scripts.pory"
+	walk_up
+# 472 "data/maps/NewMap3/scripts.pory"
+	walk_up
+# 472 "data/maps/NewMap3/scripts.pory"
+	walk_up
+# 473 "data/maps/NewMap3/scripts.pory"
+	step_end
+
+# 476 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_URSARINGAttacksURSALUNA:
-# 338 "data/maps/NewMap3/scripts.pory"
+# 477 "data/maps/NewMap3/scripts.pory"
 	jump_right
-# 339 "data/maps/NewMap3/scripts.pory"
+# 478 "data/maps/NewMap3/scripts.pory"
 	jump_left
-# 340 "data/maps/NewMap3/scripts.pory"
+# 479 "data/maps/NewMap3/scripts.pory"
 	face_right
-# 341 "data/maps/NewMap3/scripts.pory"
+# 480 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 344 "data/maps/NewMap3/scripts.pory"
+# 483 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_URSALUNAAttacksURSARING:
-# 345 "data/maps/NewMap3/scripts.pory"
+# 484 "data/maps/NewMap3/scripts.pory"
 	jump_left
-# 346 "data/maps/NewMap3/scripts.pory"
+# 485 "data/maps/NewMap3/scripts.pory"
 	jump_right
-# 347 "data/maps/NewMap3/scripts.pory"
+# 486 "data/maps/NewMap3/scripts.pory"
 	face_left
-# 348 "data/maps/NewMap3/scripts.pory"
+# 487 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 351 "data/maps/NewMap3/scripts.pory"
+# 490 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_WalkUpTowardsBattle:
-# 352 "data/maps/NewMap3/scripts.pory"
+# 491 "data/maps/NewMap3/scripts.pory"
 	face_up
-# 353 "data/maps/NewMap3/scripts.pory"
+# 492 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 353 "data/maps/NewMap3/scripts.pory"
+# 492 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 354 "data/maps/NewMap3/scripts.pory"
+# 493 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 357 "data/maps/NewMap3/scripts.pory"
+# 496 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_BoySeessister:
-# 358 "data/maps/NewMap3/scripts.pory"
+# 497 "data/maps/NewMap3/scripts.pory"
 	walk_fast_up
-# 359 "data/maps/NewMap3/scripts.pory"
+# 498 "data/maps/NewMap3/scripts.pory"
 	walk_fast_up
-# 360 "data/maps/NewMap3/scripts.pory"
+# 499 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 363 "data/maps/NewMap3/scripts.pory"
+# 502 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_GirlRunsAway:
-# 364 "data/maps/NewMap3/scripts.pory"
+# 503 "data/maps/NewMap3/scripts.pory"
 	face_right
-# 365 "data/maps/NewMap3/scripts.pory"
+# 504 "data/maps/NewMap3/scripts.pory"
 	walk_fast_right
-# 366 "data/maps/NewMap3/scripts.pory"
+# 505 "data/maps/NewMap3/scripts.pory"
 	face_up
-# 367 "data/maps/NewMap3/scripts.pory"
+# 506 "data/maps/NewMap3/scripts.pory"
 	walk_fast_up
-# 367 "data/maps/NewMap3/scripts.pory"
+# 506 "data/maps/NewMap3/scripts.pory"
 	walk_fast_up
-# 368 "data/maps/NewMap3/scripts.pory"
+# 507 "data/maps/NewMap3/scripts.pory"
 	face_right
-# 369 "data/maps/NewMap3/scripts.pory"
+# 508 "data/maps/NewMap3/scripts.pory"
 	walk_fast_right
-# 369 "data/maps/NewMap3/scripts.pory"
+# 508 "data/maps/NewMap3/scripts.pory"
 	walk_fast_right
-# 369 "data/maps/NewMap3/scripts.pory"
+# 508 "data/maps/NewMap3/scripts.pory"
 	walk_fast_right
-# 370 "data/maps/NewMap3/scripts.pory"
+# 509 "data/maps/NewMap3/scripts.pory"
 	face_up
-# 371 "data/maps/NewMap3/scripts.pory"
+# 510 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 372 "data/maps/NewMap3/scripts.pory"
+# 511 "data/maps/NewMap3/scripts.pory"
 	jump_in_place_up
-# 373 "data/maps/NewMap3/scripts.pory"
+# 512 "data/maps/NewMap3/scripts.pory"
 	face_down
-# 374 "data/maps/NewMap3/scripts.pory"
+# 513 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 377 "data/maps/NewMap3/scripts.pory"
+# 516 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_URSALUNAchasesGirl:
-# 378 "data/maps/NewMap3/scripts.pory"
+# 517 "data/maps/NewMap3/scripts.pory"
 	face_up
-# 379 "data/maps/NewMap3/scripts.pory"
+# 518 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 379 "data/maps/NewMap3/scripts.pory"
+# 518 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 380 "data/maps/NewMap3/scripts.pory"
+# 519 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 383 "data/maps/NewMap3/scripts.pory"
+# 522 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_BoyWalkUpTowardsBattle:
-# 384 "data/maps/NewMap3/scripts.pory"
+# 523 "data/maps/NewMap3/scripts.pory"
+	face_left
+# 524 "data/maps/NewMap3/scripts.pory"
+	walk_left
+# 525 "data/maps/NewMap3/scripts.pory"
 	face_up
-# 385 "data/maps/NewMap3/scripts.pory"
+# 526 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 386 "data/maps/NewMap3/scripts.pory"
+# 526 "data/maps/NewMap3/scripts.pory"
+	walk_up
+# 527 "data/maps/NewMap3/scripts.pory"
 	face_right
-# 387 "data/maps/NewMap3/scripts.pory"
+# 528 "data/maps/NewMap3/scripts.pory"
 	walk_right
-# 388 "data/maps/NewMap3/scripts.pory"
+# 528 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 529 "data/maps/NewMap3/scripts.pory"
 	face_up
-# 389 "data/maps/NewMap3/scripts.pory"
+# 530 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 389 "data/maps/NewMap3/scripts.pory"
+# 530 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 389 "data/maps/NewMap3/scripts.pory"
-	walk_up
-# 390 "data/maps/NewMap3/scripts.pory"
+# 531 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 393 "data/maps/NewMap3/scripts.pory"
+# 534 "data/maps/NewMap3/scripts.pory"
+NewMap3_Movement_BoyWalkUpTowardsBattle2:
+# 535 "data/maps/NewMap3/scripts.pory"
+	face_right
+# 536 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 537 "data/maps/NewMap3/scripts.pory"
+	face_up
+# 538 "data/maps/NewMap3/scripts.pory"
+	walk_up
+# 539 "data/maps/NewMap3/scripts.pory"
+	face_right
+# 540 "data/maps/NewMap3/scripts.pory"
+	walk_right
+# 541 "data/maps/NewMap3/scripts.pory"
+	face_up
+# 542 "data/maps/NewMap3/scripts.pory"
+	walk_up
+# 542 "data/maps/NewMap3/scripts.pory"
+	walk_up
+# 542 "data/maps/NewMap3/scripts.pory"
+	walk_up
+# 543 "data/maps/NewMap3/scripts.pory"
+	step_end
+
+# 546 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_BoyFacesPlayer:
-# 394 "data/maps/NewMap3/scripts.pory"
+# 547 "data/maps/NewMap3/scripts.pory"
 	face_left
-# 395 "data/maps/NewMap3/scripts.pory"
+# 548 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 398 "data/maps/NewMap3/scripts.pory"
+# 551 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_BoyFacesup:
-# 399 "data/maps/NewMap3/scripts.pory"
+# 552 "data/maps/NewMap3/scripts.pory"
 	face_up
-# 400 "data/maps/NewMap3/scripts.pory"
+# 553 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 403 "data/maps/NewMap3/scripts.pory"
+# 556 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_ForcePlayerUp:
-# 404 "data/maps/NewMap3/scripts.pory"
+# 557 "data/maps/NewMap3/scripts.pory"
 	face_up
-# 405 "data/maps/NewMap3/scripts.pory"
+# 558 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 406 "data/maps/NewMap3/scripts.pory"
+# 559 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 409 "data/maps/NewMap3/scripts.pory"
+# 562 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_BoyFacesPlayerRight:
-# 410 "data/maps/NewMap3/scripts.pory"
+# 563 "data/maps/NewMap3/scripts.pory"
 	face_right
-# 411 "data/maps/NewMap3/scripts.pory"
+# 564 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 414 "data/maps/NewMap3/scripts.pory"
+# 567 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_ForcePlayerLeft:
-# 415 "data/maps/NewMap3/scripts.pory"
+# 568 "data/maps/NewMap3/scripts.pory"
 	face_left
-# 416 "data/maps/NewMap3/scripts.pory"
+# 569 "data/maps/NewMap3/scripts.pory"
 	walk_left
-# 417 "data/maps/NewMap3/scripts.pory"
+# 570 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 419 "data/maps/NewMap3/scripts.pory"
+# 572 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_ForcePlayerDown:
-# 420 "data/maps/NewMap3/scripts.pory"
+# 573 "data/maps/NewMap3/scripts.pory"
 	face_down
-# 421 "data/maps/NewMap3/scripts.pory"
+# 574 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 422 "data/maps/NewMap3/scripts.pory"
+# 575 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 425 "data/maps/NewMap3/scripts.pory"
+# 578 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_FaceUrsalunaBattle:
-# 426 "data/maps/NewMap3/scripts.pory"
+# 579 "data/maps/NewMap3/scripts.pory"
 	face_up
-# 427 "data/maps/NewMap3/scripts.pory"
+# 580 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 428 "data/maps/NewMap3/scripts.pory"
+# 581 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 430 "data/maps/NewMap3/scripts.pory"
+# 583 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_BoyApproachesAfterBattle:
-# 431 "data/maps/NewMap3/scripts.pory"
+# 584 "data/maps/NewMap3/scripts.pory"
 	face_right
-# 432 "data/maps/NewMap3/scripts.pory"
+# 585 "data/maps/NewMap3/scripts.pory"
 	walk_right
-# 432 "data/maps/NewMap3/scripts.pory"
+# 585 "data/maps/NewMap3/scripts.pory"
 	walk_right
-# 433 "data/maps/NewMap3/scripts.pory"
+# 586 "data/maps/NewMap3/scripts.pory"
 	face_up
-# 434 "data/maps/NewMap3/scripts.pory"
+# 587 "data/maps/NewMap3/scripts.pory"
 	walk_up
-# 435 "data/maps/NewMap3/scripts.pory"
+# 588 "data/maps/NewMap3/scripts.pory"
 	face_player
-# 436 "data/maps/NewMap3/scripts.pory"
+# 589 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 439 "data/maps/NewMap3/scripts.pory"
+# 592 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_BoyLeaves:
-# 440 "data/maps/NewMap3/scripts.pory"
+# 593 "data/maps/NewMap3/scripts.pory"
 	face_left
-# 441 "data/maps/NewMap3/scripts.pory"
+# 594 "data/maps/NewMap3/scripts.pory"
 	walk_left
-# 441 "data/maps/NewMap3/scripts.pory"
+# 594 "data/maps/NewMap3/scripts.pory"
 	walk_left
-# 442 "data/maps/NewMap3/scripts.pory"
+# 595 "data/maps/NewMap3/scripts.pory"
 	face_down
-# 443 "data/maps/NewMap3/scripts.pory"
+# 596 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 443 "data/maps/NewMap3/scripts.pory"
+# 596 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 443 "data/maps/NewMap3/scripts.pory"
+# 596 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 444 "data/maps/NewMap3/scripts.pory"
+# 597 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 444 "data/maps/NewMap3/scripts.pory"
+# 597 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 444 "data/maps/NewMap3/scripts.pory"
+# 597 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 445 "data/maps/NewMap3/scripts.pory"
+# 598 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 448 "data/maps/NewMap3/scripts.pory"
+# 601 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_GirlLeaves:
-# 449 "data/maps/NewMap3/scripts.pory"
+# 602 "data/maps/NewMap3/scripts.pory"
 	face_down
-# 450 "data/maps/NewMap3/scripts.pory"
+# 603 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 451 "data/maps/NewMap3/scripts.pory"
+# 604 "data/maps/NewMap3/scripts.pory"
 	face_left
-# 452 "data/maps/NewMap3/scripts.pory"
+# 605 "data/maps/NewMap3/scripts.pory"
 	walk_left
-# 452 "data/maps/NewMap3/scripts.pory"
+# 605 "data/maps/NewMap3/scripts.pory"
 	walk_left
-# 452 "data/maps/NewMap3/scripts.pory"
+# 605 "data/maps/NewMap3/scripts.pory"
 	walk_left
-# 453 "data/maps/NewMap3/scripts.pory"
+# 606 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 453 "data/maps/NewMap3/scripts.pory"
+# 606 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 453 "data/maps/NewMap3/scripts.pory"
+# 606 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 454 "data/maps/NewMap3/scripts.pory"
+# 607 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 454 "data/maps/NewMap3/scripts.pory"
+# 607 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 454 "data/maps/NewMap3/scripts.pory"
+# 607 "data/maps/NewMap3/scripts.pory"
 	walk_down
-# 455 "data/maps/NewMap3/scripts.pory"
+# 608 "data/maps/NewMap3/scripts.pory"
 	step_end
 
-# 457 "data/maps/NewMap3/scripts.pory"
+# 610 "data/maps/NewMap3/scripts.pory"
 NewMap3_Movement_ForcePlayerRight:
-# 458 "data/maps/NewMap3/scripts.pory"
+# 611 "data/maps/NewMap3/scripts.pory"
 	face_right
-# 459 "data/maps/NewMap3/scripts.pory"
+# 612 "data/maps/NewMap3/scripts.pory"
 	walk_right
-# 460 "data/maps/NewMap3/scripts.pory"
+# 613 "data/maps/NewMap3/scripts.pory"
 	step_end
+
+NewMap3_EventScript_WeatherReturnTrigger::
+# 617 "data/maps/NewMap3/scripts.pory"
+	lockall
+# 618 "data/maps/NewMap3/scripts.pory"
+	setweather WEATHER_NONE
+# 619 "data/maps/NewMap3/scripts.pory"
+	doweather
+# 620 "data/maps/NewMap3/scripts.pory"
+	setvar VAR_NewMap3_STATE, 6
+# 621 "data/maps/NewMap3/scripts.pory"
+	releaseall
+	return
+
 
 NewMap3_EventScript_BoyNeedsHelp_Text_0:
-# 34 "data/maps/NewMap3/scripts.pory"
+# 39 "data/maps/NewMap3/scripts.pory"
 	.string "Leaf: Hey {PLAYER}, I need to head\n"
 	.string "home. Ill catch ya later!$"
 
 NewMap3_EventScript_BoyNeedsHelp_Text_1:
-# 45 "data/maps/NewMap3/scripts.pory"
+# 53 "data/maps/NewMap3/scripts.pory"
 	.string "Hey You, Could you help me find my\n"
 	.string "sister?$"
 
 NewMap3_EventScript_BoyNeedsHelp_Text_2:
-# 46 "data/maps/NewMap3/scripts.pory"
+# 54 "data/maps/NewMap3/scripts.pory"
 	.string "I cannot find her and im getting\n"
 	.string "worried...$"
 
 NewMap3_EventScript_BoyNeedsHelp_Text_3:
-# 48 "data/maps/NewMap3/scripts.pory"
+# 56 "data/maps/NewMap3/scripts.pory"
 	.string "What would you like to do?$"
 
 NewMap3_EventScript_BoyNeedsHelp_Text_4:
-# 50 "data/maps/NewMap3/scripts.pory"
+# 58 "data/maps/NewMap3/scripts.pory"
 	.string "Help the boy find his sister$"
 
 NewMap3_EventScript_BoyNeedsHelp_Text_5:
-# 50 "data/maps/NewMap3/scripts.pory"
+# 58 "data/maps/NewMap3/scripts.pory"
 	.string "Im busy right now$"
 
 NewMap3_EventScript_BoyNeedsHelp_Text_6:
-# 58 "data/maps/NewMap3/scripts.pory"
+# 66 "data/maps/NewMap3/scripts.pory"
 	.string "I hope she's okay...$"
 
 BoyonYourteamChat_Eventscript_CustomFollowerScript_Text_0:
-# 120 "data/maps/NewMap3/scripts.pory"
+# 178 "data/maps/NewMap3/scripts.pory"
 	.string "Ask about Her Whereabouts$"
 
 BoyonYourteamChat_Eventscript_CustomFollowerScript_Text_1:
-# 120 "data/maps/NewMap3/scripts.pory"
+# 178 "data/maps/NewMap3/scripts.pory"
 	.string "Ask where to look$"
 
 BoyonYourteamChat_Eventscript_CustomFollowerScript_Text_2:
-# 124 "data/maps/NewMap3/scripts.pory"
+# 182 "data/maps/NewMap3/scripts.pory"
 	.string "Shes usually playing near the pond.$"
 
 BoyonYourteamChat_Eventscript_CustomFollowerScript_Text_3:
-# 127 "data/maps/NewMap3/scripts.pory"
+# 185 "data/maps/NewMap3/scripts.pory"
 	.string "I think she may have wondered off, down\n"
 	.string "this trail$"
 
 NewMap3_EventScript_WeatherTrigger02_Text_0:
-# 144 "data/maps/NewMap3/scripts.pory"
+# 202 "data/maps/NewMap3/scripts.pory"
 	.string "We should hurry before the weather\n"
 	.string "gets worse...$"
 
 NewMap3_EventScript_WeatherTrigger03_Text_0:
-# 156 "data/maps/NewMap3/scripts.pory"
+# 214 "data/maps/NewMap3/scripts.pory"
 	.string "I hope we find her soon, The storm is\n"
 	.string "getting worse.$"
 
 NewMap3_EventScript_Trigger08_Text_0:
-# 166 "data/maps/NewMap3/scripts.pory"
+# 224 "data/maps/NewMap3/scripts.pory"
 	.string "You have to do something! PLEASE!$"
 
 NewMap3_EventScript_TriggerNoExit_Text_0:
-# 212 "data/maps/NewMap3/scripts.pory"
+# 257 "data/maps/NewMap3/scripts.pory"
 	.string "Ive already looked this way$"
 
 NewMap3_EventScript_TriggerNoExit2_Text_0:
-# 221 "data/maps/NewMap3/scripts.pory"
+# 266 "data/maps/NewMap3/scripts.pory"
 	.string "We have already looked this way$"
 
 NewMap3_EventScript_Trigger04_Text_0:
-# 230 "data/maps/NewMap3/scripts.pory"
+# 275 "data/maps/NewMap3/scripts.pory"
 	.string "Wait! I think i hear something ahead!$"
 
 NewMap3_EventScript_Trigger04_Text_1:
-# 236 "data/maps/NewMap3/scripts.pory"
+# 281 "data/maps/NewMap3/scripts.pory"
 	.string "Be caraeful, theres a Ursaring up there!$"
 
 NewMap3_EventScript_Trigger04_Text_2:
-# 264 "data/maps/NewMap3/scripts.pory"
+# 309 "data/maps/NewMap3/scripts.pory"
 	.string "Woah! Ursaring just got knocked out by\n"
 	.string "something...$"
 
 NewMap3_EventScript_Trigger04_Text_3:
-# 273 "data/maps/NewMap3/scripts.pory"
+# 325 "data/maps/NewMap3/scripts.pory"
 	.string "Girl: AHHHHH!$"
 
 NewMap3_EventScript_Trigger04_Text_4:
-# 281 "data/maps/NewMap3/scripts.pory"
+# 333 "data/maps/NewMap3/scripts.pory"
 	.string "MY SISTER!$"
 
 NewMap3_EventScript_Trigger04_Text_5:
-# 287 "data/maps/NewMap3/scripts.pory"
+# 339 "data/maps/NewMap3/scripts.pory"
 	.string "Please! You have to do something!$"
 
+NewMap3_EventScript_Trigger042_Text_0:
+# 355 "data/maps/NewMap3/scripts.pory"
+	.string "Be careful, theres a Ursaring up there!$"
+
 NewMap3_EventScript_UrsalunaBattle_Text_0:
-# 310 "data/maps/NewMap3/scripts.pory"
+# 440 "data/maps/NewMap3/scripts.pory"
 	.string "Thank you for saving me$"
 
 NewMap3_EventScript_UrsalunaBattle_Text_1:
-# 314 "data/maps/NewMap3/scripts.pory"
+# 446 "data/maps/NewMap3/scripts.pory"
 	.string "We are going home now, Thank you!$"

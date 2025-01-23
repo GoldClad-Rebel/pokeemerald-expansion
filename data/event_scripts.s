@@ -1234,3 +1234,23 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/BirchesSantuaryWest/scripts.inc"
 
 	.include "data/maps/LostCreekTransitionMap/scripts.inc"
+
+	.include "data/maps/PokeParkPenitentiary/scripts.inc"
+
+	.include "data/maps/WardensOffice/scripts.inc"
+
+	.include "data/maps/Route115Ext/scripts.inc"
+
+	.include "data/maps/NorthernRustboroRiverExt1/scripts.inc"
+
+	.include "data/maps/RustboroTransitionMapRight/scripts.inc"
+
+	.include "data/maps/RustboroTransitionMap2/scripts.inc"
+
+	.include "data/maps/RusturfTunnel_East/scripts.inc"
+
+	.include "data/maps/RusturfTunnelTransitionMap/scripts.inc"
+
+	.include "data/maps/RusturfPass/scripts.inc"
+
+	.include "data/maps/TreeTop01/scripts.inc"

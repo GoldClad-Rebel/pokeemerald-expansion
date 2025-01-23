@@ -16,7 +16,6 @@
 #define ALL_LAND                            FOLLOWER_FLAG_ALL_LAND
 #define FOLLOWER_ALL                        FOLLOWER_FLAG_ALL
 #define FOLLOWER_NO_RUN                     CAN_LEAVE_ROUTE | CLEAR_ON_WHITE_OUT
-#define FOLLOWER_NO_WHITE_OUT               CAN_LEAVE_ROUTE
 
 
 

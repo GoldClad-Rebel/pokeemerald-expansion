@@ -42,6 +42,11 @@
       "map": "MAP_RUSTBORO_RIDGE_EXT02",
       "offset": -15,
       "direction": "up"
+    },
+    {
+      "map": "MAP_RUSTBORO_CITY",
+      "offset": -57,
+      "direction": "right"
     }
   ],
   "object_events": [

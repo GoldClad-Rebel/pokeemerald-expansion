@@ -274,5 +274,19 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL
 	setflag FLAG_PichuAppears_0x024
 	setflag FLAG_LEAFRoute101Ext02_0x02C 
+	setflag FLAG_Jailbird1_0x044
+	setflag FLAG_Jailbird2_0x045
+	setflag FLAG_ThugBoss_0x043
+	setflag FLAG_RustboroWoman2_0x049
+	setflag FLAG_RCMEOWTH1_0x04A
+	setflag FLAG_RCMEOWTH2_0x04B
+	setflag FLAG_RCMEOWTH3_0x04C
+	setflag FLAG_AZELF_0x04D
+	setflag FLAG_ZOROARK01_0x266
+	setflag FLAG_ZOROARK02_0x267
+	setflag FLAG_Azelf03_0x264
+	setflag FLAG_AZELF05_0x26B
+	setflag FLAG_FinalAzelf_0x268
+	setflag FLAG_FinalAzelf2_0x26D
 	call EventScript_ResetAllBerries
 	end

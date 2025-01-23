@@ -61,10 +61,59 @@
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_DEVON_CORP_2F",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 13,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTBORO_CITY",
+      "dest_warp_id": "14"
+    },
+    {
+      "x": 14,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTBORO_CITY",
+      "dest_warp_id": "15"
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_devonpresident_STATE",
+      "var_value": "0",
+      "script": "RustboroCity_DevonCorp_3F_EventScript_PresidentTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_devonpresident_STATE",
+      "var_value": "1",
+      "script": "RustboroCity_DevonCorp_3F_EventScript_PresidentTrigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_devonpresident_STATE",
+      "var_value": "1",
+      "script": "RustboroCity_DevonCorp_3F_EventScript_PresidentTrigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_devonpresident_STATE",
+      "var_value": "0",
+      "script": "RustboroCity_DevonCorp_3F_EventScript_PresidentTrigger1"
+    }
   ],
   "bg_events": [
     {

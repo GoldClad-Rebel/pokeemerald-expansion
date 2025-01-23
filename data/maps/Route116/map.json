@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_VERDANTURF_TOWN",
-      "offset": 80,
+      "offset": 60,
       "direction": "down"
     },
     {
@@ -29,13 +29,18 @@
       "direction": "down"
     },
     {
-      "map": "MAP_ROUTE115",
+      "map": "MAP_ROUTE115EXT",
       "offset": -40,
       "direction": "up"
     },
     {
-      "map": "MAP_NORTHERN_RUSTBORO_RIVER",
+      "map": "MAP_NORTHERN_RUSTBORO_RIVER_EXT1",
       "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_RUSTURF_PASS",
+      "offset": 34,
       "direction": "up"
     }
   ],
@@ -94,8 +99,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 32,
-      "y": 10,
+      "x": 30,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -133,8 +138,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 5,
-      "y": 18,
+      "x": 8,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -264,7 +269,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
       "x": 28,
-      "y": 8,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -302,8 +307,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "x": 38,
-      "y": 9,
+      "x": 37,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
@@ -367,8 +372,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 30,
-      "y": 5,
+      "x": 29,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -403,6 +408,71 @@
       "trainer_sight_or_berry_tree_id": "5",
       "script": "Route116_EventScript_Devan",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MACHAMP)",
+      "x": 63,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 3,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MACHOKE)",
+      "x": 56,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MACHOP)",
+      "x": 47,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AZELF)",
+      "x": 50,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_FinalAzelf_0x268"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AZELF)",
+      "x": 69,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_FinalAzelf2_0x26D"
     }
   ],
   "warp_events": [
@@ -421,14 +491,14 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 65,
+      "x": 68,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_RUSTURF_TUNNEL",
       "dest_warp_id": "2"
     },
     {
-      "x": 59,
+      "x": 58,
       "y": 13,
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
@@ -439,6 +509,20 @@
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 74,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTURF_TUNNEL",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 96,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTURF_TUNNEL_EAST",
       "dest_warp_id": "0"
     }
   ],
@@ -451,6 +535,24 @@
       "var": "VAR_ROUTE116_STATE",
       "var_value": "1",
       "script": "Route116_EventScript_BrineyTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 55,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_RusturfPass_STATE",
+      "var_value": "5",
+      "script": "Route116_EventScript_AzelfFliesByTrigger06"
+    },
+    {
+      "type": "trigger",
+      "x": 68,
+      "y": 0,
+      "elevation": 0,
+      "var": "VAR_RusturfPass_STATE",
+      "var_value": "5",
+      "script": "Route116_EventScript_AzelfFliesByTriggerRight"
     }
   ],
   "bg_events": [
@@ -487,7 +589,7 @@
     },
     {
       "type": "secret_base",
-      "x": 79,
+      "x": 78,
       "y": 11,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_BLUE_CAVE2_1"
@@ -518,7 +620,7 @@
     {
       "type": "secret_base",
       "x": 55,
-      "y": 15,
+      "y": 16,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_BLUE_CAVE4_2"
     },
@@ -532,8 +634,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 70,
-      "y": 13,
+      "x": 74,
+      "y": 9,
       "elevation": 3,
       "item": "ITEM_BLACK_GLASSES",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES"

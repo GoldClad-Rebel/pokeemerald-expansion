@@ -130,7 +130,12 @@
     "BirchesSanctuarySouth",
     "BirchesSanctuaryEast",
     "BirchesSantuaryWest",
-    "LostCreekTransitionMap"
+    "LostCreekTransitionMap",
+    "Route115Ext",
+    "NorthernRustboroRiverExt1",
+    "RustboroTransitionMapRight",
+    "RustboroTransitionMap2",
+    "RusturfPass"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -247,7 +252,9 @@
     "RustboroCity_Flat2_2F",
     "RustboroCity_Flat2_3F",
     "RustboroCity_House3",
-    "RustboroRiverHouse"
+    "RustboroRiverHouse",
+    "PokeParkPenitentiary",
+    "WardensOffice"
   ],
   "gMapGroup_IndoorFortree": [
     "FortreeCity_House1",
@@ -469,7 +476,9 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "RusturfTunnel_East",
+    "RusturfTunnelTransitionMap"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
@@ -532,7 +541,8 @@
     "BattlePyramidSquare14",
     "BattlePyramidSquare15",
     "BattlePyramidSquare16",
-    "UnionRoom"
+    "UnionRoom",
+    "TreeTop01"
   ],
   "gMapGroup_SpecialArea": [
     "SafariZone_Northwest",

@@ -1,0 +1,44 @@
+{
+  "id": "MAP_RUSTBORO_TRANSITION_MAP2",
+  "name": "RustboroTransitionMap2",
+  "layout": "LAYOUT_RUSTBORO_TRANSITION_MAP2",
+  "music": "MUS_RUSTBORO",
+  "region_map_section": "MAPSEC_ROUTE_115",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_RUSTBORO_TRANSITION_MAP_RIGHT",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE104",
+      "offset": -5,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE104EXT",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

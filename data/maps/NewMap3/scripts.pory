@@ -11,15 +11,16 @@ const LOCALID_Boy2=15
 const LOCALID_Girl=1
 const LOCALID_URSARING=2
 const LOCALID_URSALUNA=4
+const LOCALID_URSULA=16
 
 script NewMap3_EventScript_OverworldMon0{
     lock
     faceplayer
     callnative(GetOverworldMonSpecies)
     bufferspeciesname(STR_VAR_1, VAR_0x8004)
-    startoverworldencounter(20)
+    startoverworldencounter(23)
     fadescreenswapbuffers(FADE_TO_BLACK)
-    removeobject(5)
+    removeobject(14)
     fadescreenswapbuffers(FADE_FROM_BLACK)
     releaseall
     end
@@ -31,17 +32,24 @@ script NewMap3_EventScript_BoyNeedsHelp{
     if(var(VAR_RESULT) == TRUE){
     applymovement(OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerAway)
     waitmovement(0)
+    applymovement(OBJ_EVENT_ID_FOLLOW_ME, NewMap3_Movement_LeafstepsLeft)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    delay(8)
     msgbox(format("Leaf: Hey {PLAYER}, I need to head home. Ill catch ya later!"))
     waitmessage
     closemessage
-    applymovement(OBJ_EVENT_ID_FOLLOW_ME, PartnersHouse_movement_LEAFheadshome)
+    applymovement(OBJ_EVENT_ID_FOLLOW_ME, NewMap3_Movement_LeafHeadsHome)
     waitmovement(0)
     destroyfollower
     clearflag(FLAG_leafsittinginhouse_0x02E)
     releaseall
     }
     if(var(VAR_RESULT) == FALSE){
+    applymovement(LOCALID_Boy, NewMap3_Movement_BoyWalksUpToPlayer)
+    waitmovement(3)
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+    delay(8)
     msgbox(format("Hey You, Could you help me find my sister?")) 
     msgbox(format("I cannot find her and im getting worried..."))
     waitmessage
@@ -57,6 +65,8 @@ script NewMap3_EventScript_BoyNeedsHelp{
     else{
     msgbox(format("I hope she's okay..."))
     closemessage
+    applymovement(LOCALID_Boy, NewMap3_Movement_BoyWalksaway1)
+    waitmovement(3)
     applymovement(OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerAway2)
     waitmovement(0)
     releaseall
@@ -70,15 +80,24 @@ script NewMap3_EventScript_BoyNeedsHelp2{
     if(var(VAR_RESULT) == TRUE){
     applymovement(OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerAway)
     waitmovement(0)
+    applymovement(OBJ_EVENT_ID_FOLLOW_ME, NewMap3_Movement_LeafstepsLeft)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    delay(8)
     msgbox(format("Leaf: Hey {PLAYER}, I need to head home. Ill catch ya later!"))
     waitmessage
-    applymovement(OBJ_EVENT_ID_FOLLOW_ME, PartnersHouse_movement_LEAFheadshome)
+    closemessage
+    applymovement(OBJ_EVENT_ID_FOLLOW_ME, NewMap3_Movement_LeafHeadsHome)
     waitmovement(0)
     destroyfollower
     clearflag(FLAG_leafsittinginhouse_0x02E)
+    releaseall
     }
     if(var(VAR_RESULT) == FALSE){
-    faceplayer
+    applymovement(LOCALID_Boy, NewMap3_Movement_BoyWalksUpToPlayer2)
+    waitmovement(3)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+    delay(8)
     msgbox(format("Hey You, Could you help me find my sister?")) 
     msgbox(format("I cannot find her and im getting worried..."))
     waitmessage
@@ -94,11 +113,50 @@ script NewMap3_EventScript_BoyNeedsHelp2{
     else{
     msgbox(format("I hope she's okay..."))
     closemessage
+    applymovement(LOCALID_Boy, NewMap3_Movement_BoyWalksaway2)
+    waitmovement(3)
     applymovement(OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerAway2)
     waitmovement(0)
     releaseall
     }
     }
+}
+
+movement NewMap3_Movement_LeafHeadsHome {
+    walk_left * 4
+    walk_left * 4
+    step_end    
+}
+
+movement NewMap3_Movement_LeafstepsLeft {
+    walk_left
+    face_player
+    step_end
+    
+}
+
+movement NewMap3_Movement_BoyWalksUpToPlayer{
+    walk_left * 4
+    walk_left * 4
+    step_end
+}
+
+movement NewMap3_Movement_BoyWalksUpToPlayer2{
+    walk_left * 4
+    walk_left * 3
+    step_end
+}
+
+movement NewMap3_Movement_BoyWalksaway1 {
+    walk_right * 4
+    walk_right * 4
+    step_end
+}
+
+movement NewMap3_Movement_BoyWalksaway2 {
+    walk_right * 4
+    walk_right * 3
+    step_end
 }
 
 movement NewMap3_Movement_ForcePlayerAway{
@@ -162,19 +220,6 @@ script NewMap3_EventScript_WeatherTrigger03{
 script NewMap3_EventScript_Trigger08{
     lock
     applymovement(LOCALID_Boy2, NewMap3_Movement_BoyFacesPlayer)
-    waitmovement(3)
-    msgbox(format("You have to do something! PLEASE!"))
-    waitmessage
-    applymovement(OBJ_EVENT_ID_PLAYER, NewMap3_Movement_ForcePlayerUp)
-    waitmovement(0)
-    applymovement(LOCALID_Boy2, NewMap3_Movement_BoyFacesup)
-    waitmovement(3)
-    releaseall
-}
-
-script NewMap3_EventScript_Trigger05{
-    lock
-    applymovement(LOCALID_Boy2, NewMap3_Movement_BoyFacesPlayerRight)
     waitmovement(3)
     msgbox(format("You have to do something! PLEASE!"))
     waitmessage
@@ -263,18 +308,25 @@ script NewMap3_EventScript_Trigger04{
     fadescreenswapbuffers(FADE_FROM_BLACK)
     msgbox(format("Woah! Ursaring just got knocked out by something..."))
     waitmessage
-    playse(SE_THUNDERSTORM)
-    waitse
     setflag(FLAG_NewMap3Boy_0x036)
+    setflag(FLAG_URSALUNA_0x038)
     fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(4)
     destroyfollower
     setobjectxy(LOCALID_Boy2, 29, 13)
+    setobjectxy(LOCALID_URSULA, 32, 11)
     fadescreenswapbuffers(FADE_FROM_BLACK)
+    setweather(WEATHER_RAIN_THUNDERSTORM)
+    doweather
+    playse(SE_THUNDER)
+    waitse
+    playse(SE_THUNDER)
+    waitse
     msgbox(format("Girl: AHHHHH!"))
     waitmessage
     applymovement(LOCALID_Girl, NewMap3_Movement_GirlRunsAway)
     waitmovement(1)
-    applymovement(LOCALID_URSALUNA, NewMap3_Movement_URSALUNAchasesGirl)
+    applymovement(LOCALID_URSULA, NewMap3_Movement_URSALUNAchasesGirl)
     waitmovement(0)
     playmoncry(SPECIES_URSALUNA_BLOODMOON, CRY_MODE_ENCOUNTER)
     waitmoncry
@@ -292,18 +344,96 @@ script NewMap3_EventScript_Trigger04{
     releaseall
 }
 
+script NewMap3_EventScript_Trigger042{
+    lock
+    msgbox(format("Wait! I think i hear something ahead!"))
+    waitmessage
+    applymovement(LOCALID_Boy, NewMap3_Movement_BoyWalkUpTowardsBattle2)
+    waitmovement(3)
+    applymovement(OBJ_EVENT_ID_PLAYER, NewMap3_Movement_WalkUpTowardsNoise2)
+    waitmovement(0)
+    msgbox(format("Be careful, theres a Ursaring up there!"))
+    waitmessage
+    applymovement(LOCALID_URSARING, NewMap3_Movement_URSARINGAttacksURSALUNA)
+    waitmovement(2)
+    playmoncry(SPECIES_URSARING, CRY_MODE_ENCOUNTER)
+    applymovement(LOCALID_URSARING, NewMap3_Movement_URSARINGAttacksURSALUNA)
+    waitmovement(2)
+    applymovement(LOCALID_URSALUNA, NewMap3_Movement_URSALUNAAttacksURSARING)
+    waitmovement(4)
+    playmoncry(SPECIES_URSALUNA, CRY_MODE_ENCOUNTER)
+    applymovement(LOCALID_URSALUNA, NewMap3_Movement_URSALUNAAttacksURSARING)
+    waitmovement(4)
+    applymovement(LOCALID_URSARING, NewMap3_Movement_URSARINGAttacksURSALUNA)
+    waitmovement(2)
+    playmoncry(SPECIES_URSARING, CRY_MODE_ENCOUNTER)
+    applymovement(LOCALID_URSARING, NewMap3_Movement_URSARINGAttacksURSALUNA)
+    waitmovement(2)
+    applymovement(LOCALID_URSALUNA, NewMap3_Movement_URSALUNAAttacksURSARING)
+    waitmovement(4)
+    applymovement(LOCALID_URSALUNA, NewMap3_Movement_URSALUNAAttacksURSARING)
+    waitmovement(4)
+    playmoncry(SPECIES_URSALUNA, CRY_MODE_ENCOUNTER)
+    applymovement(LOCALID_URSALUNA, NewMap3_Movement_URSALUNAAttacksURSARING)
+    waitmovement(4)
+    setflag(FLAG_URSARING_0x037)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(2)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    msgbox(format("Woah! Ursaring just got knocked out by something..."))
+    waitmessage
+    closemessage
+    setflag(FLAG_NewMap3Boy_0x036)
+    setflag(FLAG_URSALUNA_0x038)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(4)
+    destroyfollower
+    setobjectxy(LOCALID_Boy2, 29, 13)
+    setobjectxy(LOCALID_URSULA, 32, 11)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    setweather(WEATHER_RAIN_THUNDERSTORM)
+    doweather
+    playse(SE_THUNDER)
+    waitse
+    playse(SE_THUNDER)
+    waitse
+    msgbox(format("Girl: AHHHHH!"))
+    waitmessage
+    applymovement(LOCALID_Girl, NewMap3_Movement_GirlRunsAway)
+    waitmovement(1)
+    applymovement(LOCALID_URSULA, NewMap3_Movement_URSALUNAchasesGirl)
+    waitmovement(0)
+    playmoncry(SPECIES_URSALUNA_BLOODMOON, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    msgbox(format("MY SISTER!"))
+    waitmessage
+    applymovement(LOCALID_Boy2, NewMap3_Movement_BoySeessister)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, NewMap3_Movement_WalkUpTowardsBattle)
+    waitmovement(0)
+    msgbox(format("Please! You have to do something!"))
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, NewMap3_Movement_FaceUrsalunaBattle)
+    waitmovement(0)
+    setvar(VAR_NewMap3_STATE, 4)
+    releaseall
+}
+
 script NewMap3_EventScript_UrsalunaBattle{
     lock
-	faceplayer
+    faceplayer
+    playse(SE_THUNDER)
+    waitse
     playmoncry(SPECIES_URSALUNA_BLOODMOON, CRY_MODE_ENCOUNTER)
     delay(40)
     waitmoncry
     setwildbattle(SPECIES_URSALUNA_BLOODMOON, 30)
     dowildbattle
     setflag(FLAG_NewMap3Girl_0x03A)
-    setflag(FLAG_URSALUNA_0x038)
+    setflag(FLAG_Bloodmoonursula_0x03D)
     fadescreenswapbuffers(FADE_TO_BLACK)
-    removeobject(4)
+    removeobject(16)
     setobjectxy(LOCALID_Girl, 32, 9)
     turnobject(LOCALID_Girl, DIR_WEST)
     fadescreenswapbuffers(FADE_FROM_BLACK)
@@ -311,8 +441,11 @@ script NewMap3_EventScript_UrsalunaBattle{
     waitmessage
     applymovement(LOCALID_Boy2, NewMap3_Movement_BoyApproachesAfterBattle)
     waitmovement(3)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_SOUTH)
+    delay(8)
     msgbox(format("We are going home now, Thank you!"))
     waitmessage
+    closemessage
     applymovement(LOCALID_Boy2, NewMap3_Movement_BoyLeaves)
     waitmovement(3)
     applymovement(LOCALID_Girl, NewMap3_Movement_GirlLeaves)
@@ -323,8 +456,6 @@ script NewMap3_EventScript_UrsalunaBattle{
     removeobject(15)
     removeobject(1)
     fadescreenswapbuffers(FADE_FROM_BLACK)
-    setweather(WEATHER_NONE)
-    doweather
     setvar(VAR_NewMap3_STATE, 5)
     releaseall
 }
@@ -334,6 +465,14 @@ movement NewMap3_Movement_WalkUpTowardsNoise{
     walk_up * 4
     step_end
 }
+
+movement NewMap3_Movement_WalkUpTowardsNoise2{
+    face_right
+    walk_right
+    walk_up * 4
+    step_end
+}
+
 movement NewMap3_Movement_URSARINGAttacksURSALUNA{
     jump_right
     jump_left
@@ -381,6 +520,20 @@ movement NewMap3_Movement_URSALUNAchasesGirl{
 }
 
 movement NewMap3_Movement_BoyWalkUpTowardsBattle {
+    face_left
+    walk_left
+    face_up
+    walk_up * 2
+    face_right
+    walk_right * 2
+    face_up
+    walk_up * 2
+    step_end
+}
+
+movement NewMap3_Movement_BoyWalkUpTowardsBattle2 {
+    face_right
+    walk_right
     face_up
     walk_up
     face_right
@@ -458,4 +611,12 @@ movement NewMap3_Movement_ForcePlayerRight{
     face_right
     walk_right
     step_end
+}
+
+script NewMap3_EventScript_WeatherReturnTrigger{
+    lockall
+    setweather(WEATHER_NONE)
+    doweather
+    setvar(VAR_NewMap3_STATE, 6)
+    releaseall
 }

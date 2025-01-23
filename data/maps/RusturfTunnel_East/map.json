@@ -1,0 +1,45 @@
+{
+  "id": "MAP_RUSTURF_TUNNEL_EAST",
+  "name": "RusturfTunnel_East",
+  "layout": "LAYOUT_RUSTURF_TUNNEL_EAST",
+  "music": "MUS_RUSTBORO",
+  "region_map_section": "MAPSEC_RUSTURF_TUNNEL",
+  "requires_flash": false,
+  "weather": "WEATHER_FOG_HORIZONTAL",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_RUSTURF_TUNNEL",
+      "offset": 5,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_RUSTURF_TUNNEL_TRANSITION_MAP",
+      "offset": 0,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE116",
+      "dest_warp_id": "6"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

@@ -14,23 +14,23 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_RUSTBORO_CITY",
-      "offset": 0,
-      "direction": "down"
-    },
-    {
       "map": "MAP_ROUTE114",
       "offset": -40,
       "direction": "right"
     },
     {
-      "map": "MAP_ROUTE116",
+      "map": "MAP_NORTHERN_RUSTBORO_RIVER",
       "offset": 40,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE115EXT",
+      "offset": 0,
       "direction": "down"
     },
     {
-      "map": "MAP_NORTHERN_RUSTBORO_RIVER",
-      "offset": 40,
+      "map": "MAP_NORTHERN_RUSTBORO_RIVER_EXT1",
+      "offset": 80,
       "direction": "right"
     }
   ],
@@ -63,8 +63,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "x": 28,
-      "y": 55,
+      "x": 32,
+      "y": 48,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -115,8 +115,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "x": 15,
-      "y": 50,
+      "x": 14,
+      "y": 49,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -141,8 +141,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
-      "x": 24,
-      "y": 62,
+      "x": 25,
+      "y": 38,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
@@ -154,8 +154,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 20,
-      "y": 60,
+      "x": 38,
+      "y": 66,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -193,7 +193,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 31,
+      "x": 13,
       "y": 64,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
@@ -206,8 +206,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 31,
-      "y": 65,
+      "x": 14,
+      "y": 64,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -219,8 +219,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 29,
-      "y": 50,
+      "x": 27,
+      "y": 39,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -232,8 +232,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 32,
-      "y": 53,
+      "x": 39,
+      "y": 50,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -297,21 +297,21 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 28,
-      "y": 62,
+      "x": 25,
+      "y": 53,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Route115_EventScript_Marlene",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 26,
-      "y": 67,
+      "x": 36,
+      "y": 59,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -425,7 +425,7 @@
     },
     {
       "type": "sign",
-      "x": 25,
+      "x": 26,
       "y": 38,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -440,7 +440,7 @@
     },
     {
       "type": "secret_base",
-      "x": 32,
+      "x": 31,
       "y": 39,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_BROWN_CAVE1_2"
@@ -489,15 +489,15 @@
     },
     {
       "type": "secret_base",
-      "x": 20,
-      "y": 53,
+      "x": 18,
+      "y": 52,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_RED_CAVE3_1"
     },
     {
       "type": "hidden_item",
-      "x": 15,
-      "y": 49,
+      "x": 14,
+      "y": 48,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_115_HEART_SCALE"

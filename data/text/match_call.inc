@@ -2862,7 +2862,7 @@ MatchCall_Text_MrStone1::
 	.string "Hm…\n"
 	.string "How could I know that?\p"
 	.string "It's because I'm looking down at\n"
-	.string "you from my office window!\p"
+	.string "you from my office balcony!\p"
 	.string "Wahahaha!\n"
 	.string "See you again!$"
 
