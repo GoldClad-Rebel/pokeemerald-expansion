@@ -1,6 +1,9 @@
 #ifndef GUARD_METATILE_LABELS_H
 #define GUARD_METATILE_LABELS_H
 
+// gTileset_AltoMare_City
+#define METATILE_AltoMare_City_Secondary_ts  0x00B
+
 // gTileset_BattleArena
 #define METATILE_BattleArena_Door  0x81B
 

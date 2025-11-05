@@ -4332,7 +4332,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Red = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leaf = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_RED_LEAF,
+    .paletteTag = OBJ_EVENT_PAL_TAG_LEAF,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,

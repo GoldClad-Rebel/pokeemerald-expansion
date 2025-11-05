@@ -1634,3 +1634,60 @@ const u16 gTilesetPalettes_UnionRoom[][16] =
 };
 
 const u32 gTilesetTiles_UnionRoom[] = INCBIN_U32("data/tilesets/secondary/union_room/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Altomare_city[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/altomare_city/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Altomare_city[] = INCBIN_U32("data/tilesets/secondary/altomare_city/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_AltoMare_City[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/alto_mare_city/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_AltoMare_City[] = INCBIN_U32("data/tilesets/primary/alto_mare_city/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Anchorstone[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/anchorstone/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Anchorstone[] = INCBIN_U32("data/tilesets/primary/anchorstone/tiles.4bpp.lz");

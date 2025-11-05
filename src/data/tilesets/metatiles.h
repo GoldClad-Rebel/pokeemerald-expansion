@@ -207,3 +207,12 @@ const u16 gMetatileAttributes_MysteryEventsHouse[] = INCBIN_U16("data/tilesets/s
 
 const u16 gMetatiles_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatiles.bin");
 const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatile_attributes.bin");
+
+const u16 gMetatiles_Altomare_city[] = INCBIN_U16("data/tilesets/secondary/altomare_city/metatiles.bin");
+const u16 gMetatileAttributes_Altomare_city[] = INCBIN_U16("data/tilesets/secondary/altomare_city/metatile_attributes.bin");
+
+const u16 gMetatiles_AltoMare_City[] = INCBIN_U16("data/tilesets/primary/alto_mare_city/metatiles.bin");
+const u16 gMetatileAttributes_AltoMare_City[] = INCBIN_U16("data/tilesets/primary/alto_mare_city/metatile_attributes.bin");
+
+const u16 gMetatiles_Anchorstone[] = INCBIN_U16("data/tilesets/primary/anchorstone/metatiles.bin");
+const u16 gMetatileAttributes_Anchorstone[] = INCBIN_U16("data/tilesets/primary/anchorstone/metatile_attributes.bin");
